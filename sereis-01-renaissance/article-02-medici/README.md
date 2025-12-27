@@ -47,7 +47,7 @@ python bill_of_exchange_simulation.py
 
 ## 相關文章
 
-閱讀完整分析：[美第奇家族的金融帝國](https://cogitecode.com/category/renaissance/)
+閱讀完整分析：[美第奇家族的金融帝國](https://code-cogito.com/%e7%be%8e%e7%ac%ac%e5%a5%87%e5%ae%b6%e6%97%8f%e7%9a%84%e9%87%91%e8%9e%8d%e5%b8%9d%e5%9c%8b/)
 
 ## 完整版（開發中）
 
@@ -61,8 +61,7 @@ python bill_of_exchange_simulation.py
 - ✓ 互動式利潤計算器
 - ✓ PDF教學文件（40頁）
 
-**想收到完整版推出通知？**  
-Email: wina@cogitecode.com
+
 
 ## 檔案說明
 
