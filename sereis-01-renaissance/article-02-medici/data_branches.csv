@@ -1,0 +1,9 @@
+city,lat,lon,opened,closed,revenue,type,description
+Florence,43.77,11.25,1397,1494,100000,headquarters,Headquarters - 100% Medici family owned
+Rome,41.90,12.49,1397,1478,80000,branch,Papal bank - managing Church finances
+Venice,45.44,12.32,1402,1469,50000,branch,Trade finance center
+Geneva,46.20,6.14,1424,1478,45000,branch,Link between France and Italy
+Bruges,51.21,3.22,1439,1480,40000,branch,Northern European trade hub
+London,51.51,-0.13,1446,1478,35000,branch,English wool trade
+Avignon,43.95,4.81,1446,1478,30000,branch,Papal palace - southern France
+Milan,45.46,9.19,1452,1478,25000,branch,Northern industrial center
