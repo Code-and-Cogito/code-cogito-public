@@ -41,7 +41,7 @@ python basic_florence_network.py
 
 ## 相關文章
 
-閱讀完整分析：[佛羅倫斯為何成為文藝復興搖籃？](https://cogitecode.com/category/renaissance/)
+閱讀完整分析：[佛羅倫斯為何成為文藝復興搖籃？](https://code-cogito.com/%e4%bd%9b%e7%be%85%e5%80%ab%e6%96%af%e7%82%ba%e4%bd%95%e6%88%90%e7%82%ba%e6%96%87%e8%97%9d%e5%be%a9%e8%88%88%e6%90%96%e7%b1%83/)
 
 ## 完整版（開發中）
 
@@ -53,8 +53,6 @@ python basic_florence_network.py
 - ✓ Plotly互動式地圖
 - ✓ PDF教學文件（35頁）
 
-**想收到完整版推出通知？**  
-Email: wina@cogitecode.com
 
 ## 檔案說明
 
