@@ -1,0 +1,13 @@
+body_part,proportion_to_head,value_in_heads,description
+head_length,1.000,1.000,Head length (base unit)
+face_length,1.250,1.250,Hairline to chin
+body_height,8.000,8.000,Total body height (da Vinci standard)
+arm_span,8.000,8.000,Wingspan with arms extended
+navel_to_head,4.944,4.944,Navel to top of head (golden ratio)
+navel_to_feet,3.056,3.056,Navel to feet
+shoulder_width,2.000,2.000,Shoulder width
+palm_length,1.250,1.250,Palm length (equals face length)
+foot_length,1.143,1.143,Foot length (1/7 of height)
+forearm,1.500,1.500,Forearm length
+hand,1.000,1.000,Hand length (equals head length)
+cubit,2.000,2.000,Elbow to fingertip (ancient Egyptian unit)
