@@ -29,7 +29,7 @@
   
   ## 連結
   
-  - 部落格：[Code & Cogito](https://cogitecode.com)
+  - 部落格：[Code & Cogito](https://code-cogito.com)
   - Patreon：[支持創作](即將推出)
 
   
