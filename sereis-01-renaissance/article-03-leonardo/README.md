@@ -60,7 +60,7 @@ python golden_ratio_verification.py
 
 ## 相關文章
 
-閱讀完整分析：[達文西的解剖學革命](https://cogitecode.com/category/renaissance/)
+閱讀完整分析：[達文西的解剖學革命](https://code-cogito.com/%e9%81%94%e6%96%87%e8%a5%bf%e7%9a%84%e8%a7%a3%e5%89%96%e5%ad%b8%e9%9d%a9%e5%91%bd/)
 
 ## 完整版（開發中）
 
