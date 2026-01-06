@@ -1,0 +1,4 @@
+cube_id,center_x,center_y,center_z,cube_size,projected_diagonal,theoretical_ratio,actual_ratio,error
+1,0,0,5,2.0,2.828,1.00,1.00,0.0000
+2,0,0,10,2.0,1.414,2.00,2.00,0.0000
+3,0,0,15,2.0,0.943,3.00,3.00,0.0001
