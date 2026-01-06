@@ -182,4 +182,3 @@ def create_cube(size=1, center=(0, 0, 5)):
 
 作者：Wina Wu 
 
-GitHub: https://github.com/Code-and-Cogito/series04-perspective
