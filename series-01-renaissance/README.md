@@ -1,0 +1,40 @@
+# Series 1: Digital Rebirth of the Renaissance
+
+Using Python to reconstruct 500 years of intellectual evolution — from Florence's trade networks to Darwin's revolution.
+
+## Articles
+
+| # | Article | Code | Status |
+|---|---------|------|--------|
+| 01 | [Why Florence Became the Cradle of the Renaissance](./article-01-florence) | florence_network_analysis.py | Available |
+| 02 | [The Medici Family: A Financial Empire's Cultural Investment](./article-02-medici) | medici_bank_analysis.py | Available |
+| 03 | Da Vinci's Anatomical Revolution | Coming soon | |
+| 04 | Perspective: How Math Changed Art | Coming soon | |
+| 05 | The Birth of Humanism | Coming soon | |
+| 06 | The Printing Press: Knowledge Revolution | Coming soon | |
+| 07 | The Reformation: When Authority Was Challenged | Coming soon | |
+| 08 | The Enlightenment: The Age of Reason | Coming soon | |
+| 09 | Romanticism: When Poets Rebel | Coming soon | |
+| 10 | The Industrial Revolution: The Price of Progress | Coming soon | |
+| 11 | Darwin: The Philosophical Shock of Evolution | Coming soon | |
+| 12 | The Ultimate Legacy: What Did We Inherit? | Coming soon | |
+
+## About This Series
+
+12 articles spanning 500 years of history (1350-1859), each with Python code for data analysis and visualization. Topics include network analysis, financial modeling, information diffusion, and more.
+
+## Quick Start
+
+```bash
+pip install networkx matplotlib numpy pandas
+cd article-01-florence
+python florence_network_analysis.py
+```
+
+## Deep Dive Packs
+
+Each article has a premium Deep Dive Pack with complete code, datasets, Jupyter Notebooks, and PDF cheatsheets. [Get them here](https://code-cogito.com/products/).
+
+---
+
+**Code & Cogito** — [code-cogito.com](https://code-cogito.com)
