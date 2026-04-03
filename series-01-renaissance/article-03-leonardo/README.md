@@ -1,102 +1,56 @@
-# Article 03 - 達文西解剖學分析
+# Article 03 — Da Vinci's Vitruvian Man
 
-## 這是什麼？
+**Da Vinci's Anatomical Revolution: Body Proportions and the Golden Ratio**
 
-用Python重現達文西的維特魯威人研究，驗證人體的黃金比例，視覺化完美的人體比例。
+Using Python to reconstruct Da Vinci's Vitruvian Man study — verifying body proportions and the golden ratio with mathematical precision.
 
-## 快速開始
-
-### 安裝需求
+## Quick Start
 
 ```bash
-pip install numpy matplotlib scipy
-```
-
-### 運行程式
-
-```bash
-# 維特魯威人分析
+pip install numpy matplotlib
 python vitruvian_man_analysis.py
-
-# 黃金比例驗證
-python golden_ratio_verification.py
 ```
 
-## 輸出
+## What You'll Get
 
-**程式一：維特魯威人分析**
-- 終端機：人體比例一覽表、黃金比例驗證、關鍵發現
-- 圖片：`vitruvian_man.png` - 圓形+正方形兩種構圖
+**Terminal output:**
+- Body proportion table (in head-length units)
+- Golden ratio verification at the navel
+- Key findings summary
 
-**程式二：黃金比例驗證**
-- 終端機：黃金比例數學特性、費波那契數列、應用範例
+**Charts:**
+- `vitruvian_man_basic.png` — Simplified Vitruvian Man: circle (navel center) + square (arm span = height)
 
-## 關鍵發現
+## Key Findings
 
-**人體黃金比例：**
-- 肚臍分割比例：φ = 1.618...（黃金比例）
-- 身高 = 8個頭長
-- 雙臂張開 = 身高
-- 手掌長 = 臉長
-- 腳長 = 身高的 1/7
+Da Vinci's body proportion rules, verified mathematically:
+- **Height = 8 head-lengths** (classical drawing proportion)
+- **Arm span = Height** (body fits in a square)
+- **Navel divides height at the golden ratio** (phi = 1.618...)
+- Navel ratio error from phi: **< 0.000001**
 
-**達文西的發現：**
-- 人體不是隨機的，遵循數學規律
-- 肚臍是黃金分割點
-- 圓形與正方形可以完美內接人體
-- 數學即美學，人體即宇宙
+## Files
 
-## 維特魯威人的兩種構圖
+| File | Description |
+|------|-------------|
+| `vitruvian_man_analysis.py` | Main analysis script (proportions + golden ratio + visualization) |
+| `vitruvian_man_basic.png` | Output chart |
 
-**圓形構圖：**
-- 雙臂雙腿張開
-- 以肚臍為圓心
-- 手腳觸碰圓周
+## Read the Full Article
 
-**正方形構圖：**
-- 雙腿併攏，雙臂平舉
-- 高度 = 寬度 = 身高
-- 形成完美正方形
+- [English](https://code-cogito.com/en/da-vinci-anatomy-revolution-en/)
+- [Chinese](https://code-cogito.com/da-vinci-anatomy-revolution/)
+- [Japanese](https://code-cogito.com/ja/da-vinci-anatomy-revolution-ja/)
 
-## 相關文章
+## Want More?
 
-閱讀完整分析：[達文西的解剖學革命](https://code-cogito.com/%e9%81%94%e6%96%87%e8%a5%bf%e7%9a%84%e8%a7%a3%e5%89%96%e5%ad%b8%e9%9d%a9%e5%91%bd/)
-
-## 完整版（開發中）
-
-基礎版展示了維特魯威人的比例，完整版將包含：
-- ✓ 3D人體模型（可旋轉、縮放）
-- ✓ 達文西10幅解剖圖數位重現
-- ✓ 與現代解剖學對比分析
-- ✓ 準確度統計分析（達文西有98.5%準確度！）
-- ✓ 科學方法演化視覺化
-- ✓ 互動式3D模型（網頁版）
-- ✓ PDF教學文件（45頁）
-
-**想收到完整版推出通知？**  
-Email: wina@code-cogito.com
-
-## 檔案說明
-
-- `vitruvian_man_analysis.py` - 維特魯威人完整分析與視覺化
-- `golden_ratio_verification.py` - 黃金比例驗證與應用
-- `data_proportions.csv` - 人體比例數據
-- `README.md` - 本文件
-
-## 黃金比例的應用
-
-**建築：** 帕德嫩神廟、埃及金字塔  
-**藝術：** 蒙娜麗莎、達文西的畫作  
-**自然：** 鸚鵡螺殼、向日葵種子、松果螺旋  
-**設計：** 信用卡尺寸、書籍開本  
-**音樂：** 貝多芬第五交響曲、莫札特奏鳴曲
-
-## License
-
-MIT License - 自由使用，請註明出處
+The [Deep Dive Pack](https://code-cogito.com/products/) includes:
+- 3D rotatable body model
+- 10 Da Vinci anatomical drawings digitally reconstructed
+- Comparison with modern anatomy (98.5% accuracy)
+- Statistical analysis of proportional accuracy
+- Jupyter Notebook + full dataset
 
 ---
 
-**Code & Cogito** - 用程式碼解構歷史，用數據理解哲學
-
-GitHub: https://github.com/Code-and-Cogito/code-cogito-public
+**Code & Cogito** — [code-cogito.com](https://code-cogito.com)

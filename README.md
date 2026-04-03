@@ -15,8 +15,8 @@ Using Python to reconstruct 500 years of intellectual evolution — from Florenc
 |---|---------|------|
 | 01 | [Why Florence Became the Cradle of the Renaissance](https://code-cogito.com/florence-renaissance-cradle/) | [florence_network_analysis.py](./series-01-renaissance/article-01-florence/florence_network_analysis.py) |
 | 02 | [The Medici Family: A Financial Empire's Cultural Investment](https://code-cogito.com/medici-family-cultural-investment/) | [medici_bank_analysis.py](./series-01-renaissance/article-02-medici/medici_bank_analysis.py) |
-| 03 | Da Vinci's Anatomical Revolution | Coming soon |
-| 04 | Perspective: How Math Changed Art | Coming soon |
+| 03 | [Da Vinci's Anatomical Revolution](https://code-cogito.com/da-vinci-anatomy-revolution/) | [vitruvian_man_analysis.py](./series-01-renaissance/article-03-leonardo/vitruvian_man_analysis.py) |
+| 04 | [The Magic of Vanishing Points: Perspective](https://code-cogito.com/perspective-math-changed-art/) | [perspective_analysis.py](./series-01-renaissance/article-04-perspective/perspective_analysis.py) |
 | 05-12 | ... | Coming soon |
 
 ### Series 2: Industrial Revolution & Data Revolution

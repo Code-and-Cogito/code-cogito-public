@@ -8,8 +8,8 @@ Using Python to reconstruct 500 years of intellectual evolution — from Florenc
 |---|---------|------|--------|
 | 01 | [Why Florence Became the Cradle of the Renaissance](./article-01-florence) | florence_network_analysis.py | Available |
 | 02 | [The Medici Family: A Financial Empire's Cultural Investment](./article-02-medici) | medici_bank_analysis.py | Available |
-| 03 | Da Vinci's Anatomical Revolution | Coming soon | |
-| 04 | Perspective: How Math Changed Art | Coming soon | |
+| 03 | [Da Vinci's Anatomical Revolution](./article-03-leonardo) | vitruvian_man_analysis.py | Available |
+| 04 | [The Magic of Vanishing Points: Perspective](./article-04-perspective) | perspective_analysis.py | Available |
 | 05 | The Birth of Humanism | Coming soon | |
 | 06 | The Printing Press: Knowledge Revolution | Coming soon | |
 | 07 | The Reformation: When Authority Was Challenged | Coming soon | |
