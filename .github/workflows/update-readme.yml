@@ -1,0 +1,32 @@
+name: Update README Links
+
+on:
+  schedule:
+    # Run daily at 02:00 UTC = 10:00 Taiwan time
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+
+jobs:
+  update-links:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Check for newly published articles
+        run: python update_readme.py --apply
+
+      - name: Commit and push if changed
+        run: |
+          git diff --quiet README.md && exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "Auto-update README: link newly published articles"
+          git push
