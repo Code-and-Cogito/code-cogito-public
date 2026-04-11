@@ -12,12 +12,12 @@ Using Python to reconstruct 500 years of intellectual evolution — from Florenc
 | 04 | [The Magic of Vanishing Points: Perspective](./article-04-perspective) | perspective_analysis.py | Available |
 | 05 | [Humanism — The Birth of Human Dignity](./article-05-humanism) | humanism_analysis.py | Available |
 | 06 | [The Printing Press: Information Revolution](./article-06-printing-press) | printing_press_analysis.py | Available |
-| 07 | The Reformation: When Authority Was Challenged | Coming soon | |
-| 08 | The Enlightenment: The Age of Reason | Coming soon | |
-| 09 | Romanticism: When Poets Rebel | Coming soon | |
-| 10 | The Industrial Revolution: The Price of Progress | Coming soon | |
-| 11 | Darwin: The Philosophical Shock of Evolution | Coming soon | |
-| 12 | The Ultimate Legacy: What Did We Inherit? | Coming soon | |
+| 07 | [Reformation — When Authority Crumbles](./article-07-reformation) | reformation_analysis.py | Available |
+| 08 | [Enlightenment — When Reason Becomes the New God](./article-08-enlightenment) | enlightenment_analysis.py | Available |
+| 09 | [Romanticism: When Poets Rebel](./article-09-romanticism) | romanticism_analysis.py | Available |
+| 10 | [The Industrial Revolution: When Machines Changed Everything](./article-10-industrial-revolution) | industrial_revolution_analysis.py | Available |
+| 11 | [Darwin's Evolution: The Final Revolution](./article-11-darwin) | darwin_analysis.py | Available |
+| 12 | [The Ultimate Legacy: What Did We Inherit?](./article-12-legacy) | legacy_analysis.py | Available |
 
 ## About This Series
 
