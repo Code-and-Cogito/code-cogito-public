@@ -1,0 +1,253 @@
+{
+  "base_url": "https://code-cogito.com",
+  "series": {
+    "series-01-renaissance": {
+      "articles": {
+        "01": {
+          "title": "Why Florence Became the Cradle of the Renaissance",
+          "slug": "florence-renaissance-cradle",
+          "code": "florence_network_analysis.py",
+          "code_path": "./series-01-renaissance/article-01-florence/florence_network_analysis.py"
+        },
+        "02": {
+          "title": "The Medici Family: A Financial Empire's Cultural Investment",
+          "slug": "medici-family-cultural-investment",
+          "code": "medici_bank_analysis.py",
+          "code_path": "./series-01-renaissance/article-02-medici/medici_bank_analysis.py"
+        },
+        "03": {
+          "title": "Da Vinci's Anatomical Revolution",
+          "slug": "da-vinci-anatomy-revolution",
+          "code": "vitruvian_man_analysis.py",
+          "code_path": "./series-01-renaissance/article-03-leonardo/vitruvian_man_analysis.py"
+        },
+        "04": {
+          "title": "The Magic of Vanishing Points: Perspective",
+          "slug": "perspective-math-changed-art",
+          "code": "perspective_analysis.py",
+          "code_path": "./series-01-renaissance/article-04-perspective/perspective_analysis.py"
+        },
+        "05": {
+          "title": "Humanism — The Birth of Human Dignity",
+          "slug": "humanism-birth-human-dignity",
+          "code": "humanism_analysis.py",
+          "code_path": "./series-01-renaissance/article-05-humanism/humanism_analysis.py"
+        },
+        "06": {
+          "title": "The Printing Press: Information Revolution",
+          "slug": "printing-press-information-revolution",
+          "code": "printing_press_analysis.py",
+          "code_path": "./series-01-renaissance/article-06-printing-press/printing_press_analysis.py"
+        },
+        "07": {
+          "title": "Reformation — When Authority Crumbles",
+          "slug": "reformation-when-authority-crumbles",
+          "code": "reformation_analysis.py",
+          "code_path": "./series-01-renaissance/article-07-reformation/reformation_analysis.py"
+        },
+        "08": {
+          "title": "Enlightenment — When Reason Becomes the New God",
+          "slug": "enlightenment-reason-new-god",
+          "code": "enlightenment_analysis.py",
+          "code_path": "./series-01-renaissance/article-08-enlightenment/enlightenment_analysis.py"
+        },
+        "09": {
+          "title": "Romanticism: When Poets Rebel",
+          "slug": "romanticism-poets-rebel",
+          "code": "romanticism_analysis.py",
+          "code_path": "./series-01-renaissance/article-09-romanticism/romanticism_analysis.py"
+        },
+        "10": {
+          "title": "The Industrial Revolution: When Machines Changed Everything",
+          "slug": "industrial-revolution-machines-changed",
+          "code": "industrial_revolution_analysis.py",
+          "code_path": "./series-01-renaissance/article-10-industrial-revolution/industrial_revolution_analysis.py"
+        },
+        "11": {
+          "title": "Darwin's Evolution: The Final Revolution",
+          "slug": "darwin-evolution-final-revolution",
+          "code": "darwin_analysis.py",
+          "code_path": "./series-01-renaissance/article-11-darwin/darwin_analysis.py"
+        },
+        "12": {
+          "title": "The Ultimate Legacy: What Did We Inherit?",
+          "slug": "renaissance-ultimate-legacy",
+          "code": "legacy_analysis.py",
+          "code_path": "./series-01-renaissance/article-12-legacy/legacy_analysis.py"
+        }
+      }
+    },
+    "series-02-industrial-data-revolution": {
+      "articles": {
+        "01": {
+          "title": "Steam Engine vs Cloud Computing",
+          "slug": "steam-engine-vs-cloud-computing",
+          "code": "steam_vs_cloud_analysis.py",
+          "code_path": "./series-02-industrial-data-revolution/article-01-steam-vs-cloud/steam_vs_cloud_analysis.py"
+        },
+        "02": {
+          "title": "Factory Discipline vs Platform Algorithms",
+          "slug": "factory-discipline-vs-platform-algorithms",
+          "code": "factory_vs_platform_analysis.py",
+          "code_path": "./series-02-industrial-data-revolution/article-02-factory-vs-platform/factory_vs_platform_analysis.py"
+        },
+        "03": {
+          "title": "Marx's Alienation in the Algorithm Age",
+          "slug": "marx-alienation-algorithm-age",
+          "code": "alienation_analysis.py",
+          "code_path": "./series-02-industrial-data-revolution/article-03-alienation/alienation_analysis.py"
+        },
+        "04": {
+          "title": "Data Archaeology of the Industrial Revolution",
+          "slug": "data-archaeology-industrial-revolution",
+          "code": "data_archaeology_analysis.py",
+          "code_path": "./series-02-industrial-data-revolution/article-04-data-archaeology/data_archaeology_analysis.py"
+        },
+        "05": {
+          "title": "Child Labour vs Algorithmic Bias",
+          "slug": "child-labour-vs-algorithmic-bias",
+          "code": "child_labour_vs_bias_analysis.py",
+          "code_path": "./series-02-industrial-data-revolution/article-05-child-labour-vs-bias/child_labour_vs_bias_analysis.py"
+        }
+      }
+    },
+    "series-03-quantum-eastern-philosophy": {
+      "articles": {
+        "01": {
+          "title": "Quantum Revolution: From Newton to Planck",
+          "slug": "quantum-revolution-newton-planck",
+          "code": "quantum_revolution_analysis.py",
+          "code_path": "./series-03-quantum-eastern-philosophy/article-01-quantum-revolution/quantum_revolution_analysis.py"
+        },
+        "02": {
+          "title": "Copenhagen Interpretation vs Kyoto School",
+          "slug": "copenhagen-interpretation-kyoto-school",
+          "code": "copenhagen_kyoto_analysis.py",
+          "code_path": "./series-03-quantum-eastern-philosophy/article-02-copenhagen-kyoto/copenhagen_kyoto_analysis.py"
+        },
+        "03": {
+          "title": "Quantum Superposition and Taoism",
+          "slug": "quantum-superposition-taoism",
+          "code": "superposition_dao_analysis.py",
+          "code_path": "./series-03-quantum-eastern-philosophy/article-03-superposition-dao/superposition_dao_analysis.py"
+        },
+        "04": {
+          "title": "Uncertainty Principle and Buddhist Emptiness",
+          "slug": "uncertainty-principle-buddhist-emptiness",
+          "code": "uncertainty_emptiness_analysis.py",
+          "code_path": "./series-03-quantum-eastern-philosophy/article-04-uncertainty-emptiness/uncertainty_emptiness_analysis.py"
+        },
+        "05": {
+          "title": "Quantum Entanglement vs Indra's Net",
+          "slug": "quantum-entanglement-indras-net",
+          "code": "entanglement_indra_analysis.py",
+          "code_path": "./series-03-quantum-eastern-philosophy/article-05-entanglement-indra/entanglement_indra_analysis.py"
+        },
+        "06": {
+          "title": "Many-Worlds and Huayan Buddhism",
+          "slug": "many-worlds-huayan-buddhism",
+          "code": "many_worlds_huayan_analysis.py",
+          "code_path": "./series-03-quantum-eastern-philosophy/article-06-many-worlds-huayan/many_worlds_huayan_analysis.py"
+        },
+        "07": {
+          "title": "Quantum Field Theory and Yogacara Buddhism",
+          "slug": "quantum-field-theory-yogacara",
+          "code": "quantum_field_yogacara_analysis.py",
+          "code_path": "./series-03-quantum-eastern-philosophy/article-07-quantum-field-yogacara/quantum_field_yogacara_analysis.py"
+        },
+        "08": {
+          "title": "Entanglement and Dependent Origination",
+          "slug": "entanglement-dependent-origination",
+          "code": "entanglement_dependent_origination_analysis.py",
+          "code_path": "./series-03-quantum-eastern-philosophy/article-08-entanglement-dependent-origination/entanglement_dependent_origination_analysis.py"
+        },
+        "09": {
+          "title": "Quantum Consciousness and Eastern Philosophy",
+          "slug": "quantum-consciousness-eastern-philosophy",
+          "code": "quantum_consciousness_analysis.py",
+          "code_path": "./series-03-quantum-eastern-philosophy/article-09-quantum-consciousness/quantum_consciousness_analysis.py"
+        },
+        "10": {
+          "title": "Quantum Computing vs Zen: Beyond Binary",
+          "slug": "quantum-computing-zen-beyond-binary",
+          "code": "quantum_computing_zen_analysis.py",
+          "code_path": "./series-03-quantum-eastern-philosophy/article-10-quantum-computing-zen/quantum_computing_zen_analysis.py"
+        },
+        "11": {
+          "title": "Meditation and Quantum States",
+          "slug": "meditation-quantum-states",
+          "code": "meditation_quantum_states_analysis.py",
+          "code_path": "./series-03-quantum-eastern-philosophy/article-11-meditation-quantum-states/meditation_quantum_states_analysis.py"
+        },
+        "12": {
+          "title": "Unified View of Reality",
+          "slug": "unified-view-reality",
+          "code": "unified_reality_analysis.py",
+          "code_path": "./series-03-quantum-eastern-philosophy/article-12-unified-reality/unified_reality_analysis.py"
+        }
+      }
+    },
+    "series-05-revolution-of-ideas": {
+      "articles": {
+        "01": {
+          "title": "Rise of Humanism vs Age of Personal Branding",
+          "slug": "humanism-vs-personal-branding",
+          "code": "humanism_vs_branding_analysis.py",
+          "code_path": "./series-05-revolution-of-ideas/article-01-humanism-vs-personal-brand/humanism_vs_branding_analysis.py"
+        },
+        "02": {
+          "title": "Printing Revolution vs Social Media Explosion",
+          "slug": "printing-revolution-vs-social-media",
+          "code": "printing_vs_social_analysis.py",
+          "code_path": "./series-05-revolution-of-ideas/article-02-printing-vs-social-media/printing_vs_social_analysis.py"
+        },
+        "03": {
+          "title": "Reformation vs Decentralization Movement",
+          "slug": "reformation-vs-decentralization",
+          "code": "reformation_vs_decentralization_analysis.py",
+          "code_path": "./series-05-revolution-of-ideas/article-03-reformation-vs-decentralization/reformation_vs_decentralization_analysis.py"
+        }
+      }
+    },
+    "series-06-finance-bubbles-crises": {
+      "articles": {
+        "01": {
+          "title": "Tulip Mania vs Bitcoin Bubble",
+          "slug": "tulip-mania-vs-bitcoin",
+          "code": "tulip_vs_bitcoin_analysis.py",
+          "code_path": "./series-06-finance-bubbles-crises/article-01-tulip-vs-bitcoin/tulip_vs_bitcoin_analysis.py"
+        },
+        "02": {
+          "title": "South Sea Bubble vs Dot-Com Bubble",
+          "slug": "south-sea-vs-dotcom-bubble",
+          "code": "south_sea_vs_dotcom_analysis.py",
+          "code_path": "./series-06-finance-bubbles-crises/article-02-south-sea-vs-dotcom/south_sea_vs_dotcom_analysis.py"
+        },
+        "03": {
+          "title": "Great Depression vs 2008 Financial Crisis",
+          "slug": "great-depression-vs-2008",
+          "code": "depression_vs_2008_analysis.py",
+          "code_path": "./series-06-finance-bubbles-crises/article-03-great-depression-vs-2008/depression_vs_2008_analysis.py"
+        },
+        "04": {
+          "title": "Japan's Lost Decades vs Taiwan's Housing Crisis",
+          "slug": "japan-lost-decades-taiwan-housing",
+          "code": "japan_lost_decades_analysis.py",
+          "code_path": "./series-06-finance-bubbles-crises/article-04-japan-lost-decades/japan_lost_decades_analysis.py"
+        },
+        "05": {
+          "title": "Bank Runs: Northern Rock to SVB",
+          "slug": "bank-runs-northern-rock-svb",
+          "code": "bank_runs_analysis.py",
+          "code_path": "./series-06-finance-bubbles-crises/article-05-bank-runs/bank_runs_analysis.py"
+        },
+        "06": {
+          "title": "Collapse of FTX: Bankruptcy of Trust",
+          "slug": "ftx-collapse-bankruptcy-trust",
+          "code": "ftx_collapse_analysis.py",
+          "code_path": "./series-06-finance-bubbles-crises/article-06-ftx-collapse/ftx_collapse_analysis.py"
+        }
+      }
+    }
+  }
+}

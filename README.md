@@ -19,12 +19,12 @@ Using Python to reconstruct 500 years of intellectual evolution — from Florenc
 | 04 | [The Magic of Vanishing Points: Perspective](https://code-cogito.com/perspective-math-changed-art/) | [perspective_analysis.py](./series-01-renaissance/article-04-perspective/perspective_analysis.py) |
 | 05 | [Humanism — The Birth of Human Dignity](https://code-cogito.com/humanism-birth-human-dignity/) | [humanism_analysis.py](./series-01-renaissance/article-05-humanism/humanism_analysis.py) |
 | 06 | [The Printing Press: Information Revolution](https://code-cogito.com/printing-press-information-revolution/) | [printing_press_analysis.py](./series-01-renaissance/article-06-printing-press/printing_press_analysis.py) |
-| 07 | [Reformation — When Authority Crumbles](https://code-cogito.com/reformation-when-authority-crumbles/) | [reformation_analysis.py](./series-01-renaissance/article-07-reformation/reformation_analysis.py) |
-| 08 | [Enlightenment — When Reason Becomes the New God](https://code-cogito.com/enlightenment-reason-new-god/) | [enlightenment_analysis.py](./series-01-renaissance/article-08-enlightenment/enlightenment_analysis.py) |
-| 09 | [Romanticism: When Poets Rebel](https://code-cogito.com/romanticism-poets-rebel/) | [romanticism_analysis.py](./series-01-renaissance/article-09-romanticism/romanticism_analysis.py) |
-| 10 | [The Industrial Revolution: When Machines Changed Everything](https://code-cogito.com/industrial-revolution-machines-changed/) | [industrial_revolution_analysis.py](./series-01-renaissance/article-10-industrial-revolution/industrial_revolution_analysis.py) |
-| 11 | [Darwin's Evolution: The Final Revolution](https://code-cogito.com/darwin-evolution-final-revolution/) | [darwin_analysis.py](./series-01-renaissance/article-11-darwin/darwin_analysis.py) |
-| 12 | [The Ultimate Legacy: What Did We Inherit?](https://code-cogito.com/renaissance-ultimate-legacy/) | [legacy_analysis.py](./series-01-renaissance/article-12-legacy/legacy_analysis.py) |
+| 07 | Reformation — When Authority Crumbles | [reformation_analysis.py](./series-01-renaissance/article-07-reformation/reformation_analysis.py) |
+| 08 | Enlightenment — When Reason Becomes the New God | [enlightenment_analysis.py](./series-01-renaissance/article-08-enlightenment/enlightenment_analysis.py) |
+| 09 | Romanticism: When Poets Rebel | [romanticism_analysis.py](./series-01-renaissance/article-09-romanticism/romanticism_analysis.py) |
+| 10 | The Industrial Revolution: When Machines Changed Everything | [industrial_revolution_analysis.py](./series-01-renaissance/article-10-industrial-revolution/industrial_revolution_analysis.py) |
+| 11 | Darwin's Evolution: The Final Revolution | [darwin_analysis.py](./series-01-renaissance/article-11-darwin/darwin_analysis.py) |
+| 12 | The Ultimate Legacy: What Did We Inherit? | [legacy_analysis.py](./series-01-renaissance/article-12-legacy/legacy_analysis.py) |
 
 ### [Series 2: Industrial Revolution & Data Revolution](./series-02-industrial-data-revolution)
 Using Python to draw parallels between the Industrial Revolution (1760-1840) and today's digital transformation.
