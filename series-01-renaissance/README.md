@@ -10,8 +10,8 @@ Using Python to reconstruct 500 years of intellectual evolution — from Florenc
 | 02 | [The Medici Family: A Financial Empire's Cultural Investment](./article-02-medici) | medici_bank_analysis.py | Available |
 | 03 | [Da Vinci's Anatomical Revolution](./article-03-leonardo) | vitruvian_man_analysis.py | Available |
 | 04 | [The Magic of Vanishing Points: Perspective](./article-04-perspective) | perspective_analysis.py | Available |
-| 05 | The Birth of Humanism | Coming soon | |
-| 06 | The Printing Press: Knowledge Revolution | Coming soon | |
+| 05 | [Humanism — The Birth of Human Dignity](./article-05-humanism) | humanism_analysis.py | Available |
+| 06 | [The Printing Press: Information Revolution](./article-06-printing-press) | printing_press_analysis.py | Available |
 | 07 | The Reformation: When Authority Was Challenged | Coming soon | |
 | 08 | The Enlightenment: The Age of Reason | Coming soon | |
 | 09 | Romanticism: When Poets Rebel | Coming soon | |
