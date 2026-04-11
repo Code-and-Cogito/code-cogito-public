@@ -20,7 +20,7 @@ jobs:
           python-version: '3.12'
 
       - name: Check for newly published articles
-        run: python update_readme.py --apply
+        run: python .github/update_readme.py --apply
 
       - name: Commit and push if changed
         run: |
