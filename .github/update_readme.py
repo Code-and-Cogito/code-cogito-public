@@ -22,7 +22,7 @@ from urllib.error import URLError, HTTPError
 # Config
 # ---------------------------------------------------------------------------
 REGISTRY_PATH = Path(__file__).parent / "article_registry.json"
-README_PATH = Path(__file__).parent / "README.md"
+README_PATH = Path(__file__).parent.parent / "README.md"
 TIMEOUT = 15  # seconds per request
 
 
