@@ -22,7 +22,7 @@ Using Python to reconstruct 500 years of intellectual evolution — from Florenc
 | 07 | Reformation — When Authority Crumbles | [reformation_analysis.py](./series-01-renaissance/article-07-reformation/reformation_analysis.py) |
 | 08 | Enlightenment — When Reason Becomes the New God | [enlightenment_analysis.py](./series-01-renaissance/article-08-enlightenment/enlightenment_analysis.py) |
 | 09 | Romanticism: When Poets Rebel | [romanticism_analysis.py](./series-01-renaissance/article-09-romanticism/romanticism_analysis.py) |
-| 10 | The Industrial Revolution: When Machines Changed Everything | [industrial_revolution_analysis.py](./series-01-renaissance/article-10-industrial-revolution/industrial_revolution_analysis.py) |
+| 10 | [The Industrial Revolution: When Machines Changed Everything](https://code-cogito.com/industrial-revolution-machines-changed/) | [industrial_revolution_analysis.py](./series-01-renaissance/article-10-industrial-revolution/industrial_revolution_analysis.py) |
 | 11 | Darwin's Evolution: The Final Revolution | [darwin_analysis.py](./series-01-renaissance/article-11-darwin/darwin_analysis.py) |
 | 12 | The Ultimate Legacy: What Did We Inherit? | [legacy_analysis.py](./series-01-renaissance/article-12-legacy/legacy_analysis.py) |
 
