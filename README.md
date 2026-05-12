@@ -32,7 +32,7 @@ Using Python to draw parallels between the Industrial Revolution (1760-1840) and
 | # | Article | Code |
 |---|---------|------|
 | 01 | [Steam Engine vs Cloud Computing](https://code-cogito.com/steam-engine-vs-cloud-computing/) | [steam_vs_cloud_analysis.py](./series-02-industrial-data-revolution/article-01-steam-vs-cloud/steam_vs_cloud_analysis.py) |
-| 02 | Factory Discipline vs Platform Algorithms | [factory_vs_platform_analysis.py](./series-02-industrial-data-revolution/article-02-factory-vs-platform/factory_vs_platform_analysis.py) |
+| 02 | [Factory Discipline vs Platform Algorithms](https://code-cogito.com/factory-discipline-vs-platform-algorithms/) | [factory_vs_platform_analysis.py](./series-02-industrial-data-revolution/article-02-factory-vs-platform/factory_vs_platform_analysis.py) |
 | 03 | Marx's Alienation in the Algorithm Age | [alienation_analysis.py](./series-02-industrial-data-revolution/article-03-alienation/alienation_analysis.py) |
 | 04 | Data Archaeology of the Industrial Revolution | [data_archaeology_analysis.py](./series-02-industrial-data-revolution/article-04-data-archaeology/data_archaeology_analysis.py) |
 | 05 | Child Labour vs Algorithmic Bias | [child_labour_vs_bias_analysis.py](./series-02-industrial-data-revolution/article-05-child-labour-vs-bias/child_labour_vs_bias_analysis.py) |
