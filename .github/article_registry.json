@@ -29,49 +29,49 @@
         },
         "05": {
           "title": "Humanism — The Birth of Human Dignity",
-          "slug": "humanism-birth-human-dignity",
+          "slug": "humanism-birth-renaissance",
           "code": "humanism_analysis.py",
           "code_path": "./series-01-renaissance/article-05-humanism/humanism_analysis.py"
         },
         "06": {
           "title": "The Printing Press: Information Revolution",
-          "slug": "printing-press-information-revolution",
+          "slug": "printing-press-knowledge-revolution",
           "code": "printing_press_analysis.py",
           "code_path": "./series-01-renaissance/article-06-printing-press/printing_press_analysis.py"
         },
         "07": {
           "title": "Reformation — When Authority Crumbles",
-          "slug": "reformation-when-authority-crumbles",
+          "slug": "reformation-authority-challenged",
           "code": "reformation_analysis.py",
           "code_path": "./series-01-renaissance/article-07-reformation/reformation_analysis.py"
         },
         "08": {
           "title": "Enlightenment — When Reason Becomes the New God",
-          "slug": "enlightenment-reason-new-god",
+          "slug": "enlightenment-age-of-reason",
           "code": "enlightenment_analysis.py",
           "code_path": "./series-01-renaissance/article-08-enlightenment/enlightenment_analysis.py"
         },
         "09": {
           "title": "Romanticism: When Poets Rebel",
-          "slug": "romanticism-poets-rebel",
+          "slug": "romanticism-poets-vs-philosophers",
           "code": "romanticism_analysis.py",
           "code_path": "./series-01-renaissance/article-09-romanticism/romanticism_analysis.py"
         },
         "10": {
           "title": "The Industrial Revolution: When Machines Changed Everything",
-          "slug": "industrial-revolution-machines-changed",
+          "slug": "industrial-revolution-machines-changed-everything",
           "code": "industrial_revolution_analysis.py",
           "code_path": "./series-01-renaissance/article-10-industrial-revolution/industrial_revolution_analysis.py"
         },
         "11": {
           "title": "Darwin's Evolution: The Final Revolution",
-          "slug": "darwin-evolution-final-revolution",
+          "slug": "darwin-evolution-philosophical-shock",
           "code": "darwin_analysis.py",
           "code_path": "./series-01-renaissance/article-11-darwin/darwin_analysis.py"
         },
         "12": {
           "title": "The Ultimate Legacy: What Did We Inherit?",
-          "slug": "renaissance-ultimate-legacy",
+          "slug": "renaissance-legacy-500-years-2",
           "code": "legacy_analysis.py",
           "code_path": "./series-01-renaissance/article-12-legacy/legacy_analysis.py"
         }

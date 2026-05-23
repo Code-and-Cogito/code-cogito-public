@@ -17,14 +17,14 @@ Using Python to reconstruct 500 years of intellectual evolution — from Florenc
 | 02 | [The Medici Family: A Financial Empire's Cultural Investment](https://code-cogito.com/medici-family-cultural-investment/) | [medici_bank_analysis.py](./series-01-renaissance/article-02-medici/medici_bank_analysis.py) |
 | 03 | [Da Vinci's Anatomical Revolution](https://code-cogito.com/da-vinci-anatomy-revolution/) | [vitruvian_man_analysis.py](./series-01-renaissance/article-03-leonardo/vitruvian_man_analysis.py) |
 | 04 | [The Magic of Vanishing Points: Perspective](https://code-cogito.com/perspective-math-changed-art/) | [perspective_analysis.py](./series-01-renaissance/article-04-perspective/perspective_analysis.py) |
-| 05 | [Humanism — The Birth of Human Dignity](https://code-cogito.com/humanism-birth-human-dignity/) | [humanism_analysis.py](./series-01-renaissance/article-05-humanism/humanism_analysis.py) |
-| 06 | [The Printing Press: Information Revolution](https://code-cogito.com/printing-press-information-revolution/) | [printing_press_analysis.py](./series-01-renaissance/article-06-printing-press/printing_press_analysis.py) |
-| 07 | Reformation — When Authority Crumbles | [reformation_analysis.py](./series-01-renaissance/article-07-reformation/reformation_analysis.py) |
-| 08 | Enlightenment — When Reason Becomes the New God | [enlightenment_analysis.py](./series-01-renaissance/article-08-enlightenment/enlightenment_analysis.py) |
-| 09 | Romanticism: When Poets Rebel | [romanticism_analysis.py](./series-01-renaissance/article-09-romanticism/romanticism_analysis.py) |
-| 10 | [The Industrial Revolution: When Machines Changed Everything](https://code-cogito.com/industrial-revolution-machines-changed/) | [industrial_revolution_analysis.py](./series-01-renaissance/article-10-industrial-revolution/industrial_revolution_analysis.py) |
-| 11 | Darwin's Evolution: The Final Revolution | [darwin_analysis.py](./series-01-renaissance/article-11-darwin/darwin_analysis.py) |
-| 12 | The Ultimate Legacy: What Did We Inherit? | [legacy_analysis.py](./series-01-renaissance/article-12-legacy/legacy_analysis.py) |
+| 05 | [Humanism — The Birth of Human Dignity](https://code-cogito.com/humanism-birth-renaissance/) | [humanism_analysis.py](./series-01-renaissance/article-05-humanism/humanism_analysis.py) |
+| 06 | [The Printing Press: Information Revolution](https://code-cogito.com/printing-press-knowledge-revolution/) | [printing_press_analysis.py](./series-01-renaissance/article-06-printing-press/printing_press_analysis.py) |
+| 07 | [Reformation — When Authority Crumbles](https://code-cogito.com/reformation-authority-challenged/) | [reformation_analysis.py](./series-01-renaissance/article-07-reformation/reformation_analysis.py) |
+| 08 | [Enlightenment — When Reason Becomes the New God](https://code-cogito.com/enlightenment-age-of-reason/) | [enlightenment_analysis.py](./series-01-renaissance/article-08-enlightenment/enlightenment_analysis.py) |
+| 09 | [Romanticism: When Poets Rebel](https://code-cogito.com/romanticism-poets-vs-philosophers/) | [romanticism_analysis.py](./series-01-renaissance/article-09-romanticism/romanticism_analysis.py) |
+| 10 | [The Industrial Revolution: When Machines Changed Everything](https://code-cogito.com/industrial-revolution-machines-changed-everything/) | [industrial_revolution_analysis.py](./series-01-renaissance/article-10-industrial-revolution/industrial_revolution_analysis.py) |
+| 11 | [Darwin's Evolution: The Final Revolution](https://code-cogito.com/darwin-evolution-philosophical-shock/) | [darwin_analysis.py](./series-01-renaissance/article-11-darwin/darwin_analysis.py) |
+| 12 | [The Ultimate Legacy: What Did We Inherit?](https://code-cogito.com/renaissance-legacy-500-years-2/) | [legacy_analysis.py](./series-01-renaissance/article-12-legacy/legacy_analysis.py) |
 
 ### [Series 2: Industrial Revolution & Data Revolution](./series-02-industrial-data-revolution)
 Using Python to draw parallels between the Industrial Revolution (1760-1840) and today's digital transformation.
@@ -32,8 +32,8 @@ Using Python to draw parallels between the Industrial Revolution (1760-1840) and
 | # | Article | Code |
 |---|---------|------|
 | 01 | [Steam Engine vs Cloud Computing](https://code-cogito.com/steam-engine-vs-cloud-computing/) | [steam_vs_cloud_analysis.py](./series-02-industrial-data-revolution/article-01-steam-vs-cloud/steam_vs_cloud_analysis.py) |
-| 02 | [Factory Discipline vs Platform Algorithms](https://code-cogito.com/factory-discipline-vs-platform-algorithms/) | [factory_vs_platform_analysis.py](./series-02-industrial-data-revolution/article-02-factory-vs-platform/factory_vs_platform_analysis.py) |
-| 03 | Marx's Alienation in the Algorithm Age | [alienation_analysis.py](./series-02-industrial-data-revolution/article-03-alienation/alienation_analysis.py) |
+| 02 | [Factory Discipline vs Platform Algorithms](https://code-cogito.com/factory-discipline-vs-platform-algorithms-2/) | [factory_vs_platform_analysis.py](./series-02-industrial-data-revolution/article-02-factory-vs-platform/factory_vs_platform_analysis.py) |
+| 03 | [Marx's Alienation in the Algorithm Age](https://code-cogito.com/labor-alienation-marx-to-algorithms-2/) | [alienation_analysis.py](./series-02-industrial-data-revolution/article-03-alienation/alienation_analysis.py) |
 | 04 | Data Archaeology of the Industrial Revolution | [data_archaeology_analysis.py](./series-02-industrial-data-revolution/article-04-data-archaeology/data_archaeology_analysis.py) |
 | 05 | Child Labour vs Algorithmic Bias | [child_labour_vs_bias_analysis.py](./series-02-industrial-data-revolution/article-05-child-labour-vs-bias/child_labour_vs_bias_analysis.py) |
 

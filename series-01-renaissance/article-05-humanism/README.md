@@ -45,9 +45,9 @@ The paradigm shift radar shows a near-complete inversion across all five dimensi
 
 ## Read the Full Article
 
-- [English](https://code-cogito.com/en/humanism-birth-human-dignity-en/)
-- [Chinese](https://code-cogito.com/humanism-birth-human-dignity/)
-- [Japanese](https://code-cogito.com/ja/humanism-birth-human-dignity-ja/)
+- [English](https://code-cogito.com/en/humanism-the-birth-of-human-dignity-en/)
+- [Chinese](https://code-cogito.com/humanism-birth-renaissance/)
+- [Japanese](https://code-cogito.com/ja/humanism-birth-renaissance-ja/)
 
 ## Want More?
 

@@ -41,9 +41,9 @@ python darwin_analysis.py
 
 ## Read the Full Article
 
-- [English](https://code-cogito.com/en/darwin-evolution-final-revolution-en/)
-- [Chinese](https://code-cogito.com/darwin-evolution-final-revolution/)
-- [Japanese](https://code-cogito.com/ja/darwin-evolution-final-revolution-ja/)
+- [English](https://code-cogito.com/en/darwin-evolution-philosophical-shock-en/)
+- [Chinese](https://code-cogito.com/darwin-evolution-philosophical-shock/)
+- [Japanese](https://code-cogito.com/ja/darwin-evolution-philosophical-shock-ja/)
 
 ## Want More?
 

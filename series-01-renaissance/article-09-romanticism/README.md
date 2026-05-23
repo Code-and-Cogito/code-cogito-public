@@ -40,9 +40,9 @@ python romanticism_analysis.py
 
 ## Read the Full Article
 
-- [English](https://code-cogito.com/en/romanticism-poets-rebel-en/)
-- [Chinese](https://code-cogito.com/romanticism-poets-rebel/)
-- [Japanese](https://code-cogito.com/ja/romanticism-poets-rebel-ja/)
+- [English](https://code-cogito.com/en/romanticism-poets-vs-philosophers-en/)
+- [Chinese](https://code-cogito.com/romanticism-poets-vs-philosophers/)
+- [Japanese](https://code-cogito.com/ja/romanticism-poets-vs-philosophers-ja/)
 
 ## Want More?
 

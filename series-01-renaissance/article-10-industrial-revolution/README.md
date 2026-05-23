@@ -41,9 +41,9 @@ python industrial_revolution_analysis.py
 
 ## Read the Full Article
 
-- [English](https://code-cogito.com/en/industrial-revolution-machines-changed-en/)
-- [Chinese](https://code-cogito.com/industrial-revolution-machines-changed/)
-- [Japanese](https://code-cogito.com/ja/industrial-revolution-machines-changed-ja/)
+- [English](https://code-cogito.com/en/the-industrial-revolution-when-machines-changed-everything-en/)
+- [Chinese](https://code-cogito.com/industrial-revolution-machines-changed-everything/)
+- [Japanese](https://code-cogito.com/ja/industrial-revolution-machines-changed-everything-ja/)
 
 ## Want More?
 

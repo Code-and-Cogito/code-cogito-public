@@ -40,9 +40,9 @@ python legacy_analysis.py
 
 ## Read the Full Article
 
-- [English](https://code-cogito.com/en/renaissance-ultimate-legacy-en/)
-- [Chinese](https://code-cogito.com/renaissance-ultimate-legacy/)
-- [Japanese](https://code-cogito.com/ja/renaissance-ultimate-legacy-ja/)
+- [English](https://code-cogito.com/en/renaissance-legacy-500-years-en/)
+- [Chinese](https://code-cogito.com/renaissance-legacy-500-years-2/)
+- [Japanese](https://code-cogito.com/ja/renaissance-legacy-500-years-ja/)
 
 ## Want More?
 

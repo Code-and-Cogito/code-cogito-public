@@ -40,9 +40,9 @@ python reformation_analysis.py
 
 ## Read the Full Article
 
-- [English](https://code-cogito.com/en/reformation-authority-crumbles-en/)
-- [Chinese](https://code-cogito.com/reformation-authority-crumbles/)
-- [Japanese](https://code-cogito.com/ja/reformation-authority-crumbles-ja/)
+- [English](https://code-cogito.com/en/reformation-authority-challenged-en/)
+- [Chinese](https://code-cogito.com/reformation-authority-challenged/)
+- [Japanese](https://code-cogito.com/ja/reformation-authority-challenged-ja/)
 
 ## Want More?
 

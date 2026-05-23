@@ -45,9 +45,9 @@ Luther's 95 Theses (1517) went from one church door to all of Europe in two mont
 
 ## Read the Full Article
 
-- [English](https://code-cogito.com/en/printing-press-information-revolution-en/)
-- [Chinese](https://code-cogito.com/printing-press-information-revolution/)
-- [Japanese](https://code-cogito.com/ja/printing-press-information-revolution-ja/)
+- [English](https://code-cogito.com/en/printing-press-knowledge-revolution-en/)
+- [Chinese](https://code-cogito.com/printing-press-knowledge-revolution/)
+- [Japanese](https://code-cogito.com/ja/printing-press-knowledge-revolution-ja/)
 
 ## Want More?
 

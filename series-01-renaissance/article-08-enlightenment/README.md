@@ -40,9 +40,9 @@ python enlightenment_analysis.py
 
 ## Read the Full Article
 
-- [English](https://code-cogito.com/en/enlightenment-reason-new-god-en/)
-- [Chinese](https://code-cogito.com/enlightenment-reason-new-god/)
-- [Japanese](https://code-cogito.com/ja/enlightenment-reason-new-god-ja/)
+- [English](https://code-cogito.com/en/enlightenment-age-of-reason-en/)
+- [Chinese](https://code-cogito.com/enlightenment-age-of-reason/)
+- [Japanese](https://code-cogito.com/ja/enlightenment-age-of-reason-ja/)
 
 ## Want More?
 
