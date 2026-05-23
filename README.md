@@ -2,6 +2,12 @@
 
 > Decoding history through code. Understanding philosophy through data.
 
+[![Blog](https://img.shields.io/badge/blog-code--cogito.com-2c3e50?style=flat-square)](https://code-cogito.com)
+[![Languages](https://img.shields.io/badge/languages-中文%20%7C%20EN%20%7C%20日本語-blue?style=flat-square)](https://code-cogito.com)
+[![License](https://img.shields.io/github/license/Code-and-Cogito/code-cogito-public?style=flat-square)](./LICENSE)
+[![Last Commit](https://img.shields.io/github/last-commit/Code-and-Cogito/code-cogito-public?style=flat-square)](https://github.com/Code-and-Cogito/code-cogito-public/commits)
+[![Stars](https://img.shields.io/github/stars/Code-and-Cogito/code-cogito-public?style=flat-square)](https://github.com/Code-and-Cogito/code-cogito-public/stargazers)
+
 ## About
 
 This repository contains the free, open-source Python code accompanying [Code & Cogito](https://code-cogito.com) blog articles. Each script is a standalone, runnable analysis that demonstrates the core concepts discussed in the corresponding article.
