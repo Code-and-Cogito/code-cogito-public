@@ -51,7 +51,7 @@ Using Python to explore the surprising structural parallels between quantum phys
 | # | Article | Code |
 |---|---------|------|
 | 01 | [Quantum Revolution: From Newton to Planck](https://code-cogito.com/quantum-revolution-newton-universe-collapse/) | [quantum_revolution_analysis.py](./series-03-quantum-eastern-philosophy/article-01-quantum-revolution/quantum_revolution_analysis.py) |
-| 02 | Copenhagen Interpretation vs Kyoto School | [copenhagen_kyoto_analysis.py](./series-03-quantum-eastern-philosophy/article-02-copenhagen-kyoto/copenhagen_kyoto_analysis.py) |
+| 02 | [Copenhagen Interpretation vs Kyoto School](https://code-cogito.com/copenhagen-interpretation-vs-kyoto-school/) | [copenhagen_kyoto_analysis.py](./series-03-quantum-eastern-philosophy/article-02-copenhagen-kyoto/copenhagen_kyoto_analysis.py) |
 | 03 | Quantum Superposition and Taoism | [superposition_dao_analysis.py](./series-03-quantum-eastern-philosophy/article-03-superposition-dao/superposition_dao_analysis.py) |
 | 04 | Uncertainty Principle and Buddhist Emptiness | [uncertainty_emptiness_analysis.py](./series-03-quantum-eastern-philosophy/article-04-uncertainty-emptiness/uncertainty_emptiness_analysis.py) |
 | 05 | Quantum Entanglement vs Indra's Net | [entanglement_indra_analysis.py](./series-03-quantum-eastern-philosophy/article-05-entanglement-indra/entanglement_indra_analysis.py) |
