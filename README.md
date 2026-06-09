@@ -12,6 +12,10 @@
 
 This repository contains the free, open-source Python code accompanying [Code & Cogito](https://code-cogito.com) blog articles. Each script is a standalone, runnable analysis that demonstrates the core concepts discussed in the corresponding article.
 
+**Code & Cogito decodes history and philosophy through data.** Using Python — network analysis, diffusion models, statistics and data visualization — we re-examine the Renaissance, the Industrial Revolution, quantum physics and Eastern philosophy, and 400 years of financial bubbles. Every article is published in **Traditional Chinese, English and Japanese**, with the runnable code kept here on GitHub.
+
+**Topics covered:** computational history · digital humanities · data storytelling · network analysis · the Renaissance · the Industrial & data revolution · Marx and labor in the algorithm age · quantum mechanics and Buddhist/Taoist philosophy · financial bubbles and crises.
+
 ## Series
 
 ### [Series 1: Digital Rebirth of the Renaissance](./series-01-renaissance)
@@ -112,10 +116,13 @@ Want the complete code, datasets, Jupyter Notebooks, and PDF cheatsheets? Check 
 
 ## Languages
 
-All blog articles are available in three languages:
-- Traditional Chinese (default)
-- [English](https://code-cogito.com/en/)
-- [Japanese](https://code-cogito.com/ja/)
+All blog articles are published in three languages, each on its own localized URL so readers in every market get a native experience:
+
+- 🇹🇼 **繁體中文 (Traditional Chinese)** — [code-cogito.com](https://code-cogito.com/) *(default)*
+- 🇪🇺🇺🇸 **English** — [code-cogito.com/en/home-en/](https://code-cogito.com/en/home-en/)
+- 🇯🇵 **日本語 (Japanese)** — [code-cogito.com/ja/home-ja/](https://code-cogito.com/ja/home-ja/)
+
+Each article links to all three language versions, so you can read it in whichever language you prefer.
 
 ## Author
 

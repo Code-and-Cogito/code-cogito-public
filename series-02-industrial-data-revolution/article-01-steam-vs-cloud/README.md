@@ -34,7 +34,8 @@ python steam_vs_cloud_analysis.py
 
 ## Read the Full Article
 
-📅 Coming May 2026 on [Code & Cogito](https://code-cogito.com)
+- 🇹🇼 [中文 (Chinese)](https://code-cogito.com/steam-engine-vs-cloud-computing/)
+- 🇪🇺🇺🇸 English and 🇯🇵 日本語 (Japanese) versions are available via the language switcher on the article page.
 
 ## Want More?
 

@@ -19,7 +19,8 @@ python quantum_revolution_analysis.py
 
 ## Read the Full Article
 
-📅 Coming June 2026 on [Code & Cogito](https://code-cogito.com)
+- 🇹🇼 [中文 (Chinese)](https://code-cogito.com/quantum-revolution-newton-universe-collapse/)
+- 🇪🇺🇺🇸 English and 🇯🇵 日本語 (Japanese) versions are available via the language switcher on the article page.
 
 ---
 
