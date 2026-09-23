@@ -24,6 +24,10 @@ python reformation_vs_decentralization_analysis.py
 
 📅 Coming July 2026 on [Code & Cogito](https://code-cogito.com)
 
+## Want More?
+
+The [Deep Dive Pack](https://code-cogito.com/products/) for this article includes the complete code, full dataset, Jupyter Notebook, and a PDF cheatsheet.
+
 ---
 
 **Code & Cogito** — [code-cogito.com](https://code-cogito.com)
