@@ -33,7 +33,7 @@ python florence_network_analysis.py
 
 ## Deep Dive Packs
 
-Each article has a premium Deep Dive Pack with complete code, datasets, Jupyter Notebooks, and PDF cheatsheets. [Get them here](https://code-cogito.com/products/).
+Each article has a Deep Dive Pack (complete notebook and .py source, the data file, a PDF walkthrough; from US$4.99, pay what you want), linked from the end of each article's README. The whole series is available as one [series bundle](https://codecogito.gumroad.com/l/renaissance-bundle?utm_source=github&utm_medium=readme&utm_campaign=series_bundle&utm_content=s1) (from US$24.99). New here? Start with the free [Starter Notebook](https://codecogito.gumroad.com/l/starter-notebook?utm_source=github&utm_medium=readme&utm_campaign=starter&utm_content=s1_series). All products: [code-cogito.com/en/products-en](https://code-cogito.com/en/products-en/).
 
 ---
 

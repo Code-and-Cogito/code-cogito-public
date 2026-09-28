@@ -19,11 +19,15 @@ python many_worlds_huayan_analysis.py
 
 ## Read the Full Article
 
-📅 Coming August 2026 on [Code & Cogito](https://code-cogito.com)
+- [English](https://code-cogito.com/en/many-worlds-interpretation-huayan-en/)
+- [Chinese](https://code-cogito.com/many-worlds-interpretation-huayan/)
+- [Japanese](https://code-cogito.com/ja/many-worlds-interpretation-huayan-ja/)
 
 ## Want More?
 
-The [Deep Dive Pack](https://code-cogito.com/products/) for this article includes the complete code, full dataset, Jupyter Notebook, and a PDF cheatsheet.
+The [Deep Dive Pack](https://codecogito.gumroad.com/l/quantum-eastern-06?utm_source=github&utm_medium=readme&utm_campaign=article_pack&utm_content=quantum-eastern-06) for this article includes the complete code, the data file, Jupyter Notebook, and a PDF cheatsheet.
+
+New to this kind of analysis? The free [Starter Notebook](https://codecogito.gumroad.com/l/starter-notebook?utm_source=github&utm_medium=readme&utm_campaign=starter&utm_content=quantum-eastern-06) takes one real dataset (Maddison Project GDP, 1500–2022) from download to three figures in about 30 minutes.
 
 ---
 

@@ -48,12 +48,14 @@ The core math of perspective projection:
 
 ## Want More?
 
-The [Deep Dive Pack](https://code-cogito.com/products/) includes:
+The [Deep Dive Pack](https://codecogito.gumroad.com/l/renaissance-04?utm_source=github&utm_medium=readme&utm_campaign=article_pack&utm_content=renaissance-04) includes:
 - Two-point and three-point perspective visualizations
 - 100-painting dataset analysis
 - Vanishing point auto-detection algorithm
 - Projection matrix derivation
-- Jupyter Notebook + full dataset
+- Jupyter Notebook + data file
+
+New to this kind of analysis? The free [Starter Notebook](https://codecogito.gumroad.com/l/starter-notebook?utm_source=github&utm_medium=readme&utm_campaign=starter&utm_content=renaissance-04) takes one real dataset (Maddison Project GDP, 1500–2022) from download to three figures in about 30 minutes.
 
 ---
 
