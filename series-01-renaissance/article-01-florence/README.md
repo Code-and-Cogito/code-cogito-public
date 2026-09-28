@@ -46,12 +46,14 @@ More information, capital, and talent flowed through Florence than any other Ita
 
 ## Want More?
 
-The [Deep Dive Pack](https://code-cogito.com/products/) includes:
+The [Deep Dive Pack](https://codecogito.gumroad.com/l/renaissance-01?utm_source=github&utm_medium=readme&utm_campaign=article_pack&utm_content=renaissance-01) includes:
 - Complete 20-city network analysis
 - 150-year time series (1350-1500)
 - Real geographic coordinate mapping
 - Interactive Plotly map
-- Jupyter Notebook + full dataset
+- Jupyter Notebook + data file
+
+New to this kind of analysis? The free [Starter Notebook](https://codecogito.gumroad.com/l/starter-notebook?utm_source=github&utm_medium=readme&utm_campaign=starter&utm_content=renaissance-01) takes one real dataset (Maddison Project GDP, 1500–2022) from download to three figures in about 30 minutes.
 
 ---
 

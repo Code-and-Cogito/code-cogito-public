@@ -19,11 +19,15 @@ python quantum_field_yogacara_analysis.py
 
 ## Read the Full Article
 
-📅 Coming August 2026 on [Code & Cogito](https://code-cogito.com)
+- [English](https://code-cogito.com/en/quantum-field-theory-yogacara-en/)
+- [Chinese](https://code-cogito.com/quantum-field-theory-yogacara/)
+- [Japanese](https://code-cogito.com/ja/quantum-field-theory-yogacara-ja/)
 
 ## Want More?
 
-The [Deep Dive Pack](https://code-cogito.com/products/) for this article includes the complete code, full dataset, Jupyter Notebook, and a PDF cheatsheet.
+The [Deep Dive Pack](https://codecogito.gumroad.com/l/quantum-eastern-07?utm_source=github&utm_medium=readme&utm_campaign=article_pack&utm_content=quantum-eastern-07) for this article includes the complete code, the data file, Jupyter Notebook, and a PDF cheatsheet.
+
+New to this kind of analysis? The free [Starter Notebook](https://codecogito.gumroad.com/l/starter-notebook?utm_source=github&utm_medium=readme&utm_campaign=starter&utm_content=quantum-eastern-07) takes one real dataset (Maddison Project GDP, 1500–2022) from download to three figures in about 30 minutes.
 
 ---
 

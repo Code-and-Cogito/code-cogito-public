@@ -29,11 +29,15 @@ python child_labour_vs_bias_analysis.py
 
 ## Read the Full Article
 
-📅 Coming May 2026 on [Code & Cogito](https://code-cogito.com)
+- [English](https://code-cogito.com/en/child-labor-vs-algorithmic-bias-en/)
+- [Chinese](https://code-cogito.com/child-labor-vs-algorithmic-bias/)
+- [Japanese](https://code-cogito.com/ja/child-labor-vs-algorithmic-bias-ja/)
 
 ## Want More?
 
-The [Deep Dive Pack](https://code-cogito.com/products/) includes extended bias audit analysis, Jupyter Notebook, and full dataset.
+The [Deep Dive Pack](https://codecogito.gumroad.com/l/industrial-data-05?utm_source=github&utm_medium=readme&utm_campaign=article_pack&utm_content=industrial-data-05) includes extended bias audit analysis, Jupyter Notebook, and the data file.
+
+New to this kind of analysis? The free [Starter Notebook](https://codecogito.gumroad.com/l/starter-notebook?utm_source=github&utm_medium=readme&utm_campaign=starter&utm_content=industrial-data-05) takes one real dataset (Maddison Project GDP, 1500–2022) from download to three figures in about 30 minutes.
 
 ---
 

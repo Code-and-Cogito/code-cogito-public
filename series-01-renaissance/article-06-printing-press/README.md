@@ -51,12 +51,14 @@ Luther's 95 Theses (1517) went from one church door to all of Europe in two mont
 
 ## Want More?
 
-The [Deep Dive Pack](https://code-cogito.com/products/) includes:
+The [Deep Dive Pack](https://codecogito.gumroad.com/l/renaissance-06?utm_source=github&utm_medium=readme&utm_campaign=article_pack&utm_content=renaissance-06) includes:
 - Luther's 95 Theses viral diffusion simulation
 - SIR model for information spread
 - Literacy rate impact analysis
 - Complete propaganda network model
-- Jupyter Notebook + full dataset
+- Jupyter Notebook + data file
+
+New to this kind of analysis? The free [Starter Notebook](https://codecogito.gumroad.com/l/starter-notebook?utm_source=github&utm_medium=readme&utm_campaign=starter&utm_content=renaissance-06) takes one real dataset (Maddison Project GDP, 1500–2022) from download to three figures in about 30 minutes.
 
 ---
 

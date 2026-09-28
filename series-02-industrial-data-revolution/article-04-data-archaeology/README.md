@@ -29,11 +29,15 @@ python data_archaeology_analysis.py
 
 ## Read the Full Article
 
-📅 Coming May 2026 on [Code & Cogito](https://code-cogito.com)
+- [English](https://code-cogito.com/en/data-archaeology-python-industrial-revolution-en/)
+- [Chinese](https://code-cogito.com/data-archaeology-python-industrial-revolution/)
+- [Japanese](https://code-cogito.com/ja/data-archaeology-python-industrial-revolution-ja/)
 
 ## Want More?
 
-The [Deep Dive Pack](https://code-cogito.com/products/) includes extended historical data analysis, Jupyter Notebook, and full dataset.
+The [Deep Dive Pack](https://codecogito.gumroad.com/l/industrial-data-04?utm_source=github&utm_medium=readme&utm_campaign=article_pack&utm_content=industrial-data-04) includes extended historical data analysis, Jupyter Notebook, and the data file.
+
+New to this kind of analysis? The free [Starter Notebook](https://codecogito.gumroad.com/l/starter-notebook?utm_source=github&utm_medium=readme&utm_campaign=starter&utm_content=industrial-data-04) takes one real dataset (Maddison Project GDP, 1500–2022) from download to three figures in about 30 minutes.
 
 ---
 

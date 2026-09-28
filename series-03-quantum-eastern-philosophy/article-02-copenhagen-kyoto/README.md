@@ -19,11 +19,15 @@ python copenhagen_kyoto_analysis.py
 
 ## Read the Full Article
 
-📅 Coming June 2026 on [Code & Cogito](https://code-cogito.com)
+- [English](https://code-cogito.com/en/copenhagen-interpretation-vs-kyoto-school-en/)
+- [Chinese](https://code-cogito.com/copenhagen-interpretation-vs-kyoto-school/)
+- [Japanese](https://code-cogito.com/ja/copenhagen-interpretation-vs-kyoto-school-ja/)
 
 ## Want More?
 
-The [Deep Dive Pack](https://code-cogito.com/products/) for this article includes the complete code, full dataset, Jupyter Notebook, and a PDF cheatsheet.
+The [Deep Dive Pack](https://codecogito.gumroad.com/l/quantum-eastern-02?utm_source=github&utm_medium=readme&utm_campaign=article_pack&utm_content=quantum-eastern-02) for this article includes the complete code, the data file, Jupyter Notebook, and a PDF cheatsheet.
+
+New to this kind of analysis? The free [Starter Notebook](https://codecogito.gumroad.com/l/starter-notebook?utm_source=github&utm_medium=readme&utm_campaign=starter&utm_content=quantum-eastern-02) takes one real dataset (Maddison Project GDP, 1500–2022) from download to three figures in about 30 minutes.
 
 ---
 

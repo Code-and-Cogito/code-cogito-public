@@ -51,13 +51,15 @@ python medici_bank_analysis.py
 
 ## Want More?
 
-The [Deep Dive Pack](https://code-cogito.com/products/) includes:
+The [Deep Dive Pack](https://codecogito.gumroad.com/l/renaissance-02?utm_source=github&utm_medium=readme&utm_campaign=article_pack&utm_content=renaissance-02) includes:
 - 97-year time series analysis
 - Dynamic branch opening/closing tracker
 - Pazzi Conspiracy network impact analysis
 - Monte Carlo simulation (exchange rate fluctuation)
 - Interactive profit calculator
-- Jupyter Notebook + full dataset
+- Jupyter Notebook + data file
+
+New to this kind of analysis? The free [Starter Notebook](https://codecogito.gumroad.com/l/starter-notebook?utm_source=github&utm_medium=readme&utm_campaign=starter&utm_content=renaissance-02) takes one real dataset (Maddison Project GDP, 1500–2022) from download to three figures in about 30 minutes.
 
 ---
 

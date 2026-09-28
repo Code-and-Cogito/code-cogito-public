@@ -6,9 +6,9 @@ Using Python to draw parallels between Renaissance intellectual revolutions and 
 
 | # | Article | Code | Status |
 |---|---------|------|--------|
-| 01 | Humanism vs Age of Personal Branding | humanism_vs_branding_analysis.py | Coming Jun 2026 |
-| 02 | Printing Revolution vs Social Media Explosion | printing_vs_social_analysis.py | Coming Jul 2026 |
-| 03 | Reformation vs Decentralization Movement | reformation_vs_decentralization_analysis.py | Coming Jul 2026 |
+| 01 | Humanism vs Age of Personal Branding | humanism_vs_branding_analysis.py | [Read](https://code-cogito.com/en/thought-revolution-01-en/) |
+| 02 | Printing Revolution vs Social Media Explosion | printing_vs_social_analysis.py | [Read](https://code-cogito.com/en/thought-revolution-02-en/) |
+| 03 | Reformation vs Decentralization Movement | reformation_vs_decentralization_analysis.py | [Read](https://code-cogito.com/en/thought-revolution-03-en/) |
 
 ## About This Series
 
@@ -24,7 +24,7 @@ python humanism_vs_branding_analysis.py
 
 ## Deep Dive Packs
 
-Each article has a premium Deep Dive Pack with complete code, datasets, Jupyter Notebooks, and PDF cheatsheets. [Get them here](https://code-cogito.com/products/).
+Each article has a Deep Dive Pack (complete notebook and .py source, the data file, a PDF walkthrough; from US$4.99, pay what you want), linked from the end of each article's README. The whole series is available as one [series bundle](https://codecogito.gumroad.com/l/revolution-of-ideas-bundle?utm_source=github&utm_medium=readme&utm_campaign=series_bundle&utm_content=s5) (from US$9.99). New here? Start with the free [Starter Notebook](https://codecogito.gumroad.com/l/starter-notebook?utm_source=github&utm_medium=readme&utm_campaign=starter&utm_content=s5_series). All products: [code-cogito.com/en/products-en](https://code-cogito.com/en/products-en/).
 
 ---
 

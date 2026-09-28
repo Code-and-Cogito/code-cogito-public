@@ -6,17 +6,17 @@ Using Python to explore the surprising structural parallels between quantum phys
 
 | # | Article | Code | Status |
 |---|---------|------|--------|
-| 01 | Quantum Revolution: From Newton to Planck | quantum_revolution_analysis.py | Coming Jun 2026 |
-| 02 | Copenhagen Interpretation vs Kyoto School | copenhagen_kyoto_analysis.py | Coming Jun 2026 |
-| 03 | Quantum Superposition and Taoism | superposition_dao_analysis.py | Coming Jul 2026 |
-| 04 | Uncertainty Principle and Buddhist Emptiness | uncertainty_emptiness_analysis.py | Coming Jul 2026 |
-| 05 | Quantum Entanglement vs Indra's Net | entanglement_indra_analysis.py | Coming Jul 2026 |
-| 06 | Many-Worlds and Huayan Buddhism | many_worlds_huayan_analysis.py | Coming Aug 2026 |
-| 07 | Quantum Field Theory and Yogacara Buddhism | quantum_field_yogacara_analysis.py | Coming Aug 2026 |
-| 08 | Entanglement and Dependent Origination | entanglement_dependent_origination_analysis.py | Coming Aug 2026 |
-| 09 | Quantum Consciousness and Eastern Philosophy | quantum_consciousness_analysis.py | Coming Sep 2026 |
-| 10 | Quantum Computing vs Zen: Beyond Binary | quantum_computing_zen_analysis.py | Coming Sep 2026 |
-| 11 | Meditation and Quantum States | meditation_quantum_states_analysis.py | Coming Oct 2026 |
+| 01 | Quantum Revolution: From Newton to Planck | quantum_revolution_analysis.py | [Read](https://code-cogito.com/en/quantum-revolution-newton-universe-collapse-en/) |
+| 02 | Copenhagen Interpretation vs Kyoto School | copenhagen_kyoto_analysis.py | [Read](https://code-cogito.com/en/copenhagen-interpretation-vs-kyoto-school-en/) |
+| 03 | Quantum Superposition and Taoism | superposition_dao_analysis.py | [Read](https://code-cogito.com/en/quantum-superposition-taoism-dao-en/) |
+| 04 | Uncertainty Principle and Buddhist Emptiness | uncertainty_emptiness_analysis.py | [Read](https://code-cogito.com/en/uncertainty-principle-buddhist-emptiness-en/) |
+| 05 | Quantum Entanglement vs Indra's Net | entanglement_indra_analysis.py | [Read](https://code-cogito.com/en/quantum-entanglement-vs-indra-s-net-the-universe-as-an-indivisible-whole-en/) |
+| 06 | Many-Worlds and Huayan Buddhism | many_worlds_huayan_analysis.py | [Read](https://code-cogito.com/en/many-worlds-interpretation-huayan-en/) |
+| 07 | Quantum Field Theory and Yogacara Buddhism | quantum_field_yogacara_analysis.py | [Read](https://code-cogito.com/en/quantum-field-theory-yogacara-en/) |
+| 08 | Entanglement and Dependent Origination | entanglement_dependent_origination_analysis.py | [Read](https://code-cogito.com/en/quantum-entanglement-vs-buddhist-dependent-origination-nothing-exists-alone-en/) |
+| 09 | Quantum Consciousness and Eastern Philosophy | quantum_consciousness_analysis.py | [Read](https://code-cogito.com/en/quantum-consciousness-eastern-philosophy-en/) |
+| 10 | Quantum Computing vs Zen: Beyond Binary | quantum_computing_zen_analysis.py | [Read](https://code-cogito.com/en/quantum-computing-vs-zen-beyond-binary-logic-en/) |
+| 11 | Meditation and Quantum States | meditation_quantum_states_analysis.py | Coming Sep 2026 |
 | 12 | Unified View of Reality | unified_reality_analysis.py | Coming Oct 2026 |
 
 ## About This Series
@@ -33,7 +33,7 @@ python quantum_revolution_analysis.py
 
 ## Deep Dive Packs
 
-Each article has a premium Deep Dive Pack with complete code, datasets, Jupyter Notebooks, and PDF cheatsheets. [Get them here](https://code-cogito.com/products/).
+Each article has a Deep Dive Pack (complete notebook and .py source, the data file, a PDF walkthrough; from US$4.99, pay what you want), linked from the end of each article's README. The whole series is available as one [series bundle](https://codecogito.gumroad.com/l/quantum-eastern-bundle?utm_source=github&utm_medium=readme&utm_campaign=series_bundle&utm_content=s3) (from US$24.99). New here? Start with the free [Starter Notebook](https://codecogito.gumroad.com/l/starter-notebook?utm_source=github&utm_medium=readme&utm_campaign=starter&utm_content=s3_series). All products: [code-cogito.com/en/products-en](https://code-cogito.com/en/products-en/).
 
 ---
 

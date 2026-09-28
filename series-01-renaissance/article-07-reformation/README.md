@@ -46,11 +46,13 @@ python reformation_analysis.py
 
 ## Want More?
 
-The [Deep Dive Pack](https://code-cogito.com/products/) includes:
+The [Deep Dive Pack](https://codecogito.gumroad.com/l/renaissance-07?utm_source=github&utm_medium=readme&utm_campaign=article_pack&utm_content=renaissance-07) includes:
 - Protestant spread network simulation
 - Pamphlet distribution model
 - Religious demographics shift analysis
-- Jupyter Notebook + full dataset
+- Jupyter Notebook + data file
+
+New to this kind of analysis? The free [Starter Notebook](https://codecogito.gumroad.com/l/starter-notebook?utm_source=github&utm_medium=readme&utm_campaign=starter&utm_content=renaissance-07) takes one real dataset (Maddison Project GDP, 1500–2022) from download to three figures in about 30 minutes.
 
 ---
 
