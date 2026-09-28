@@ -72,9 +72,9 @@ Using Python to draw parallels between Renaissance intellectual revolutions and 
 
 | # | Article | Code |
 |---|---------|------|
-| 01 | Humanism vs Age of Personal Branding | [humanism_vs_branding_analysis.py](./series-05-revolution-of-ideas/article-01-humanism-vs-personal-brand/humanism_vs_branding_analysis.py) |
-| 02 | Printing Revolution vs Social Media Explosion | [printing_vs_social_analysis.py](./series-05-revolution-of-ideas/article-02-printing-vs-social-media/printing_vs_social_analysis.py) |
-| 03 | Reformation vs Decentralization Movement | [reformation_vs_decentralization_analysis.py](./series-05-revolution-of-ideas/article-03-reformation-vs-decentralization/reformation_vs_decentralization_analysis.py) |
+| 01 | [Humanism vs Age of Personal Branding](https://code-cogito.com/thought-revolution-01/) | [humanism_vs_branding_analysis.py](./series-05-revolution-of-ideas/article-01-humanism-vs-personal-brand/humanism_vs_branding_analysis.py) |
+| 02 | [Printing Revolution vs Social Media Explosion](https://code-cogito.com/thought-revolution-02/) | [printing_vs_social_analysis.py](./series-05-revolution-of-ideas/article-02-printing-vs-social-media/printing_vs_social_analysis.py) |
+| 03 | [Reformation vs Decentralization Movement](https://code-cogito.com/thought-revolution-03/) | [reformation_vs_decentralization_analysis.py](./series-05-revolution-of-ideas/article-03-reformation-vs-decentralization/reformation_vs_decentralization_analysis.py) |
 
 📦 Deep Dive Packs for every article, or the whole series as one [bundle](https://codecogito.gumroad.com/l/revolution-of-ideas-bundle?utm_source=github&utm_medium=readme&utm_campaign=series_bundle&utm_content=s5) (from US$9.99). [Series page](https://code-cogito.com/en/revolutions-of-thought-en/)
 
@@ -83,7 +83,7 @@ Using Python to analyze 400 years of financial bubbles and crises — from tulip
 
 | # | Article | Code |
 |---|---------|------|
-| 01 | Tulip Mania vs Bitcoin Bubble | [tulip_vs_bitcoin_analysis.py](./series-06-finance-bubbles-crises/article-01-tulip-vs-bitcoin/tulip_vs_bitcoin_analysis.py) |
+| 01 | [Tulip Mania vs Bitcoin Bubble](https://code-cogito.com/finance-01/) | [tulip_vs_bitcoin_analysis.py](./series-06-finance-bubbles-crises/article-01-tulip-vs-bitcoin/tulip_vs_bitcoin_analysis.py) |
 | 02 | South Sea Bubble vs Dot-Com Bubble | [south_sea_vs_dotcom_analysis.py](./series-06-finance-bubbles-crises/article-02-south-sea-vs-dotcom/south_sea_vs_dotcom_analysis.py) |
 | 03 | Great Depression vs 2008 Financial Crisis | [depression_vs_2008_analysis.py](./series-06-finance-bubbles-crises/article-03-great-depression-vs-2008/depression_vs_2008_analysis.py) |
 | 04 | Japan's Lost Decades vs Taiwan's Housing Crisis | [japan_lost_decades_analysis.py](./series-06-finance-bubbles-crises/article-04-japan-lost-decades/japan_lost_decades_analysis.py) |
