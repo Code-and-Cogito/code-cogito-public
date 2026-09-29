@@ -22,7 +22,7 @@ print("=" * 65)
 print("MODEL 1: Bubble Trajectory DTW Comparison")
 print("=" * 65)
 
-# Tulip price data (1634-1637, monthly, Dutch guilders)
+# Illustrative tulip price path (hand-built shape, not historical monthly data)
 tulip_months = np.arange(0, 36)
 tulip_prices_raw = np.array([
     40, 42, 45, 50, 55, 60, 68, 75, 85, 100,
@@ -31,7 +31,8 @@ tulip_prices_raw = np.array([
     2500, 1200, 400, 150, 80, 50, 40, 35, 32, 30
 ])
 
-# Bitcoin price data (2020-2022, monthly, USD)
+# Approximate Bitcoin path (USD, hand-typed: mixed monthly closes and
+# intramonth highs/lows, ~Dec 2019 to mid-2023)
 btc_months = np.arange(0, 36)
 btc_prices_raw = np.array([
     7200, 8800, 9200, 9500, 11300, 13800, 19000,
@@ -63,10 +64,12 @@ similarity = (1 - dtw_distance / max_possible) * 100
 
 print(f"\nDTW Distance: {dtw_distance:.1f}")
 print(f"Similarity:   {similarity:.1f}%")
-print(f"Tulip peak:   month {np.argmax(tulip_norm)} (normalized: {tulip_norm.max():.0f})")
-print(f"BTC peak:     month {np.argmax(btc_norm)} (normalized: {btc_norm.max():.0f})")
+print(f"Tulip peak:   step {np.argmax(tulip_norm)} (normalized: {tulip_norm.max():.0f})")
+print(f"BTC peak:     step {np.argmax(btc_norm)} (normalized: {btc_norm.max():.0f})")
 print(f"Tulip crash:  -{(1 - tulip_prices_raw[-1]/tulip_prices_raw.max())*100:.0f}%")
-print(f"BTC crash:    -{(1 - btc_prices_raw.min()/btc_prices_raw.max())*100:.0f}%")
+btc_peak_idx = np.argmax(btc_prices_raw)
+btc_drawdown = (1 - btc_prices_raw[btc_peak_idx:].min() / btc_prices_raw.max()) * 100
+print(f"BTC crash:    -{btc_drawdown:.0f}% (post-peak drawdown)")
 
 # Visualization
 fig, axes = plt.subplots(1, 3, figsize=(22, 6))
@@ -199,11 +202,17 @@ print("=" * 65)
 
 np.random.seed(42)
 
-def simulate_greater_fool(n_players=1000, n_chairs=100, n_rounds=20):
+def simulate_greater_fool(n_players=1000, n_rounds=20):
     """Simulate greater fool / musical chairs game."""
     players_profit = np.zeros(n_players)
     entry_round = np.zeros(n_players, dtype=int)
     active = np.zeros(n_players, dtype=bool)
+    # Tracks whether a player has EVER entered, separately from `active`
+    # (which goes back to False once a player exits). Without this, a
+    # player who entered in round 0 and cashed out in rounds 10-14 has
+    # entry_round == 0 again and gets picked as a "new" entrant, silently
+    # overwriting their profit with a fresh -price.
+    has_entered = np.zeros(n_players, dtype=bool)
 
     price = 100.0
     price_history = [price]
@@ -221,10 +230,11 @@ def simulate_greater_fool(n_players=1000, n_chairs=100, n_rounds=20):
         else:
             new_count = int(n_players * 0.02)
 
-        available = np.where(~active & (entry_round == 0))[0]
+        available = np.where(~has_entered)[0]
         if len(available) > 0:
             entrants = available[:min(new_count, len(available))]
             active[entrants] = True
+            has_entered[entrants] = True
             entry_round[entrants] = rd
             players_profit[entrants] = -price  # buy at current price
         new_entrants_per_round.append(new_count)
@@ -283,7 +293,8 @@ print(f"  Top 10% winners captured: {result['top10_share']:.0f}% of total profit
 
 fig, axes = plt.subplots(1, 3, figsize=(22, 6))
 fig.suptitle('Greater Fool Theory -- Musical Chairs Simulation\n'
-             '~85% of participants lose | Top 10% capture ~80% of profits',
+             '{:.1f}% of participants lose | Top 10% capture {:.0f}% of profits (this run)'.format(
+                 result['loser_pct'], result['top10_share']),
              fontsize=14, fontweight='bold')
 
 # Panel 1: Price trajectory
@@ -333,6 +344,9 @@ print("=" * 65)
 
 stages = ['Stealth', 'Awareness', 'Mania\n(Early)', 'Mania\n(Peak)',
           'Blow-off', 'Despair']
+# Author-assigned illustrative Fear/Greed values (0-100), not measured data.
+# No sentiment index exists for the 1637 tulip mania; the Bitcoin values
+# here are set to tell the story, not taken from any published index.
 tulip_fg = [35, 55, 75, 95, 15, 5]
 btc_fg = [30, 55, 78, 92, 12, 8]
 stage_colors = ['#3498DB', '#2ECC71', '#F39C12', '#E74C3C', '#8E44AD', '#2C3E50']
@@ -413,6 +427,10 @@ print("=" * 65)
 
 labels = ['Pre-bubble\nGini', 'Post-bubble\nGini', 'Gini\nChange',
           'Wealth transfer\n(bottom 50% -> top 10%)']
+# Author-assigned illustrative Gini / wealth-transfer values, not measured
+# data -- there is no before/after wealth-distribution dataset for 1637
+# Holland or for Bitcoin holders. The script's own simulated Lorenz curves
+# below (gini_pre/gini_post) give a different, actually-computed result.
 tulip_vals = [0.58, 0.71, 0.13, 68]
 btc_vals = [0.62, 0.75, 0.13, 72]
 
@@ -510,7 +528,9 @@ plt.close()
 
 print(f"  Pre-bubble Gini (simulated):  {gini_pre:.3f}")
 print(f"  Post-bubble Gini (simulated): {gini_post:.3f}")
-print(f"  Both bubbles: Gini increased by +0.13")
+print(f"  Change (simulated):           +{gini_post - gini_pre:.3f}")
+print("  (The bars in the chart above are separate author-assigned")
+print("   illustrative values, not this simulation's output.)")
 print("\n=> Saved: 05_wealth_gini.png")
 
 
