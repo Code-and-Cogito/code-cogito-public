@@ -12,6 +12,19 @@ This free version includes:
 
 For complete version with 12 sub-plots, see premium content.
 
+Notes on the numbers:
+- Nothing here is measured data. The wave packets, event counts, energies,
+  lifetimes and seed counts are hand-set, illustrative toy inputs (arbitrary
+  units) chosen to draw a picture; they are not derived from quantum field
+  theory and are not taken from experiments.
+- Dated facts used in the printed text: the Casimir effect was predicted by
+  H. B. G. Casimir in 1948 (Proc. K. Ned. Akad. Wet. 51, 793) and first
+  measured with good precision by S. K. Lamoreaux in 1997
+  (Phys. Rev. Lett. 78, 5).
+- The comparisons between quantum field theory and Yogacara (the ≈ lines
+  in the printed text) are the author's philosophical analogies, not
+  established equivalences.
+
 Requirements:
 pip install numpy matplotlib
 """
@@ -19,7 +32,9 @@ pip install numpy matplotlib
 import numpy as np
 import matplotlib.pyplot as plt
 
-plt.rcParams['font.sans-serif'] = ['Arial', 'Helvetica']
+# DejaVu Sans first: it ships with matplotlib and has the hbar and ket-bracket
+# glyphs used in the labels (Arial lacks them, which drew empty boxes).
+plt.rcParams['font.sans-serif'] = ['DejaVu Sans', 'Arial', 'Helvetica']
 plt.rcParams['axes.unicode_minus'] = False
 
 print("=" * 70)
@@ -48,6 +63,8 @@ def quantum_field_basic():
     vacuum = np.zeros_like(x)
     
     # Excited states (particles)
+    # Illustrative toy wave packets: amplitudes, wavenumbers and widths are
+    # hand-set to draw a picture, not derived from a field equation.
     particle1 = 0.5 * np.sin(2*np.pi*x) * np.exp(-(x-3)**2/0.5)
     particle2 = 0.8 * np.sin(3*np.pi*x) * np.exp(-(x-7)**2/0.3)
     
@@ -87,6 +104,8 @@ def quantum_field_basic():
     print(f"  ")
     print(f"  Vacuum = field with no excitations")
     print(f"  Particle = localized excitation of field")
+    print(f"  ")
+    print(f"  (Illustrative toy wave packets: amplitudes and widths are hand-set)")
 
 # ============================================================================
 # Visualization 2: Vacuum Fluctuations (Virtual Particles)
@@ -104,6 +123,9 @@ def vacuum_fluctuations_basic():
     fig, ax = plt.subplots(figsize=(14, 8))
     
     # Time evolution
+    # Illustrative toy model (hand-set inputs, arbitrary units): the number of
+    # events, the energy distribution and the constant 5 below are not
+    # measured and not derived from quantum field theory.
     n_events = 50
     time_range = 100
     
@@ -115,7 +137,7 @@ def vacuum_fluctuations_basic():
         # Lifetime according to ΔE·Δt ≥ ℏ/2
         # Higher energy → shorter lifetime
         energy = np.random.exponential(1) + 0.1
-        lifetime = 5 / energy  # Roughly ℏ/(2ΔE)
+        lifetime = 5 / energy  # Heuristic ~ ℏ/(2ΔE); the 5 is a hand-set constant
         
         t_annihilate = t_create + lifetime
         
@@ -170,10 +192,13 @@ def vacuum_fluctuations_basic():
     print(f"  Classical physics: Vacuum = nothing")
     print(f"  Quantum field theory: Vacuum = lowest energy state")
     print(f"  BUT: Virtual particles constantly pop in and out")
+    print(f"  (Toy picture: event counts and lifetimes are hand-set, arbitrary units)")
     print(f"  ")
-    print(f"  Casimir effect (1948): Experimental proof")
+    # Sources: Casimir (1948), Proc. K. Ned. Akad. Wet. 51, 793;
+    #          Lamoreaux (1997), Phys. Rev. Lett. 78, 5.
+    print(f"  Casimir effect (predicted 1948, experimentally confirmed 1997):")
     print(f"  Two metal plates attract even in vacuum")
-    print(f"  Confirmed 1997")
+    print(f"  Predicted by H. Casimir (1948); first precise measurement by S. K. Lamoreaux (1997)")
 
 # ============================================================================
 # Visualization 3: Eight Consciousnesses (Yogacara)
@@ -214,7 +239,8 @@ def eight_consciousnesses_basic():
                    xytext=(0.5, y_positions[i] + sizes[i]),
                    arrowprops=dict(arrowstyle='->', lw=2, color='gray'))
     
-    # Alaya seeds
+    # Alaya seeds: decorative dots only; 30 is a hand-set number for drawing,
+    # not a count taken from the Yogacara texts
     n_seeds = 30
     for _ in range(n_seeds):
         angle = np.random.uniform(0, 2*np.pi)
@@ -255,7 +281,7 @@ def eight_consciousnesses_basic():
     print(f"  Contains all karmic seeds (bija)")
     print(f"  Seeds manifest as phenomena (abhinirvtti)")
     print(f"  ")
-    print(f"  PARALLEL to quantum field:")
+    print(f"  PARALLEL to quantum field (the author's analogy, not an established equivalence):")
     print(f"  Alaya ≈ Quantum vacuum (both contain potential)")
     print(f"  Seeds ≈ Virtual particles (both can manifest)")
     print(f"  Manifestation ≈ Field excitation (both create reality)")
@@ -288,11 +314,14 @@ print("  - Virtual particles & Feynman diagrams (3 sub-plots)")
 print("  - Eight consciousnesses detailed (3 sub-plots)")
 print("  - Mind-matter debate visualization (2 sub-plots)")
 print("  - Total: 12 professional sub-plots")
-print("\n[Key Findings]")
-print("  - Feynman: 'Particles are just field excitations'")
+print("\n[Key Points]")
+# A paraphrase of the field-theory picture; it is not a quotation from
+# Feynman's 1965 Nobel lecture, so it is not attributed to him here.
+print("  - QFT: 'Particles are just field excitations'")
 print("  - Yogacara: 'All phenomena are consciousness manifestations'")
-print("  - Field ≈ Alaya consciousness (both fundamental)")
-print("  - Particles ≈ Manifested dharmas (both temporary)")
-print("  - Vacuum not empty ≈ Alaya contains seeds")
-print("  - Virtual particles ≈ Karmic seeds manifesting")
+print("  - Analogies drawn by the author (philosophical, not established equivalences):")
+print("    Field ≈ Alaya consciousness (both fundamental)")
+print("    Particles ≈ Manifested dharmas (both temporary)")
+print("    Vacuum not empty ≈ Alaya contains seeds")
+print("    Virtual particles ≈ Karmic seeds manifesting")
 print("=" * 70)

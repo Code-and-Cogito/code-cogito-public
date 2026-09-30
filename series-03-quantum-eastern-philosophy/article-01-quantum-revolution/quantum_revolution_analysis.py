@@ -10,19 +10,38 @@ This script recreates three historic physics discoveries using Python:
   2. The photoelectric effect: Einstein's light-quantum hypothesis
   3. The death of determinism: 240 years from Newton to Heisenberg
 
+Data notes (mirrors the "About the data" note at the end of the article):
+  - Planck / Rayleigh-Jeans formulas, h, c, k and 1 eV come from textbook physics
+    and scipy.constants (CODATA values).
+  - T = 5000 K is a round illustrative temperature close to the Sun's effective
+    temperature (about 5,772 K, roughly 5,800 K). It is not the Sun's exact value.
+  - The metal work functions are typical reference values in eV; published values
+    differ slightly by source and surface condition.
+  - The electron counts in the intensity panel are illustrative (100 electrons per
+    unit of relative intensity, by construction), not measured data.
+  - The "certainty index" is the author's own narrative yardstick: subjective
+    scores, not a measurement of any physical quantity.
+  - The energies and wavelengths printed by this script are model outputs computed from the
+    constants above, not historical experimental data.
+
 Requirements:
     pip install numpy matplotlib scipy
 """
 
 import numpy as np
 import matplotlib.pyplot as plt
-from scipy.constants import h, c, k
+from scipy.constants import h, c, k, electron_volt
 
 # ---------------------------------------------------------------------------
 # Font configuration
 # ---------------------------------------------------------------------------
 plt.rcParams['font.sans-serif'] = ['Arial', 'Helvetica']
 plt.rcParams['axes.unicode_minus'] = False
+
+# 1 eV in joules: exact SI value 1.602176634e-19 J (from scipy.constants).
+# A rounded 1.6e-19 would shift the printed results by about 0.1% (for example,
+# zinc's cutoff wavelength would read 288.1 nm instead of 287.7 nm).
+EV = electron_volt
 
 print("=" * 70)
 print("The Eve of the Quantum Revolution")
@@ -53,7 +72,9 @@ def visualize_blackbody_radiation():
 
     wavelength_nm = np.linspace(100, 3000, 1000)
     wavelength_m = wavelength_nm * 1e-9
-    T = 5000  # Approximate surface temperature of the Sun
+    # Illustrative round number close to the Sun's effective temperature
+    # (about 5,772 K, IAU 2015 nominal value; roughly 5,800 K). Not the Sun's exact value.
+    T = 5000  # K
 
     planck_intensity = planck_law(wavelength_m, T)
     rayleigh_intensity = rayleigh_jeans_law(wavelength_m, T)
@@ -106,13 +127,13 @@ def visualize_blackbody_radiation():
     plt.show()
 
     # Verify with Wien's displacement law and Stefan-Boltzmann law
-    peak_wavelength = 2.898e-3 / T
+    peak_wavelength = 2.898e-3 / T  # Wien's constant b = 2.898e-3 m*K (rounded textbook value)
     print(f"\n[Wien's Displacement Law]")
     print(f"  Temperature T = {T} K")
     print(f"  Peak wavelength lambda_max = {peak_wavelength*1e9:.1f} nm")
 
-    stefan_boltzmann = 5.67e-8
-    total_power = stefan_boltzmann * T**4
+    stefan_boltzmann = 5.67e-8  # W m^-2 K^-4 (rounded textbook value)
+    total_power = stefan_boltzmann * T**4  # power radiated per unit surface area of an ideal black body
     print(f"\n[Stefan-Boltzmann Law]")
     print(f"  Total radiated power proportional to T^4 = {total_power:.2e} W/m2")
 
@@ -127,6 +148,8 @@ def photoelectric_effect_simulation():
     print("\n[Model 2] Photoelectric Effect")
     print("-" * 70)
 
+    # Work functions in eV: typical reference values used as model inputs.
+    # Published values differ slightly by source and surface condition.
     metals = {
         'Sodium (Na)': 2.28,
         'Aluminum (Al)': 4.08,
@@ -137,7 +160,7 @@ def photoelectric_effect_simulation():
 
     wavelengths = np.linspace(200, 600, 100)
     frequencies = c / (wavelengths * 1e-9)
-    photon_energies = h * frequencies / 1.6e-19  # Convert to eV
+    photon_energies = h * frequencies / EV  # Convert to eV
 
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(20, 9))
 
@@ -151,13 +174,13 @@ def photoelectric_effect_simulation():
         ax1.plot(wavelengths, kinetic_energy,
                  linewidth=2, label=f'{metal} (W0={work_function} eV)', color=color)
 
-        cutoff_wavelength = h * c / (work_function * 1.6e-19) * 1e9
+        cutoff_wavelength = h * c / (work_function * EV) * 1e9
         ax1.axvline(cutoff_wavelength, color=color, linestyle='--', alpha=0.5)
 
     # Collect cutoff wavelengths and stagger labels to avoid overlap
     cutoff_data = []
     for (metal, work_function), color in zip(metals.items(), colors):
-        cutoff_wavelength = h * c / (work_function * 1.6e-19) * 1e9
+        cutoff_wavelength = h * c / (work_function * EV) * 1e9
         cutoff_data.append((cutoff_wavelength, metal.split()[0], color))
 
     # Sort by wavelength so we can stagger
@@ -183,11 +206,13 @@ def photoelectric_effect_simulation():
     # --- Right plot: Light intensity vs number of electrons (not energy) ---
     intensities = np.array([1, 2, 5, 10])
     wavelength_fixed = 300  # nm
-    photon_energy_fixed = h * c / (wavelength_fixed * 1e-9) / 1.6e-19
+    photon_energy_fixed = h * c / (wavelength_fixed * 1e-9) / EV
 
     work_function_Na = metals['Sodium (Na)']
 
     if photon_energy_fixed > work_function_Na:
+        # Illustrative: the electron count is proportional to intensity by construction
+        # (100 electrons per unit of relative intensity). It is not measured data.
         electron_counts = intensities * 100
         electron_energy = photon_energy_fixed - work_function_Na
 
@@ -201,7 +226,7 @@ def photoelectric_effect_simulation():
                      bbox=dict(boxstyle='round', facecolor='yellow', alpha=0.5))
 
     ax2.set_xlabel('Light Intensity (relative)', fontsize=13)
-    ax2.set_ylabel('Number of Ejected Electrons', fontsize=13)
+    ax2.set_ylabel('Number of Ejected Electrons (illustrative)', fontsize=13)
     ax2.set_title(
         f'Intensity Controls Electron Count (Not Energy)\n'
         f'Metal: Sodium, Wavelength: {wavelength_fixed} nm',
@@ -215,7 +240,7 @@ def photoelectric_effect_simulation():
              'But each electron has the SAME energy!\n'
              'Electron energy depends only on frequency\n\n'
              'Classical wave theory cannot explain this!\n'
-             '-> Light must be particles (photons)',
+             "-> Einstein's interpretation:\nlight arrives in quanta (photons)",
              fontsize=10, transform=ax2.transAxes,
              verticalalignment='top', horizontalalignment='right',
              bbox=dict(boxstyle='round', facecolor='lightblue', alpha=0.7))
@@ -233,7 +258,7 @@ def photoelectric_effect_simulation():
     work_function = metals[chosen_metal]
     print(f"\nSelected: {chosen_metal}")
     print(f"Work function W0 = {work_function} eV")
-    print(f"Cutoff wavelength lambda_0 = {h * c / (work_function * 1.6e-19) * 1e9:.1f} nm")
+    print(f"Cutoff wavelength lambda_0 = {h * c / (work_function * EV) * 1e9:.1f} nm")
 
     test_wavelengths = [200, 300, 400, 500]
     print("\nExperimental Results:")
@@ -242,7 +267,7 @@ def photoelectric_effect_simulation():
     print("-" * 60)
 
     for wl in test_wavelengths:
-        photon_e = h * c / (wl * 1e-9) / 1.6e-19
+        photon_e = h * c / (wl * 1e-9) / EV
         ke = photon_e - work_function
         if ke > 0:
             result = "Electron ejected!"
@@ -262,6 +287,9 @@ def determinism_timeline():
     print("\n[Model 3] The Death of Determinism")
     print("-" * 70)
 
+    # The last field is the "certainty index": the author's own narrative yardstick.
+    # Scores are subjective judgment calls (1.0 = fully certain, 0.0 = fundamentally
+    # uncertain), not measurements of any physical quantity.
     events = [
         (1687, "Newton: Principia",          "Deterministic universe, F=ma",           'classical', 1.0),
         (1814, "Laplace's Demon",             "Give me initial conditions, I predict all", 'classical', 1.0),
@@ -365,7 +393,7 @@ def determinism_timeline():
                             arrowprops=dict(arrowstyle='->', color='gray', lw=1))
 
     ax_curve.set_xlabel('Year', fontsize=13)
-    ax_curve.set_ylabel('Degree of "Certainty"', fontsize=13)
+    ax_curve.set_ylabel('"Certainty" index (author-assigned, subjective)', fontsize=13)
     ax_curve.set_title('The Fall of Certainty', fontsize=16, fontweight='bold', pad=15)
     ax_curve.set_xlim(1680, 1935)
     ax_curve.set_ylim(-0.15, 1.15)
@@ -387,6 +415,10 @@ def determinism_timeline():
     fig.suptitle('From Certainty to Uncertainty: 240 Years of Shifting Worldviews in Physics',
                 fontsize=18, fontweight='bold', y=0.98)
     plt.subplots_adjust(left=0.03, right=0.97, top=0.92, bottom=0.04, wspace=0.15)
+    fig.text(0.5, 0.005,
+             "Certainty scores are the author's own narrative yardstick (subjective judgments), "
+             "not measurements of a physical quantity.",
+             ha='center', fontsize=11, style='italic', color='#555555')
     plt.savefig('determinism_timeline.png', dpi=300, bbox_inches='tight')
     plt.show()
 
@@ -440,7 +472,7 @@ print("=" * 70)
 print("\nGenerated plots:")
 print("  1. blackbody_radiation.png    -- Classical vs Quantum at 5000 K")
 print("  2. photoelectric_effect.png   -- Five metals + intensity analysis")
-print("  3. determinism_timeline.png   -- 240 years, 10 key events")
+print("  3. determinism_timeline.png   -- 240 years, 10 key events (author-assigned certainty scores)")
 print()
 print("Key takeaways:")
 print("  - Planck's constant h = 6.626e-34 J*s changed physics forever")

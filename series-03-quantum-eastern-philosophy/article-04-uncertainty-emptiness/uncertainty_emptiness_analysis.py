@@ -10,6 +10,14 @@ This free version includes:
 - Position-momentum uncertainty tradeoff curve
 - Dependent origination network (emptiness visualization)
 
+About the inputs:
+All numbers below (wave-packet widths, hbar normalized to 1, the "table"
+dependency network) are illustrative inputs chosen by the author to make the
+ideas visible. They are NOT experimental measurements. The only real-world
+facts are historical: Heisenberg's uncertainty paper (1927) and Nagarjuna
+(2nd century CE). The Buddhist parallel is a structural analogy, not a claim
+that physics proves Buddhism (or the other way around).
+
 Requirements:
 pip install numpy matplotlib networkx
 """
@@ -41,21 +49,30 @@ def wave_packet_uncertainty():
     print("\n[Visualization 1] Gaussian Wave Packets & Uncertainty Principle")
     print("-" * 70)
 
+    # Illustrative inputs (arbitrary length units), chosen by the author:
+    # the grid and the two widths below are not measured values.
     x = np.linspace(-10, 10, 1000)
 
     # Narrow wave packet: position well-defined, momentum uncertain
-    sigma_narrow = 0.5
+    sigma_narrow = 0.5  # illustrative width
     psi_narrow = np.exp(-x**2 / (4 * sigma_narrow**2))
 
     # Wide wave packet: position uncertain, momentum well-defined
-    sigma_wide = 2.0
+    sigma_wide = 2.0  # illustrative width
     psi_wide = np.exp(-x**2 / (4 * sigma_wide**2))
+
+    # psi above is the wave-function amplitude. The probability density
+    # |psi|^2 = exp(-x^2 / (2 sigma^2)) is a Gaussian whose standard
+    # deviation is exactly sigma, i.e. Delta_x = sigma. Plot the density so
+    # the curves match the '|psi(x)|^2' axis label and the shaded Delta_x band.
+    prob_narrow = np.abs(psi_narrow)**2
+    prob_wide = np.abs(psi_wide)**2
 
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(15, 7))
 
     # Narrow packet
-    ax1.plot(x, psi_narrow, linewidth=3, color='#FF6B6B')
-    ax1.fill_between(x, psi_narrow, alpha=0.3, color='#FF6B6B')
+    ax1.plot(x, prob_narrow, linewidth=3, color='#FF6B6B')
+    ax1.fill_between(x, prob_narrow, alpha=0.3, color='#FF6B6B')
     ax1.axvspan(-sigma_narrow, sigma_narrow, alpha=0.15, color='cyan',
                 label=f'Delta_x = {sigma_narrow}')
     ax1.set_xlabel('Position x', fontsize=12)
@@ -68,8 +85,8 @@ def wave_packet_uncertainty():
              bbox=dict(boxstyle='round', facecolor='yellow', alpha=0.5))
 
     # Wide packet
-    ax2.plot(x, psi_wide, linewidth=3, color='#4ECDC4')
-    ax2.fill_between(x, psi_wide, alpha=0.3, color='#4ECDC4')
+    ax2.plot(x, prob_wide, linewidth=3, color='#4ECDC4')
+    ax2.fill_between(x, prob_wide, alpha=0.3, color='#4ECDC4')
     ax2.axvspan(-sigma_wide, sigma_wide, alpha=0.15, color='cyan',
                 label=f'Delta_x = {sigma_wide}')
     ax2.set_xlabel('Position x', fontsize=12)
@@ -112,8 +129,12 @@ def uncertainty_tradeoff():
     print("\n[Visualization 2] Position-Momentum Uncertainty Trade-off")
     print("-" * 70)
 
+    # Illustrative choice: normalized units (hbar = 1, arbitrary length units)
+    # so the shape of the trade-off is easy to read. The real constant is
+    # hbar = 1.054571817e-34 J*s (the article rounds it to 1.055e-34 J*s);
+    # the curve has the same shape in any units.
     delta_x = np.linspace(0.1, 10, 200)
-    hbar = 1.0  # normalized units
+    hbar = 1.0
     delta_p_min = hbar / (2 * delta_x)  # Heisenberg lower bound
 
     plt.figure(figsize=(13, 8))
@@ -166,6 +187,9 @@ def emptiness_network():
 
     G = nx.DiGraph()
 
+    # Illustrative dependency graph: the conditions listed for a table were
+    # chosen by the author for this demo. They are not exhaustive and are not
+    # empirical data.
     nodes = ['Table', 'Wood', 'Carpenter', 'Tools',
              'Concept\n"table"', 'Observer', 'Culture']
     G.add_nodes_from(nodes)
@@ -194,6 +218,8 @@ def emptiness_network():
     nx.draw_networkx_edges(G, pos, edge_color='#4ECDC4', arrows=True,
                            arrowsize=20, width=2, arrowstyle='->')
 
+    # Quote: Nagarjuna, Mulamadhyamakakarika 24:18 (English rendering as
+    # quoted in the article).
     plt.title('Buddhist Emptiness: Dependent Origination\n'
               '"Table" has no independent existence (no svabhava)',
               fontsize=14, fontweight='bold')
@@ -222,6 +248,7 @@ def emptiness_network():
     print("  - Momentum depends on measurement setup")
     print("  - No 'inherent' position or momentum (no svabhava)")
     print()
+    # Heart Sutra (Prajnaparamita Hrdaya), as quoted in the article.
     print("  Heart Sutra: 'Form is emptiness; emptiness is form'")
     print("  Uncertainty: Properties are not intrinsic -- they emerge from interaction")
 
@@ -247,8 +274,16 @@ print("  1. wave_packet_uncertainty.png  -- Narrow vs wide Gaussian packets")
 print("  2. uncertainty_tradeoff.png     -- Delta_x vs Delta_p trade-off curve")
 print("  3. emptiness_network.png        -- Dependent origination network")
 print()
+print("Note: the sigma values, hbar = 1 and the network nodes are illustrative")
+print("inputs, not measurements. The Buddhist parallel is a structural analogy,")
+print("not a proof of either side.")
+print()
 print("Key parallels explored:")
+# 1927 = Heisenberg's uncertainty paper (Z. Phys. 43, 172-198, Copenhagen).
+# The Helgoland trip that led to matrix mechanics was June 1925; it is not
+# the date of the uncertainty principle, so do not change this year to 1925.
 print("  Heisenberg (1927): Particles have no fixed properties")
+# Nagarjuna: 2nd century CE (Madhyamaka; Mulamadhyamakakarika).
 print("  Nagarjuna (2nd c.): All phenomena have no fixed essence (svabhava)")
 print("  Both say: 'Fixedness is not a fundamental feature of reality'")
 print("=" * 70)

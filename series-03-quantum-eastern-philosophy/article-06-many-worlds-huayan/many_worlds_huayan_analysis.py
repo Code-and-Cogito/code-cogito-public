@@ -10,6 +10,15 @@ This script includes:
 - Parallel "yous" calculation
 - Huayan fractal (Sierpinski triangle)
 
+About the numbers (same reading as the article's data note):
+- World counts such as 2^n, or 3 x 5 x 2 x 2 x 2 = 120, are plain model
+  arithmetic inside a toy model. They are not physical predictions.
+- The "~10^50 quantum events per second" line and the "35,000 decisions per
+  day" figure are hand-set, illustrative inputs. They are not measured data
+  or verified statistics.
+- The Huayan / fractal comparisons are conceptual analogies, not
+  equivalences established in physics or Buddhist scholarship.
+
 Requirements:
 pip install numpy matplotlib
 """
@@ -35,6 +44,9 @@ def universe_splitting_tree():
     Visualize universe splitting in Many-Worlds Interpretation.
     Each quantum measurement causes the universe to branch into
     all possible outcomes. After n measurements, 2^n worlds exist.
+
+    Toy model: every measurement is counted as one binary split (2 outcomes),
+    so the world counts are model arithmetic (2^n), not a physical prediction.
     """
     print("\n[Visualization 1] Universe Splitting Tree")
     print("-" * 70)
@@ -127,14 +139,18 @@ def universe_splitting_tree():
     print(f"After 3 measurements: {2**3} worlds")
     print(f"After 4 measurements: {2**4} worlds")
     print(f"After 5 measurements: {2**5} worlds")
-    print(f"\nAfter n measurements: 2^n worlds")
+    print(f"\nAfter n measurements: 2^n worlds "
+          f"(toy model: binary outcomes, one split per measurement)")
     print(f"\nExamples:")
     print(f"  * 10 measurements = {2**10:,} worlds")
     print(f"  * 20 measurements = {2**20:,} worlds")
     print(f"  * 30 measurements = {2**30:,} worlds")
     print(f"  * 100 measurements = {2**100:.2e} worlds")
-    print(f"\nThe universe undergoes ~10^50 quantum events per second...")
-    print(f"The number of worlds: beyond imagination!")
+    # NOTE: 10^50 events per second is an unsourced, hand-set number used only
+    # to convey scale. It is not a measured or published value.
+    print(f"\nIllustrative only: suppose ~10^50 quantum events happened per second")
+    print(f"(an unsourced, hand-set figure, not a measured or published value)...")
+    print(f"The number of worlds would be beyond imagination!")
     print("=" * 70)
 
 
@@ -146,11 +162,14 @@ def parallel_yous():
     """
     Calculate number of parallel versions of 'you' based on
     everyday life decisions. Each choice creates new branches.
+
+    Toy model: the decisions and their option counts are hand-set,
+    illustrative inputs, and each decision is treated as one branching point.
     """
     print("\n[Visualization 2] How Many Worlds Do 'You' Exist In?")
     print("-" * 70)
 
-    # Example life decisions
+    # Example life decisions (hand-set, illustrative inputs; not survey data)
     decisions = [
         {'description': 'What to eat for breakfast?', 'n_choices': 3},
         {'description': 'Which major in college?', 'n_choices': 5},
@@ -226,27 +245,36 @@ def parallel_yous():
     print("\n" + "=" * 70)
     print("YOUR PARALLEL LIVES")
     print("=" * 70)
-    print("\nExample decisions:")
+    print("\nExample decisions (hand-set, illustrative):")
     for i, decision in enumerate(decisions, 1):
         print(f"  {i}. {decision['description']} ({decision['n_choices']} choices)")
 
     print(f"\nResult:")
-    print(f"  * These decisions create {total:,} parallel versions of 'you'")
+    print(f"  * In this toy model these decisions create {total:,} parallel versions of 'you'")
     print(f"  * Each version has a different life trajectory")
     print(f"  * Each version believes it is the only one")
 
-    print(f"\nIn reality:")
-    print(f"  * You make about 35,000 decisions per day")
-    print(f"  * Each decision has on average 2-3 options")
-    print(f"  * One day: ~2^35000 worlds")
-    print(f"  * One lifetime: an incomprehensibly large number!")
+    # Illustrative extrapolation only. "35,000 decisions per day" is a widely
+    # repeated but poorly sourced pop-psychology figure, not a verified
+    # statistic, and "2 options per decision" is the simplest hand-set choice.
+    # 2^35000 is just what these assumptions compute to in this toy model.
+    decisions_per_day = 35_000
+    log10_worlds_per_day = decisions_per_day * np.log10(2)
+
+    print(f"\nIllustrative extrapolation (assumptions, not measured statistics):")
+    print(f"  * Assume {decisions_per_day:,} decisions per day "
+          f"(a widely repeated but poorly sourced pop-psychology figure)")
+    print(f"  * Assume 2 options per decision (simplest hand-set choice)")
+    print(f"  * One day in this model: 2^{decisions_per_day} worlds, "
+          f"about 10^{log10_worlds_per_day:.0f}")
+    print(f"  * One lifetime: larger still, under the same toy assumptions")
 
     print(f"\nPhilosophical questions:")
     print(f"  * Which 'you' is the 'real you'?")
     print(f"  * Do the other versions of you wonder the same thing?")
     print(f"  * What does your 'uniqueness' even mean?")
 
-    print(f"\nHuayan Buddhism's answer:")
+    print(f"\nOne Huayan-style reading (the author's interpretation, not settled doctrine):")
     print(f"  * All versions of 'you' are real")
     print(f"  * 'Self' was never singular")
     print(f"  * 'One is all': each self contains every self")
@@ -259,9 +287,10 @@ def parallel_yous():
 
 def huayan_fractal():
     """
-    Fractal visualization representing Huayan's 'one contains all'.
-    The Sierpinski triangle demonstrates self-similarity at all scales,
-    mirroring Huayan's 'one dust mote contains all directions'.
+    Fractal visualization used as an analogy for Huayan's 'one contains all'.
+    The (ideal) Sierpinski triangle is self-similar at every scale, which is
+    a conceptual parallel to Huayan's 'one dust mote contains all directions',
+    not a mathematical equivalence. The plot draws a finite number of levels.
     """
     print("\n[Visualization 3] Huayan Fractal - Sierpinski Triangle")
     print("-" * 70)
@@ -288,7 +317,8 @@ def huayan_fractal():
     p2 = np.array([1, 0])
     p3 = np.array([0.5, np.sqrt(3) / 2])
 
-    sierpinski(ax, order=5, points=np.array([p1, p2, p3]))
+    order = 5  # recursion depth: 3**5 = 243 small triangles are drawn
+    sierpinski(ax, order=order, points=np.array([p1, p2, p3]))
 
     ax.set_xlim(-0.1, 1.1)
     ax.set_ylim(-0.1, 1.0)
@@ -316,17 +346,19 @@ def huayan_fractal():
     print("HUAYAN'S FRACTAL STRUCTURE")
     print("=" * 70)
     print("\nSierpinski Triangle properties:")
-    print("  * Self-similar at all scales")
+    print("  * Self-similar at every scale (in the infinite limit)")
+    print(f"  * The plot draws order {order}: {3 ** order} small triangles, "
+          "a finite approximation")
     print("  * Each part contains pattern of whole")
     print("  * Infinite complexity from simple rule")
-    print("\nHuayan parallel:")
+    print("\nHuayan analogy (the author's conceptual comparison):")
     print("  * One dharma contains all dharmas")
     print("  * Microcosm reflects macrocosm")
     print("  * Infinite realms within infinite realms")
-    print("\nMathematical insight:")
-    print("  Fractal self-similarity = Huayan's 'subtle mutual containment'")
-    print("  Infinite nesting = infinite interpenetration")
-    print("  Part = Whole")
+    print("\nA conceptual analogy (not a mathematical proof):")
+    print("  Fractal self-similarity ~ Huayan's 'subtle mutual containment'")
+    print("  Infinite nesting ~ infinite interpenetration")
+    print("  Part ~ Whole")
     print("=" * 70)
 
 
@@ -352,10 +384,12 @@ print("  1. universe_splitting_tree.png - Branching tree + exponential growth")
 print("  2. parallel_yous.png - Life decision tree + parallel life count")
 print("  3. huayan_fractal.png - Sierpinski triangle (Huayan metaphor)")
 print("\nKey Findings:")
-print("  - After n measurements -> 2^n parallel universes")
-print("  - 5 decisions (3x5x2x2x2) = 120 parallel versions of 'you'")
-print("  - Huayan: 'One dust mote contains all directions'")
-print("  - Many-Worlds branching ~ Huayan's infinite interpenetration")
-print("  - Both describe reality as infinite nested structure")
-print("  - 'Infinity' is not a quantity -- it is a structural property")
+print("  - Toy model: n binary measurements -> 2^n branches (model arithmetic)")
+print("  - 5 hand-set decisions (3x5x2x2x2) = 120 versions of 'you' in this toy model")
+print("  - Huayan image: 'One dust mote contains all directions'")
+print("  - Analogy, not an established equivalence: Many-Worlds branching vs "
+      "Huayan's infinite interpenetration")
+print("  - Both can be pictured as nested structures")
+print("  - One reading of the analogy: 'infinity' is a structural property, "
+      "not a quantity")
 print("=" * 70)
