@@ -1,12 +1,23 @@
 """
 Meditation & Quantum States - Free Version
-Season 2 Article 11: Basic Visualizations
+Series 3, Article 11 of 12: Basic Visualizations
 
 Author: Wina Wu
 Date: 2025-01
 
 Requirements:
-pip install numpy matplotlib scipy
+pip install numpy matplotlib
+
+Data note (what is real and what is illustrative):
+- Real-world reference (text output and one chart annotation):
+  Lutz, Greischar, Rawlings, Ricard & Davidson (2004), "Long-term meditators
+  self-induce high-amplitude gamma synchrony during mental practice", PNAS
+  101(46), 16369-16373. Eight long-term Buddhist practitioners (10,000-50,000
+  hours of practice over 15-40 years) vs. controls. Reported: the gamma (25-42 Hz)
+  to slow-wave ratio was already higher at rest, and during meditation the adjusted
+  average increase in gamma activity was more than 30 times that of the controls.
+- Everything else in the charts (sine waves, bar heights, probabilities) is
+  hand-set and illustrative. It shows direction and structure, not measured EEG data.
 """
 
 import numpy as np
@@ -17,7 +28,7 @@ plt.rcParams['axes.unicode_minus'] = False
 
 print("=" * 70)
 print("Meditation & Quantum States - Free Version")
-print("Season 2 Article 11")
+print("Series 3, Article 11 of 12")
 print("=" * 70)
 
 # Visualization 1: Brain Wave Types
@@ -28,7 +39,9 @@ def brainwave_types_basic():
     time = np.linspace(0, 2, 1000)
     y_offset = 0
 
-    # Wave types
+    # Schematic sine waves: one representative frequency per band, NOT EEG recordings.
+    # Band edges are conventional and differ between sources. Gamma is often given
+    # as ~25-100 Hz (Lutz et al. 2004 analysed 25-42 Hz).
     waves = [
         ('Delta', 2, '0.5-4', 'Deep sleep'),
         ('Theta', 6, '4-8', 'Light sleep, deep meditation'),
@@ -63,13 +76,16 @@ def meditation_stages_basic():
     print("\n[Visualization 2] Meditation Brain Wave Changes")
     fig, (ax1, ax2, ax3) = plt.subplots(1, 3, figsize=(20, 7))
 
+    # NOTE: every bar height below (normal / beginner / advanced) is a hand-set,
+    # illustrative relative-power value, NOT measured data. Only the annotation in the
+    # last panel refers to a real result (Lutz et al. 2004, PNAS 101(46)).
     # Normal waking state
     wave_types = ['Delta', 'Theta', 'Alpha', 'Beta', 'Gamma']
     normal = [0.1, 0.2, 0.3, 0.6, 0.2]
 
     ax1.bar(wave_types, normal, color=['blue', 'green', 'orange', 'red', 'purple'],
            edgecolor='black', linewidth=1.5, alpha=0.7)
-    ax1.set_ylabel('Relative Power', fontsize=11)
+    ax1.set_ylabel('Relative Power (illustrative)', fontsize=11)
     ax1.set_title('Normal Waking State', fontsize=12, fontweight='bold')
     ax1.set_ylim(0, 1)
     ax1.text(2, 0.8, 'Dominated by\nBeta waves', ha='center', fontsize=9,
@@ -80,7 +96,7 @@ def meditation_stages_basic():
 
     ax2.bar(wave_types, beginner, color=['blue', 'green', 'orange', 'red', 'purple'],
            edgecolor='black', linewidth=1.5, alpha=0.7)
-    ax2.set_ylabel('Relative Power', fontsize=11)
+    ax2.set_ylabel('Relative Power (illustrative)', fontsize=11)
     ax2.set_title('Beginner Meditation (0-1 year)', fontsize=12, fontweight='bold')
     ax2.set_ylim(0, 1)
     ax2.text(2, 0.8, 'Alpha increases\nBeta decreases', ha='center', fontsize=9,
@@ -91,13 +107,20 @@ def meditation_stages_basic():
 
     ax3.bar(wave_types, advanced, color=['blue', 'green', 'orange', 'red', 'purple'],
            edgecolor='black', linewidth=1.5, alpha=0.7)
-    ax3.set_ylabel('Relative Power', fontsize=11)
+    ax3.set_ylabel('Relative Power (illustrative)', fontsize=11)
     ax3.set_title('Advanced Meditation (10,000+ hours)', fontsize=12, fontweight='bold')
     ax3.set_ylim(0, 1)
-    ax3.text(4, 0.9, 'Gamma\n25-100x\nhigher!', ha='center', fontsize=10, fontweight='bold',
+    # Real result (Lutz et al. 2004): 8 long-term practitioners, 10,000-50,000 h over
+    # 15-40 years; adjusted average gamma (25-42 Hz) increase during meditation was
+    # more than 30-fold that of controls (this is NOT the ratio of the bars above).
+    ax3.text(3.6, 0.99, 'Gamma: increase\n>30x that of controls\n(Lutz et al., 2004)', ha='center',
+            va='top', fontsize=9, fontweight='bold',
             bbox=dict(boxstyle='round', facecolor='lightyellow', edgecolor='red', linewidth=2))
 
-    plt.tight_layout()
+    fig.text(0.5, 0.01, 'Bar heights are hand-set illustrative values, not measured data. '
+             'Annotation: Lutz et al. (2004), PNAS 101(46), 16369-16373.',
+             ha='center', fontsize=9, style='italic')
+    plt.tight_layout(rect=[0, 0.04, 1, 1])
     plt.savefig('meditation_stages_basic.png', dpi=300, bbox_inches='tight')
     plt.show()
     print("  Done: Meditation stages compared")
@@ -174,10 +197,11 @@ nothought_superposition_basic()
 print("\n" + "=" * 70)
 print("Free Version Complete!")
 print("=" * 70)
-print("\nKey Findings:")
+print("\nKey Points:")
 print("  - Brain waves: Delta, Theta, Alpha, Beta, Gamma")
-print("  - Advanced meditators: Gamma waves 25-100x stronger")
-print("  - No-thought (Wu-Nian) ~ Superposition (Die-Jia-Tai)")
+print("  - Long-term meditators (Lutz et al. 2004): gamma increase >30x that of controls")
+print("  - No-thought (Wu-Nian) ~ Superposition (Die-Jia-Tai): a structural analogy")
 print("  - Both: Open state full of potential")
-print("  - Meditation trains consciousness like quantum computing")
+print("  - Holding superposition vs. decoherence ~ holding no-mind vs. attachment")
+print("  - Note: chart values (waves, bars) are illustrative, not measured data")
 print("=" * 70)
