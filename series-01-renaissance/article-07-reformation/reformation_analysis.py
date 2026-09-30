@@ -1,13 +1,22 @@
 """
 Article 07: The Reformation - When Authority Crumbles
-Free Highlights: Religious Authority Network & Conflict Timeline
+Free Highlights: Reformation Timeline, Authority Radar & Religious-War Death Toll
 Series: The Digital Rebirth of the Renaissance | Code & Cogito
+
+DATA NOTES (what is real, what is illustrative)
+- Timeline: historical event dates (95 Theses 1517 ... Peace of Westphalia 1648).
+- Authority radar: ILLUSTRATIVE. The 0-100 scores are hand-set by the author to
+  demonstrate the chart. They are not measured data.
+- War deaths: rough estimates from the secondary literature. Sources differ
+  widely, so the Thirty Years' War is drawn as a range (see section 3).
 """
 
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib.patches import Patch
+from matplotlib.ticker import FuncFormatter
 
-# --- 1. Protestant Spread Timeline ---
+# --- 1. Reformation Timeline ---
 
 events = [
     (1517, "95 Theses\n(Luther)", 1),
@@ -41,7 +50,9 @@ plt.tight_layout()
 plt.savefig('reformation_timeline.png', dpi=150)
 plt.show()
 
-# --- 2. Authority Structure: Before vs After ---
+# --- 2. Authority Structure: Before vs After (ILLUSTRATIVE scores) ---
+# NOTE: the 0-100 scores below are hand-set by the author to demonstrate the
+# radar chart. They are illustrative judgements, not measured historical data.
 
 categories = ['Religious\nAuthority', 'Political\nCentralization', 'Individual\nConscience', 'Bible\nAccess', 'Intellectual\nFreedom']
 before = [95, 80, 10, 5, 15]
@@ -61,34 +72,68 @@ ax.fill(angles, after, alpha=0.15, color='#1565C0')
 ax.set_xticks(angles[:-1])
 ax.set_xticklabels(categories, fontsize=10)
 ax.set_ylim(0, 100)
-ax.set_title('Authority Before & After Reformation', fontsize=14, pad=20)
+ax.set_title('Authority Before & After Reformation\n(illustrative scores set by the author, not measured data)',
+             fontsize=13, pad=25)
 ax.legend(loc='upper right', bbox_to_anchor=(1.3, 1.1))
 plt.tight_layout()
 plt.savefig('authority_radar.png', dpi=150)
 plt.show()
 
 # --- 3. Religious Wars: Death Toll ---
+# Rough (low, high) estimates of total deaths. Sources differ widely and count
+# different things (battle deaths only vs. also famine and disease), so read
+# these as orders of magnitude, not exact figures.
+#   German Peasants' War (1524-25): ~100,000 peasants killed (the figure used in
+#       the article; roughly 300,000 people took part in the uprising).
+#   French Wars of Religion (1562-98): ~3 million is a rough round figure only;
+#       estimates vary widely.
+#   Thirty Years' War (1618-48): 4.5-8 million soldiers and civilians, from
+#       battle, famine and disease (Wikipedia, "Thirty Years' War"). The article
+#       uses the same range; 8 million is the upper end, not a settled count.
 
 wars = ['German Peasants\nWar (1524-25)', 'French Wars of\nReligion (1562-98)', 'Thirty Years\nWar (1618-48)']
-deaths = [100000, 3000000, 8000000]
+deaths_low = [100000, 3000000, 4500000]
+deaths_high = [100000, 3000000, 8000000]
 colors = ['#FF9800', '#D32F2F', '#8B0000']
 
-fig, ax = plt.subplots(figsize=(10, 5))
-bars = ax.barh(wars, deaths, color=colors, edgecolor='black')
-for bar, d in zip(bars, deaths):
-    ax.text(bar.get_width() + 100000, bar.get_y() + bar.get_height()/2,
-            f'{d:,.0f}', va='center', fontsize=11, fontweight='bold')
 
-ax.set_xlabel('Estimated Deaths', fontsize=12)
+def fmt(n):
+    """Compact number label: 100,000 or 3.0M."""
+    return f'{n / 1e6:.1f}M' if n >= 1_000_000 else f'{n:,.0f}'
+
+
+def range_label(low, high):
+    return f'~{fmt(low)}' if low == high else f'{fmt(low)}-{fmt(high)}'
+
+
+fig, ax = plt.subplots(figsize=(10, 5))
+ax.barh(wars, deaths_low, color=colors, edgecolor='black')
+for i, (low, high) in enumerate(zip(deaths_low, deaths_high)):
+    if high > low:  # hatched extension = uncertainty range up to the high estimate
+        ax.barh(i, high - low, left=low, color=colors[i], alpha=0.35,
+                hatch='//', edgecolor='black')
+    ax.text(high + 100000, i, range_label(low, high),
+            va='center', fontsize=11, fontweight='bold')
+
+ax.set_xlim(0, max(deaths_high) * 1.3)
+ax.xaxis.set_major_formatter(FuncFormatter(lambda x, _: f'{x / 1e6:.0f}M'))
+ax.set_xlabel('Estimated deaths (rough; sources differ widely)', fontsize=12)
 ax.set_title('The Price of Religious Reform: Major Conflicts', fontsize=14)
+ax.legend(handles=[Patch(facecolor='gray', edgecolor='black', label='Low estimate'),
+                   Patch(facecolor='gray', alpha=0.35, hatch='//', edgecolor='black',
+                         label='Range up to high estimate')],
+          loc='lower right')
 ax.grid(axis='x', alpha=0.3)
 plt.tight_layout()
 plt.savefig('religious_wars_deaths.png', dpi=150)
 plt.show()
 
+total_low, total_high = sum(deaths_low), sum(deaths_high)
+
 print("\n=== Reformation Analysis Summary ===")
-print(f"Duration of upheaval: {1648-1517} years")
-print(f"Estimated total deaths: ~{sum(deaths):,}")
-print(f"Largest conflict: Thirty Years War ({deaths[-1]:,} dead)")
-print("Full analysis: premium includes Protestant spread network,")
-print("pamphlet distribution model, and religious demographics shift.")
+print(f"Timeline span: {1648-1517} years (1517-1648)")
+print(f"Estimated deaths in the 3 conflicts shown: ~{total_low/1e6:.1f}-{total_high/1e6:.1f} million (rough; sources differ widely)")
+print(f"Largest conflict: Thirty Years War ({deaths_low[-1]:,}-{deaths_high[-1]:,} dead)")
+print("Note: the authority radar scores are illustrative (set by the author), not measured data.")
+print("Full analysis: the Deep Dive Pack adds a 14-city spread network,")
+print("pamphlet print analysis, territorial-share charts and war-death charts.")

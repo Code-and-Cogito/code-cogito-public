@@ -2,6 +2,10 @@
 Article 04: Perspective - The Math Behind Renaissance Art
 Free Highlights: 3D-to-2D Projection & Vanishing Point Demo
 Series: The Digital Rebirth of the Renaissance | Code & Cogito
+
+Note on the numbers: the projection scale (f / z) is computed. The depth /
+proportion / spatial scores in section 3 are ILLUSTRATIVE values assigned by
+the author (no scoring rubric, not measurements); they only show a trend.
 """
 
 import numpy as np
@@ -12,6 +16,9 @@ import matplotlib.pyplot as plt
 focal_length = 5.0
 
 # 3D cube: front face at z=5, back face at z=10
+# (centred on the viewing axis, x and y from -1 to 1, so the vanishing point
+#  sits in the middle of the drawing; the article snippet uses a 0..1 cube,
+#  but the scale f/z depends only on z and is identical)
 vertices_3d = np.array([
     [-1, -1, 5], [1, -1, 5], [1, 1, 5], [-1, 1, 5],
     [-1, -1, 10], [1, -1, 10], [1, 1, 10], [-1, 1, 10]
@@ -41,6 +48,8 @@ plt.savefig('perspective_cube_projection.png', dpi=150)
 plt.show()
 
 # --- 2. One-Point Perspective: Converging Lines ---
+# Schematic drawing only: the lines are drawn to meet at the vanishing point,
+# they are not computed from a painting or from the projection above.
 
 fig, ax = plt.subplots(figsize=(10, 6))
 vp = (0.5, 0.5)  # vanishing point (normalized)
@@ -71,9 +80,14 @@ plt.savefig('one_point_perspective.png', dpi=150)
 plt.show()
 
 # --- 3. Depth Perception: Medieval vs Renaissance ---
+# ILLUSTRATIVE scores (0-100) assigned by the author's judgement: there is no
+# scoring rubric and nothing here was measured. They only show the trend from
+# medieval to Renaissance art. "Brunelleschi" stands for his perspective panels
+# (mirror demonstration, c.1413-1420; the exact date is not recorded and the
+# panel is lost).
 
 data = {
-    'Work': ['Medieval Icon\n(1200)', 'Giotto\n(1305)', 'Brunelleschi\n(1413)', 'Last Supper\n(1498)'],
+    'Work': ['Medieval Icon\n(1200)', 'Giotto\n(1305)', 'Brunelleschi\n(c.1413-20)', 'Last Supper\n(1498)'],
     'Depth': [15, 45, 85, 95],
     'Proportion': [25, 55, 90, 95],
     'Spatial': [20, 50, 88, 95]
@@ -88,8 +102,9 @@ ax.bar(x, data['Proportion'], width, label='Proportion Consistency', color='#FF9
 ax.bar(x + width, data['Spatial'], width, label='Spatial Coherence', color='#4CAF50')
 
 ax.set_xlabel('Artwork / Year')
-ax.set_ylabel('Score (0-100)')
-ax.set_title('Spatial Quality: Medieval vs Renaissance Art', fontsize=14)
+ax.set_ylabel('Illustrative score (0-100)')
+ax.set_title('Spatial Quality: Medieval vs Renaissance Art\n'
+             '(illustrative scores assigned by the author, not measurements)', fontsize=14)
 ax.set_xticks(x)
 ax.set_xticklabels(data['Work'])
 ax.legend()
@@ -99,9 +114,8 @@ plt.savefig('depth_comparison.png', dpi=150)
 plt.show()
 
 print("\n=== Perspective Analysis Summary ===")
-print(f"Depth improvement 1200->1498: {(95/15 - 1)*100:.0f}%")
+print(f"Depth score 1200->1498 (illustrative): {data['Depth'][0]} -> {data['Depth'][-1]}")
 print(f"Projection scale at z=5:  {focal_length/5:.2f}")
 print(f"Projection scale at z=10: {focal_length/10:.2f}")
-print(f"Most used type: One-point (62%)")
-print("Full analysis: premium version includes 100-painting dataset,")
-print("vanishing point detection, and projection matrix derivation.")
+print("Deep Dive Pack adds a projection-matrix demo, vanishing-point geometry")
+print("diagrams and a Monte Carlo simulation of vanishing-point error.")
