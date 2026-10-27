@@ -7,8 +7,8 @@ Using Python to analyze 400 years of financial bubbles and crises — from tulip
 | # | Article | Code | Status |
 |---|---------|------|--------|
 | 01 | Tulip Mania vs Bitcoin Bubble | tulip_vs_bitcoin_analysis.py | [Read](https://code-cogito.com/en/finance-01-en/) |
-| 02 | South Sea Bubble vs Dot-Com Bubble | south_sea_vs_dotcom_analysis.py | Coming Oct 2026 |
-| 03 | Great Depression vs 2008 Financial Crisis | depression_vs_2008_analysis.py | Coming Oct 2026 |
+| 02 | South Sea Bubble vs Dot-Com Bubble | south_sea_vs_dotcom_analysis.py | [Read](https://code-cogito.com/en/finance-02-en/) |
+| 03 | Great Depression vs 2008 Financial Crisis | depression_vs_2008_analysis.py | [Read](https://code-cogito.com/en/finance-03-en/) |
 | 04 | Japan's Lost Decades vs Taiwan's Housing Crisis | japan_lost_decades_analysis.py | Coming Nov 2026 |
 | 05 | Bank Runs: Northern Rock to SVB | bank_runs_analysis.py | Coming Nov 2026 |
 | 06 | Collapse of FTX: Bankruptcy of Trust | ftx_collapse_analysis.py | Coming Dec 2026 |

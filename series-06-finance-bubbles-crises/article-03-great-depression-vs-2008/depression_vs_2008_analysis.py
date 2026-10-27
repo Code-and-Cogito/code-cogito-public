@@ -5,7 +5,27 @@ Free Version -- 6 Models (Basic Analysis)
 GitHub: Code-and-Cogito/code-cogito-public
 License: MIT
 
-Requirements: pip install networkx matplotlib numpy
+Requirements: pip install numpy matplotlib
+Article: https://code-cogito.com/en/finance-03-en/
+
+What these models are (and are not)
+All six are simplified, illustrative models. The script reads no data file.
+  Model 1  Leverage        hand-set scores for a qualitative comparison; a schematic
+                           chain diagram. Not statistics.
+  Model 2  Bank run        toy agent-based model (random.seed(42) -> reproducible run).
+                           Each depositor watches 5 randomly drawn others, not a real
+                           social network.
+  Model 3  Credit spiral   deterministic toy model with a reinforcing (positive)
+                           feedback loop. The whole "1929 vs 2008" gap is ONE hand-set
+                           parameter (policy_response = 0 vs 5); nothing is calibrated
+                           to data.
+  Model 4  Unemployment    annual averages: 1929 side = Lebergott's historical
+                           estimates, 2008 side = U.S. BLS. The policy panel is
+                           hand-set scores.
+  Model 5  Inequality      hand-entered illustrative series, NOT measured wealth
+                           statistics.
+  Model 6  Recovery        simplified dates (nominal Dow, real GDP, unemployment,
+                           banking); the institutions panel is a yes/no simplification.
 """
 
 import matplotlib.pyplot as plt
@@ -23,14 +43,20 @@ print("=" * 65)
 print("MODEL 1: Leverage Evolution -- 1920s vs 2000s")
 print("=" * 65)
 
-dimensions = ['Leverage\nMultiple', 'Min Margin\nReq (%)', 'Risk\nTransparency',
+# ILLUSTRATIVE, hand-set values -- NOT statistics.
+# Leverage multiple: about 3x for 1920s broker margin loans (up to ~10x at the extreme)
+# vs about 30x at the big 2007 U.S. investment banks (rough, commonly cited orders of magnitude).
+# The other four dimensions are 0-100 judgment scores for a qualitative comparison.
+# (The earlier "minimum margin 10% vs 3-5%" dimension was dropped: no source for those figures.)
+dimensions = ['Leverage\nMultiple (x)', 'Risk\nTransparency',
               'Contagion\nSpeed', 'Regulatory\nCoverage', 'System\nComplexity']
-vals_1929 = [10, 10, 60, 30, 15, 20]
-vals_2008 = [30, 5, 15, 90, 40, 95]
+vals_1929 = [3, 60, 30, 15, 20]
+vals_2008 = [30, 15, 90, 40, 95]
 
 fig, axes = plt.subplots(1, 3, figsize=(22, 7))
 fig.suptitle('Leverage Evolution: 1920s Margin Trading vs 2000s Derivatives\n'
-             'From linear dominos to networked spider webs -- 3x leverage, 10x complexity',
+             'From linear dominos to networked spider webs -- leverage about 3x vs about 30x '
+             '(illustrative scores, not statistics)',
              fontsize=14, fontweight='bold')
 
 # Panel 1: Side-by-side bars
@@ -41,8 +67,8 @@ ax.barh(x - w/2, vals_1929, w, color='#2C3E50', alpha=0.8, label='1920s', edgeco
 ax.barh(x + w/2, vals_2008, w, color='#E74C3C', alpha=0.8, label='2000s', edgecolor='black')
 ax.set_yticks(x)
 ax.set_yticklabels(dimensions, fontsize=9)
-ax.set_xlabel('Score (0-100)', fontsize=11)
-ax.set_title('Dimension Comparison', fontsize=12, fontweight='bold')
+ax.set_xlabel('Illustrative score (0-100); leverage in x', fontsize=11)
+ax.set_title('Dimension Comparison (illustrative)', fontsize=12, fontweight='bold')
 ax.legend(fontsize=10)
 ax.grid(axis='x', alpha=0.3)
 
@@ -61,7 +87,7 @@ ax.fill(angles, r2, alpha=0.15, color='#E74C3C')
 ax.set_xticks(angles[:-1])
 ax.set_xticklabels([d.replace('\n', ' ') for d in dimensions], fontsize=7)
 ax.set_ylim(0, 100)
-ax.set_title('Risk Profile Radar', fontsize=12, fontweight='bold', pad=20)
+ax.set_title('Risk Profile Radar (illustrative)', fontsize=12, fontweight='bold', pad=20)
 ax.legend(loc='lower right', fontsize=9)
 
 # Panel 3: Leverage chain illustration
@@ -92,7 +118,7 @@ ax.text(0.5, 0.15, '2008: Networked Chain (6+ links)', ha='center', fontsize=10,
 ax.set_xlim(0, 1)
 ax.set_ylim(0, 1)
 ax.axis('off')
-ax.set_title('Contagion Chain Length', fontsize=12, fontweight='bold')
+ax.set_title('Contagion Chain Length (schematic)', fontsize=12, fontweight='bold')
 
 plt.tight_layout(rect=[0, 0, 1, 0.92], w_pad=3)
 plt.savefig('01_leverage_evolution.png', dpi=300, bbox_inches='tight')
@@ -107,6 +133,7 @@ print("\n" + "=" * 65)
 print("MODEL 2: Bank Run Agent-Based Simulation")
 print("=" * 65)
 
+# Fixed seed so the printed run (and figure 02, panels 1-2) is reproducible
 random.seed(42)
 
 class BankRunSimulation:
@@ -118,6 +145,8 @@ class BankRunSimulation:
         self.panic_threshold = panic_threshold
         self.neighbor_influence = neighbor_influence
         self.states = [0] * n_depositors
+        # Each depositor gets 5 randomly drawn "neighbors" (random links drawn from all
+        # depositors -- not a real social network)
         self.neighbors = [random.sample(range(n_depositors), 5)
                           for _ in range(n_depositors)]
 
@@ -159,7 +188,8 @@ for r in results:
 
 fig, axes = plt.subplots(1, 3, figsize=(22, 6))
 fig.suptitle('Bank Run Agent-Based Model: Panic Contagion\n'
-             'Each depositor watches 5 neighbors -- local panic triggers global collapse',
+             'Toy model: each depositor watches 5 randomly drawn others; the bank holds only a 10% cash reserve '
+             '(seed 42)',
              fontsize=14, fontweight='bold')
 
 ax = axes[0]
@@ -182,30 +212,48 @@ ax.set_ylabel('New Withdrawals This Step', fontsize=11)
 ax.set_title('Contagion Acceleration', fontsize=12, fontweight='bold')
 ax.grid(axis='y', alpha=0.3)
 
-# Panel 3: Critical threshold analysis (multiple sims)
+# Panel 3: Panic-threshold check, averaged over many seeds (median steps until failure)
 ax = axes[2]
-random.seed(0)
+N_SEEDS = 200
+MAX_STEPS = 100
 thresholds = [0.1, 0.2, 0.3, 0.4, 0.5]
 collapse_steps = []
+survivors = []
 for thresh in thresholds:
-    sim2 = BankRunSimulation(panic_threshold=thresh)
-    for t2 in range(100):
-        w2, alive2 = sim2.step()
-        if not alive2:
-            collapse_steps.append(t2)
-            break
-    else:
-        collapse_steps.append(100)
+    steps_to_fail = []
+    n_survived = 0
+    for seed in range(N_SEEDS):
+        random.seed(seed)
+        sim2 = BankRunSimulation(panic_threshold=thresh)
+        for t2 in range(MAX_STEPS):
+            w2, alive2 = sim2.step()
+            if not alive2:
+                steps_to_fail.append(t2)
+                break
+        else:
+            n_survived += 1
+            steps_to_fail.append(MAX_STEPS)
+    collapse_steps.append(float(np.median(steps_to_fail)))
+    survivors.append(n_survived)
 
-colors_t = ['#E74C3C' if s < 30 else '#F39C12' if s < 60 else '#27AE60' for s in collapse_steps]
-bars = ax.bar([f'{t:.0%}' for t in thresholds], collapse_steps, color=colors_t,
+print(f"\n  Threshold check ({N_SEEDS} seeds each, median step at which the bank fails):")
+for thresh, med, ns in zip(thresholds, collapse_steps, survivors):
+    print(f"    panic_threshold={thresh:.0%}: median failure step {med:.1f} "
+          f"({ns} of {N_SEEDS} runs survived {MAX_STEPS} steps)")
+total_runs = N_SEEDS * len(thresholds)
+print(f"  Reading: the bank failed in {total_runs - sum(survivors)} of {total_runs} runs. Changing the\n"
+      f"  threshold only moves the median failure step between {min(collapse_steps):.0f} and "
+      f"{max(collapse_steps):.0f}: the thin 10% reserve\n"
+      f"  (20 units) is drained within a few steps by the 2% spontaneous withdrawals plus contagion.")
+
+bars = ax.bar([f'{t:.0%}' for t in thresholds], collapse_steps, color='#E74C3C',
               edgecolor='black', linewidth=1)
 ax.set_xlabel('Panic Threshold (neighbor ratio)', fontsize=11)
-ax.set_ylabel('Steps Until Bank Failure', fontsize=11)
-ax.set_title('Threshold Sensitivity', fontsize=12, fontweight='bold')
+ax.set_ylabel(f'Median steps until bank failure ({N_SEEDS} seeds)', fontsize=11)
+ax.set_title('Threshold Check (median of 200 seeds)', fontsize=12, fontweight='bold')
 for bar, v in zip(bars, collapse_steps):
-    label = f'{v}' if v < 100 else 'Survived'
-    ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 1,
+    label = f'{v:.1f}' if v < MAX_STEPS else 'Survived'
+    ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.1,
             label, ha='center', fontweight='bold', fontsize=10)
 ax.grid(axis='y', alpha=0.3)
 
@@ -216,12 +264,15 @@ print("=> Saved: 02_bank_run_agents.png")
 
 
 # ============================================================
-# MODEL 3: Credit Spiral -- Death Spiral Feedback Loop
+# MODEL 3: Credit Spiral -- Reinforcing (Positive) Feedback Loop
 # ============================================================
 print("\n" + "=" * 65)
-print("MODEL 3: Credit Spiral -- Negative Feedback Loop")
+print("MODEL 3: Credit Spiral -- Reinforcing (Positive) Feedback Loop")
 print("=" * 65)
 
+# Deterministic toy model, NOT calibrated to any data. A self-reinforcing spiral is a
+# reinforcing (positive) feedback loop. The only difference between the "1929" run and
+# the "2008" run below is one hand-set parameter: policy_response = 0 vs 5.
 def credit_spiral(initial_gdp=100, shock=-10, policy_response=0, rounds=10):
     gdp = initial_gdp + shock
     credit = 100
@@ -240,19 +291,20 @@ no_response = credit_spiral(policy_response=0)
 with_response = credit_spiral(policy_response=5)
 
 fig, axes = plt.subplots(1, 3, figsize=(22, 6))
-fig.suptitle('Credit Crunch Death Spiral: 1929 (No Response) vs 2008 (Aggressive Response)\n'
-             'Same negative feedback loop, different policy intervention',
+fig.suptitle('Credit Crunch Death Spiral: "1929" (policy_response = 0) vs "2008" (policy_response = 5)\n'
+             'Same reinforcing (positive) feedback loop; the only difference is one hand-set parameter '
+             '(toy model, not calibrated)',
              fontsize=14, fontweight='bold')
 
 for idx, (metric, label) in enumerate([('gdp', 'GDP Index'), ('credit', 'Credit Index'),
                                         ('asset', 'Asset Price Index')]):
     ax = axes[idx]
     ax.plot([h['round'] for h in no_response], [h[metric] for h in no_response],
-            'o-', color='#2C3E50', linewidth=2.5, markersize=5, label='1929: No response')
+            'o-', color='#2C3E50', linewidth=2.5, markersize=5, label='"1929" setting: no response')
     ax.plot([h['round'] for h in with_response], [h[metric] for h in with_response],
-            's-', color='#27AE60', linewidth=2.5, markersize=5, label='2008: Policy response')
+            's-', color='#27AE60', linewidth=2.5, markersize=5, label='"2008" setting: policy response')
     ax.axhline(y=100, color='gray', linestyle='--', alpha=0.5, label='Pre-crisis level')
-    ax.set_xlabel('Quarters After Crisis', fontsize=11)
+    ax.set_xlabel('Rounds After Shock (illustrative)', fontsize=11)
     ax.set_ylabel(label, fontsize=11)
     ax.set_title(label, fontsize=12, fontweight='bold')
     ax.legend(fontsize=9)
@@ -265,19 +317,30 @@ print("=> Saved: 03_credit_spiral.png")
 
 
 # ============================================================
-# MODEL 4: Unemployment Cascade
+# MODEL 4: Unemployment Paths (annual averages)
 # ============================================================
 print("\n" + "=" * 65)
-print("MODEL 4: Unemployment Cascade -- 25 Years vs 5 Years")
+print("MODEL 4: Unemployment Paths -- 1929 vs 2008 (annual averages)")
 print("=" * 65)
 
-years_after = [0, 0.5, 1, 2, 3, 4, 5, 10]
-unemp_1929 = [3.2, 5.0, 8.7, 15.9, 23.6, 24.9, 21.7, 14.6]
-unemp_2008 = [5.0, 7.2, 9.3, 9.6, 8.9, 8.1, 7.2, 4.4]
+# Annual-average unemployment rates (%), counted in years after the onset year.
+# 1929 side: Lebergott's historical estimates for 1929, 1930, ..., 1934 and 1939
+#   (there is no official US unemployment series before 1940; other estimates differ).
+# 2008 side: U.S. Bureau of Labor Statistics annual averages for 2008, 2009, ..., 2013 and 2018.
+# The 2010 annual average is 9.6%; the monthly peak was 10.0% (October 2009).
+years_after = [0, 1, 2, 3, 4, 5, 10]
+unemp_1929 = [3.2, 8.7, 15.9, 23.6, 24.9, 21.7, 17.2]
+unemp_2008 = [5.8, 9.3, 9.6, 8.9, 8.1, 7.4, 3.9]
+
+print("  Annual-average unemployment (%)   [1929 side: Lebergott estimates | 2008 side: BLS]")
+print(f"  {'Years after onset':<22}{'1929 side':>10}{'2008 side':>11}")
+for y, u1, u2 in zip(years_after, unemp_1929, unemp_2008):
+    row = 'Onset year (1929 / 2008)' if y == 0 else f'+{y} year' + ('s' if y > 1 else '')
+    print(f"  {row:<24}{u1:>8.1f}%{u2:>10.1f}%")
 
 fig, axes = plt.subplots(1, 3, figsize=(22, 6))
-fig.suptitle('Unemployment Cascade: 1929 (25% peak) vs 2008 (10% peak)\n'
-             'Safety nets + policy response = 25 years of suffering compressed to 5',
+fig.suptitle('Unemployment Paths: 1929 (about 25% peak) vs 2008 (9.6% annual-average peak, 10.0% monthly)\n'
+             'Annual averages: Lebergott estimates (1929 side) vs U.S. BLS (2008 side)',
              fontsize=14, fontweight='bold')
 
 # Panel 1: Unemployment trajectories
@@ -288,7 +351,7 @@ ax.fill_between(years_after, unemp_1929, alpha=0.15, color='#2C3E50')
 ax.plot(years_after, unemp_2008, 's-', color='#E74C3C', linewidth=2.5, markersize=8,
         label='2008 Financial Crisis')
 ax.fill_between(years_after, unemp_2008, alpha=0.15, color='#E74C3C')
-ax.set_xlabel('Years After Crisis', fontsize=11)
+ax.set_xlabel('Years After Onset Year (1929 / 2008)', fontsize=11)
 ax.set_ylabel('Unemployment Rate (%)', fontsize=11)
 ax.set_title('Unemployment Trajectories', fontsize=12, fontweight='bold')
 ax.legend(fontsize=10)
@@ -300,14 +363,13 @@ gap = [u1 - u2 for u1, u2 in zip(unemp_1929, unemp_2008)]
 colors_gap = ['#E74C3C' if g > 0 else '#27AE60' for g in gap]
 ax.bar(range(len(gap)), gap, color=colors_gap, edgecolor='black', linewidth=1)
 ax.set_xticks(range(len(years_after)))
-ax.set_xticklabels([f'+{y:.0f}yr' if y == int(y) else f'+{y}yr' for y in years_after],
-                   fontsize=9)
+ax.set_xticklabels([f'+{y}yr' for y in years_after], fontsize=9)
 ax.set_ylabel('Unemployment Gap (pp)', fontsize=11)
 ax.set_title('1929 Excess Unemployment vs 2008', fontsize=12, fontweight='bold')
 ax.grid(axis='y', alpha=0.3)
 ax.axhline(y=0, color='black', linewidth=1)
 
-# Panel 3: Policy differences
+# Panel 3: Policy differences -- hand-set ILLUSTRATIVE scores, not measured data
 ax = axes[2]
 policies = ['Deposit\nInsurance', 'Central Bank\nResponse', 'Fiscal\nStimulus',
             'Safety\nNets', 'Global\nCoordination']
@@ -320,8 +382,8 @@ ax.barh(x + 0.18, score_2008, 0.35, color='#27AE60', alpha=0.8, label='2008',
         edgecolor='black', linewidth=1)
 ax.set_yticks(x)
 ax.set_yticklabels(policies, fontsize=9)
-ax.set_xlabel('Policy Effectiveness (0-100)', fontsize=11)
-ax.set_title('Policy Response Comparison', fontsize=12, fontweight='bold')
+ax.set_xlabel('Illustrative score (0-100, hand-set)', fontsize=11)
+ax.set_title('Policy Response (illustrative scores)', fontsize=12, fontweight='bold')
 ax.legend(fontsize=10)
 ax.grid(axis='x', alpha=0.3)
 
@@ -332,29 +394,36 @@ print("=> Saved: 04_unemployment_cascade.png")
 
 
 # ============================================================
-# MODEL 5: Wealth Gini Changes
+# MODEL 5: Inequality -- hand-entered illustrative series
 # ============================================================
 print("\n" + "=" * 65)
-print("MODEL 5: Wealth Gini -- Crisis Impact on Inequality")
+print("MODEL 5: Inequality -- hand-entered illustrative series (NOT measured wealth statistics)")
 print("=" * 65)
 
-years_gini = [1928, 1932, 1945, 1979, 2007, 2010, 2024]
-gini_vals = [0.82, 0.78, 0.68, 0.65, 0.83, 0.85, 0.87]
-top1_share = [23.9, 18.4, 11.5, 8.0, 23.5, 24.1, 26.3]
+# ILLUSTRATIVE, hand-entered values -- NOT measured wealth statistics.
+# - The Gini column has no source.
+# - The "top 1%" column is too small to be a wealth share (the values look like top-1%
+#   income shares, e.g. Piketty-Saez): in Saez & Zucman's estimates (NBER w20625) the top
+#   0.1% alone held about 7% of wealth in 1979 and about 22% in 2012, so a top-1% wealth
+#   share of 8% in 1979 is impossible.
+# - The unsourced 2024 point was deleted. The series only sketches a rough direction.
+years_gini = [1928, 1932, 1945, 1979, 2007, 2010]
+gini_vals = [0.82, 0.78, 0.68, 0.65, 0.83, 0.85]
+top1_share = [23.9, 18.4, 11.5, 8.0, 23.5, 24.1]
 
 fig, axes = plt.subplots(1, 3, figsize=(22, 6))
-fig.suptitle('Wealth Inequality Through Crises: Gini Coefficient & Top 1% Share\n'
-             '1929 crisis led to New Deal compression | 2008 rescue made inequality worse',
+fig.suptitle('Inequality Around Two Crises: Gini Coefficient & Top 1% Share -- ILLUSTRATIVE series\n'
+             'Hand-entered values, not measured wealth statistics; they only sketch a rough direction',
              fontsize=14, fontweight='bold')
 
 ax = axes[0]
 ax.plot(years_gini, gini_vals, 'o-', color='#E74C3C', linewidth=2.5, markersize=8)
 ax.fill_between(years_gini, gini_vals, alpha=0.15, color='#E74C3C')
 ax.axvspan(1929, 1945, alpha=0.1, color='blue', label='New Deal era')
-ax.axvspan(2008, 2024, alpha=0.1, color='red', label='Post-2008 QE era')
+ax.axvspan(2008, 2010, alpha=0.1, color='red', label='Post-2008 period')
 ax.set_xlabel('Year', fontsize=11)
 ax.set_ylabel('Gini Coefficient', fontsize=11)
-ax.set_title('Gini Coefficient Over Time', fontsize=12, fontweight='bold')
+ax.set_title('Gini Coefficient (illustrative)', fontsize=12, fontweight='bold')
 ax.legend(fontsize=9)
 ax.grid(alpha=0.3)
 
@@ -362,23 +431,28 @@ ax = axes[1]
 ax.plot(years_gini, top1_share, 's-', color='#8E44AD', linewidth=2.5, markersize=8)
 ax.fill_between(years_gini, top1_share, alpha=0.15, color='#8E44AD')
 ax.set_xlabel('Year', fontsize=11)
-ax.set_ylabel('Top 1% Wealth Share (%)', fontsize=11)
-ax.set_title('Top 1% Wealth Concentration', fontsize=12, fontweight='bold')
+ax.set_ylabel('Top 1% Share (%, illustrative)', fontsize=11)
+ax.set_title('Top 1% Share (illustrative)', fontsize=12, fontweight='bold')
 ax.grid(alpha=0.3)
+label_offsets = {2007: (-26, 2)}   # keep the 2007 and 2010 labels apart
 for y, g in zip(years_gini, top1_share):
-    ax.annotate(f'{g}%', (y, g), textcoords="offset points", xytext=(0, 10),
+    ax.annotate(f'{g}%', (y, g), textcoords="offset points",
+                xytext=label_offsets.get(y, (0, 10)),
                 ha='center', fontsize=9, fontweight='bold')
 
-# Panel 3: Paradox
+# Panel 3: change in the illustrative Gini series over two windows (neutral labels:
+# the series cannot say what caused either change)
 ax = axes[2]
-labels_p = ['1929 Crisis\n(No Rescue)', '2008 Crisis\n(Massive Rescue)']
-gini_change = [0.82 - 0.65, 0.85 - 0.83]
-inequality_direction = ['Decreased\n(New Deal)', 'Increased\n(QE benefited\nasset holders)']
+labels_p = ['1928 -> 1979', '2007 -> 2010']
+gini_change = [gini_vals[0] - gini_vals[3], gini_vals[5] - gini_vals[4]]
+inequality_direction = [f'Fell\n({gini_vals[0]:.2f} -> {gini_vals[3]:.2f})',
+                        f'Rose\n({gini_vals[4]:.2f} -> {gini_vals[5]:.2f})']
 colors_ineq = ['#27AE60', '#E74C3C']
 bars = ax.bar(labels_p, [abs(gc)*100 for gc in gini_change], color=colors_ineq,
               edgecolor='black', linewidth=1.5)
+ax.set_ylim(0, max(abs(gc) for gc in gini_change) * 100 * 1.25)
 ax.set_ylabel('Gini Change (x100)', fontsize=11)
-ax.set_title('Crisis Paradox:\nRescue Can Worsen Inequality', fontsize=12, fontweight='bold')
+ax.set_title('Change in the Illustrative\nGini Series', fontsize=12, fontweight='bold')
 for bar, direction in zip(bars, inequality_direction):
     ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.3,
             direction, ha='center', fontsize=9, fontweight='bold')
@@ -391,21 +465,32 @@ print("=> Saved: 05_wealth_gini.png")
 
 
 # ============================================================
-# MODEL 6: Recovery Time Comparison
+# MODEL 6: Recovery Time Comparison (simplified years)
 # ============================================================
 print("\n" + "=" * 65)
-print("MODEL 6: Recovery Time -- 25 Years vs 5 Years")
+print("MODEL 6: Recovery Time -- 1929 vs 2008 (simplified years)")
 print("=" * 65)
 
-metrics = ['Stock Market\nto Pre-high', 'GDP to\nPre-high', 'Unemployment\nBelow 5%',
+# Years until recovery, counted from 1929 / 2008 in every row (simplified, rounded).
+# - Stock market: NOMINAL Dow price index. It regained its Sept 1929 high on 23 Nov 1954
+#   (25 years) and its Oct 2007 high on 5 Mar 2013 (about 5 years). Dividends and the
+#   deflation of the 1930s are not counted, so a real total-return measure recovers earlier.
+# - GDP: BEA real GDP regained its 1929 level in 1936 (7 years) and its Q4 2007 peak in
+#   Q2 2011 (3 years).
+# - Unemployment below 5%: 1942 (Lebergott 4.7%; 13 years) vs 2016 (annual average 4.9%;
+#   8 years). The monthly BLS rate first reached 5.0% in October 2015.
+# - Banking stable: 1933-34 (bank holiday March 1933, FDIC insurance from January 1934,
+#   about 4-5 years; 4.5 used) vs 2009 (stress-test results May 2009, about 1 year).
+#   "Stable" is not precisely defined, so this is the most judgmental row.
+metrics = ['Stock Market\n(Dow, nominal)\nto Pre-high', 'GDP to\nPre-high', 'Unemployment\nBelow 5%',
            'Banking System\nStable']
-recovery_1929 = [25, 7, 13, 4]
-recovery_2008 = [5, 3, 8, 2]
+recovery_1929 = [25, 7, 13, 4.5]
+recovery_2008 = [5, 3, 8, 1]
 ratio_r = [r1/r2 for r1, r2 in zip(recovery_1929, recovery_2008)]
 
 fig, axes = plt.subplots(1, 3, figsize=(22, 6))
-fig.suptitle('Recovery Time: 1929 Great Depression vs 2008 Financial Crisis\n'
-             'Institutional learning + policy response = dramatically faster recovery',
+fig.suptitle('Recovery Time: 1929 Great Depression vs 2008 Financial Crisis (simplified years)\n'
+             'Recovery was much faster after 2008; the policy response is a leading, but debated, explanation',
              fontsize=14, fontweight='bold')
 
 ax = axes[0]
@@ -435,22 +520,25 @@ ax.grid(axis='y', alpha=0.3)
 
 # Panel 3: Key institutional differences
 ax = axes[2]
-institutions = ['FDIC\n(Deposit Insurance)', 'Fed as\nLender of Last Resort',
+# Simplified yes/no. The Fed existed in 1929 (founded 1913) but did not act as an effective
+# lender of last resort, so the 1929 bars mean "absent or not in that role", not "did not exist".
+institutions = ['FDIC\n(Deposit Insurance)', 'Fed as Effective\nLender of Last Resort',
                 'Automatic\nStabilizers', 'Global\nCoordination']
 existed_1929 = [0, 0, 0, 0]
 existed_2008 = [1, 1, 1, 1]
 x3 = np.arange(len(institutions))
-ax.barh(x3, existed_2008, 0.5, color='#27AE60', alpha=0.8, label='2008: Existed',
+ax.barh(x3, existed_2008, 0.5, color='#27AE60', alpha=0.8, label='2008: In place',
         edgecolor='black', linewidth=1)
-ax.barh(x3, existed_1929, 0.5, color='#E74C3C', alpha=0.3, label='1929: Did NOT exist')
+ax.barh(x3, existed_1929, 0.5, color='#E74C3C', alpha=0.3, label='1929: absent or not in that role')
 ax.set_yticks(x3)
 ax.set_yticklabels(institutions, fontsize=9)
-ax.set_xlabel('Available (0=No, 1=Yes)', fontsize=11)
-ax.set_title('Key Institutional Safeguards', fontsize=12, fontweight='bold')
+ax.set_xlabel('In place? (0 = absent or not in that role, 1 = yes)', fontsize=10)
+ax.set_title('Key Institutional Safeguards (simplified yes/no)', fontsize=12, fontweight='bold')
 for i, (v29, v08) in enumerate(zip(existed_1929, existed_2008)):
     ax.text(0.5, i, 'YES' if v08 else 'NO', ha='center', va='center',
             fontsize=12, fontweight='bold', color='white')
-ax.legend(fontsize=9)
+ax.set_ylim(-0.5, len(institutions) + 0.5)   # empty top row leaves room for the legend
+ax.legend(fontsize=9, loc='upper right')
 ax.set_xlim(0, 1.2)
 
 plt.tight_layout(rect=[0, 0, 1, 0.92], w_pad=3)
@@ -458,12 +546,12 @@ plt.savefig('06_recovery_time.png', dpi=300, bbox_inches='tight')
 plt.close()
 
 for m, r1, r2, r in zip(metrics, recovery_1929, recovery_2008, ratio_r):
-    print(f"  {m.replace(chr(10), ' '):<25}: 1929={r1:>2}yr, 2008={r2:>2}yr ({r:.1f}x slower)")
+    print(f"  {m.replace(chr(10), ' '):<40}: 1929={r1:>4.1f}yr, 2008={r2:>4.1f}yr (1929 took {r:.1f}x as long)")
 print("\n=> Saved: 06_recovery_time.png")
 
 
 # ============================================================
 print("\n" + "=" * 65)
-print("ALL 6 MODELS COMPLETE")
+print("ALL 6 MODELS COMPLETE (all simplified, illustrative models -- see the docstring)")
 print("Output files: 01-06_*.png")
 print("=" * 65)
