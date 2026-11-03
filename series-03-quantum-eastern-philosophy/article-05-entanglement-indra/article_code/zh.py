@@ -577,7 +577,7 @@ def nonlocal_correlation_demo():
         correlations.append(corr + noise)
 
     ax1.plot(distance_light_years, correlations, 'ro-',
-            markersize=12, linewidth=3, label='實驗測量')
+            markersize=12, linewidth=3, label='模擬值（固定值＋雜訊）')
     ax1.axhline(correlations[0], color='blue', linestyle='--',
                linewidth=2, label=f'理論值 ≈ {correlations[0]:.3f}')
 

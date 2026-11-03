@@ -447,7 +447,7 @@ class BeyondDualityVisualizer:
         ax2.text(0.5, 0.5, '重ね合わせ', ha='center', va='center',
                 fontsize=11, fontweight='bold', color='purple')
 
-        ax2.text(0.5, 0.85, '量子重ね合わせ\n排中律を超えて', ha='center',
+        ax2.text(0.5, 0.85, '量子重ね合わせ\n二者択一を超えて', ha='center',
                 fontsize=12, fontweight='bold')
         ax2.text(0.5, 0.12, '|ψ⟩ = α|0⟩ + β|1⟩\n0と1の重ね合わせ',
                 ha='center', fontsize=9,

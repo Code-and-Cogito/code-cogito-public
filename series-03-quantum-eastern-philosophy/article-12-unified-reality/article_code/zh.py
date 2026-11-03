@@ -447,7 +447,7 @@ class BeyondDualityVisualizer:
         ax2.text(0.5, 0.5, '疊加', ha='center', va='center',
                 fontsize=11, fontweight='bold', color='purple')
 
-        ax2.text(0.5, 0.85, '量子疊加\n超越排中律', ha='center',
+        ax2.text(0.5, 0.85, '量子疊加\n超越非此即彼', ha='center',
                 fontsize=12, fontweight='bold')
         ax2.text(0.5, 0.12, '|psi> = alpha|0> + beta|1>\n0與1的疊加',
                 ha='center', fontsize=9,

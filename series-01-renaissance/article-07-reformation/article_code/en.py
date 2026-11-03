@@ -56,7 +56,7 @@ pamphlet_diffusion()
 import numpy as np
 
 def cascade_failure_simulation(n_institutions=20, n_simulations=500,
-                               connection_density=0.3, failure_threshold=0.4):
+                               connection_density=0.3, failure_threshold=0.15):
     """
     Model how questioning one institution cascades to others.
     Each institution has connections; when enough connected
@@ -75,13 +75,13 @@ def cascade_failure_simulation(n_institutions=20, n_simulations=500,
         "Feudal Obligations"
     ]
 
-    # Create random adjacency matrix (symmetric)
-    adj = np.random.rand(n_institutions, n_institutions) < connection_density
-    np.fill_diagonal(adj, False)
-    adj = adj | adj.T
-
     cascade_sizes = []
     for _ in range(n_simulations):
+        # A new random network each run (symmetric)
+        adj = np.random.rand(n_institutions, n_institutions) < connection_density
+        np.fill_diagonal(adj, False)
+        adj = adj | adj.T
+
         failed = np.zeros(n_institutions, dtype=bool)
         failed[0] = True  # Papal Authority questioned first
 

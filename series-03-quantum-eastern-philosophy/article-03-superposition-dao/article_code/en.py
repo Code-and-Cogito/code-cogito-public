@@ -164,7 +164,7 @@ def dao_you_wu_animation():
     Demonstrates how being and non-being mutually generate and depend on each other.
     """
 
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 7))
+    fig = plt.figure(figsize=(16, 7)); ax1 = fig.add_subplot(121); ax2 = fig.add_subplot(122, projection='3d')
     theta = np.linspace(0, 2*np.pi, 1000)
     n_frames = 60
 
@@ -239,7 +239,7 @@ def dao_you_wu_animation():
     plt.show()
 
     # Static version (for article illustrations)
-    fig_static, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 7))
+    fig_static = plt.figure(figsize=(16, 7)); ax1 = fig_static.add_subplot(121); ax2 = fig_static.add_subplot(122, projection='3d')
 
     theta = np.linspace(0, 2*np.pi, 1000)
     r_yin = 1 + 0.5 * np.sin(theta)
