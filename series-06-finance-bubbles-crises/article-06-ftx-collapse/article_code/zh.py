@@ -1,5 +1,5 @@
 # Code & Cogito: FTX崩潰與信任的破產（完結篇）
-# Article: https://code-cogito.com/?p=2630
+# Article: https://code-cogito.com/finance-06/
 # All the code blocks of the article, in order. Program output is kept as comments.
 
 def leverage_tower_collapse(

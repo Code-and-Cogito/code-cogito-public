@@ -1,5 +1,5 @@
 # Code & Cogito: Bank Runs: From Northern Rock to Silicon Valley Bank
-# Article: https://code-cogito.com/en/?p=2625
+# Article: https://code-cogito.com/en/finance-05-en/
 # All the code blocks of the article, in order. Program output is kept as comments.
 
 import numpy as np

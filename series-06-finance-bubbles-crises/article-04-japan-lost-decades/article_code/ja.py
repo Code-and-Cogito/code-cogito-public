@@ -1,5 +1,5 @@
 # Code & Cogito: 日本の失われた30年 vs 台湾の住宅危機
-# Article: https://code-cogito.com/ja/?p=2620
+# Article: https://code-cogito.com/ja/finance-04-ja/
 # All the code blocks of the article, in order. Program output is kept as comments.
 
 import numpy as np

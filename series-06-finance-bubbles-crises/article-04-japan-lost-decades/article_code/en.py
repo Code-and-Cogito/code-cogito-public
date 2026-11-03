@@ -1,5 +1,5 @@
 # Code & Cogito: Japan's Lost Decades vs Taiwan's Housing Crisis
-# Article: https://code-cogito.com/en/?p=2619
+# Article: https://code-cogito.com/en/finance-04-en/
 # All the code blocks of the article, in order. Program output is kept as comments.
 
 import numpy as np

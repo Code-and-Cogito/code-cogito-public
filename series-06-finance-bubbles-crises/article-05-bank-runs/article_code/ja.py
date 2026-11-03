@@ -1,5 +1,5 @@
 # Code & Cogito: 取り付け騒ぎ：ノーザン・ロックからシリコンバレー銀行まで
-# Article: https://code-cogito.com/ja/?p=2626
+# Article: https://code-cogito.com/ja/finance-05-ja/
 # All the code blocks of the article, in order. Program output is kept as comments.
 
 import numpy as np

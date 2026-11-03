@@ -1,5 +1,5 @@
 # Code & Cogito: The Collapse of FTX and the Bankruptcy of Trust (Season Finale)
-# Article: https://code-cogito.com/en/?p=2631
+# Article: https://code-cogito.com/en/finance-06-en/
 # All the code blocks of the article, in order. Program output is kept as comments.
 
 def leverage_tower_collapse(

@@ -1,5 +1,5 @@
 # Code & Cogito: 銀行擠兌：從北岩銀行到矽谷銀行
-# Article: https://code-cogito.com/?p=2624
+# Article: https://code-cogito.com/finance-05/
 # All the code blocks of the article, in order. Program output is kept as comments.
 
 import numpy as np
