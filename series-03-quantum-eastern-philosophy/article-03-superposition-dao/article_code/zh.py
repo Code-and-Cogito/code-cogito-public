@@ -164,7 +164,7 @@ def dao_you_wu_animation():
     展示：有和無如何互相產生、互相依存
     """
 
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 7))
+    fig = plt.figure(figsize=(16, 7)); ax1 = fig.add_subplot(121); ax2 = fig.add_subplot(122, projection='3d')
     theta = np.linspace(0, 2*np.pi, 1000)
     n_frames = 60
 
@@ -238,7 +238,7 @@ def dao_you_wu_animation():
     plt.show()
 
     # 靜態版本（用於文章）
-    fig_static, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 7))
+    fig_static = plt.figure(figsize=(16, 7)); ax1 = fig_static.add_subplot(121); ax2 = fig_static.add_subplot(122, projection='3d')
 
     theta = np.linspace(0, 2*np.pi, 1000)
     r_yin = 1 + 0.5 * np.sin(theta)

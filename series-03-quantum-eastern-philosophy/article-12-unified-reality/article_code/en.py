@@ -448,7 +448,7 @@ class BeyondDualityVisualizer:
         ax2.text(0.5, 0.5, 'Super-\nposition', ha='center', va='center',
                 fontsize=10, fontweight='bold', color='purple')
 
-        ax2.text(0.5, 0.85, 'Quantum Superposition\nBeyond Excluded Middle', ha='center',
+        ax2.text(0.5, 0.85, 'Quantum Superposition\nBeyond Either-Or', ha='center',
                 fontsize=12, fontweight='bold')
         ax2.text(0.5, 0.12, '|psi> = alpha|0> + beta|1>\nA superposition of 0 and 1',
                 ha='center', fontsize=9,
