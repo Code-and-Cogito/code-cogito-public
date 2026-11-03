@@ -169,10 +169,10 @@ class BrainwaveSimulator:
         • 資深冥想者的Gamma波增強
           可能反映微管的量子過程
 
-        關鍵發現（Davidson et al., 2004）：
-        • 長期冥想改變大腦結構
-        • Gamma波強度前所未見
-        • 神經可塑性的證據
+        關鍵發現（Lutz, Davidson 等人 2004）：
+        • 冥想時 Gamma 活動大幅增加
+        • 冥想前的靜息基線就高於對照組
+        • 作者推測可能有長短期神經變化
         '''
 
         ax.text(0.05, 0.5, text, fontsize=10, va='center',
@@ -212,7 +212,7 @@ class BrainwaveSimulator:
         print("\nDavidson實驗（2004）：")
         print("  • 8位藏傳佛教僧侶")
         print("  • 累積冥想經驗：10,000-50,000小時")
-        print("  • 結果：Gamma波強度前所未見")
+        print("  • 結果：冥想時 Gamma 活動增幅超過對照組 30 倍")
 
         print("\nOrch OR理論的預測：")
         print("  • 量子坍縮頻率 ≈ 40 Hz")
@@ -485,7 +485,7 @@ class NeuroplasticitySimulator:
 
         print("\n重要研究：")
         print("  • Davidson et al. (2004)：資深冥想者")
-        print("  • Lazar et al. (2005)：灰質密度")
+        print("  • Lazar et al. (2005)：皮質厚度")
         print("  • Holzel et al. (2011)：8週正念課程")
 
         print("\n神經可塑性（Neuroplasticity）：")

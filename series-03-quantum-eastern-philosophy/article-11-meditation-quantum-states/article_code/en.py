@@ -170,10 +170,10 @@ class BrainwaveSimulator:
           may reflect quantum processes in
           microtubules
 
-        Key Finding (Davidson et al., 2004):
-        * Long-term meditation changes brain structure
-        * Unprecedented Gamma wave intensity
-        * Evidence for neuroplasticity
+        Key Finding (Lutz, Davidson et al., 2004):
+        * Large rise in gamma activity during meditation
+        * Already higher at rest before meditating
+        * Authors suggest possible neural changes
         '''
 
         ax.text(0.05, 0.5, text, fontsize=10, va='center',
@@ -213,7 +213,7 @@ class BrainwaveSimulator:
         print("\nDavidson Experiment (2004):")
         print("  * 8 Tibetan Buddhist monks")
         print("  * Accumulated meditation practice: 10,000-50,000 hours")
-        print("  * Result: Unprecedented Gamma wave intensity")
+        print("  * Result: gamma rose over 30x as much as in controls")
 
         print("\nOrch OR Theory Prediction:")
         print("  * Quantum collapse frequency ~ 40 Hz")
@@ -487,7 +487,7 @@ class NeuroplasticitySimulator:
 
         print("\nKey studies:")
         print("  * Davidson et al. (2004): Advanced meditators")
-        print("  * Lazar et al. (2005): Gray matter density")
+        print("  * Lazar et al. (2005): Cortical thickness")
         print("  * Holzel et al. (2011): 8-week mindfulness program")
 
         print("\nNeuroplasticity:")

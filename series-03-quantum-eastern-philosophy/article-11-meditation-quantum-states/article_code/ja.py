@@ -169,10 +169,10 @@ class BrainwaveSimulator:
         • 熟練瞑想者のGamma波増強は
           微小管の量子過程を反映？
 
-        主要な発見（Davidson et al., 2004）：
-        • 長期瞑想が脳構造を変化させる
-        • 前例のないGamma波強度
-        • 神経可塑性の証拠
+        主要な発見（Lutz, Davidsonら 2004）：
+        • 瞑想中にガンマ活動が大きく増加
+        • 瞑想前の安静時からすでに対照群より高い
+        • 著者らは長短期の神経変化の可能性を示唆
         '''
 
         ax.text(0.05, 0.5, text, fontsize=10, va='center',
@@ -212,7 +212,7 @@ class BrainwaveSimulator:
         print("\nDavidson実験（2004）：")
         print("  • 8名のチベット仏教高僧")
         print("  • 累計瞑想時間：10,000〜50,000時間")
-        print("  • 結果：前例のないガンマ波強度")
+        print("  • 結果：瞑想中のガンマ活動の増加幅が対照群の30倍超")
 
         print("\nOrch OR理論の予測：")
         print("  • 量子収縮頻度 ≈ 40 Hz")
@@ -485,7 +485,7 @@ class NeuroplasticitySimulator:
 
         print("\n重要な研究：")
         print("  • Davidson et al. (2004)：熟練瞑想者")
-        print("  • Lazar et al. (2005)：灰白質密度")
+        print("  • Lazar et al. (2005)：皮質の厚さ")
         print("  • Holzel et al. (2011)：8週間のマインドフルネスプログラム")
 
         print("\n神経可塑性（Neuroplasticity）：")
