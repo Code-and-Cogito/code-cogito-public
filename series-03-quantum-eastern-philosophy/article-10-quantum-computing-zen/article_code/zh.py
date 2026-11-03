@@ -1,7 +1,7 @@
 # Code & Cogito: 量子計算 vs 禪宗——超越二元邏輯
 # Article: https://code-cogito.com/quantum-computing-zen-beyond-binary/
 # All the code blocks of the article, in order. Program output is kept as comments.
-# Note: the article shows this code in excerpts, so this file does not run on its own.
+
 # | H = (1/√2) × [1   1]
 # |               [1  -1]
 
@@ -71,82 +71,82 @@ class QuantumBitSimulator:
         ax.set_zlabel('Z')
         ax.set_title(label, fontsize=13, fontweight='bold')
 
-# |     def visualize_quantum_states(self):
-# |         """
-# |         視覺化不同的量子態
-# |         """
-# |         fig = plt.figure(figsize=(18, 12))
-# | 
-# |         # === |0⟩ 態 ===
-# |         ax1 = fig.add_subplot(2, 3, 1, projection='3d')
-# |         self.bloch_sphere(ax1, [1, 0], '|0⟩ 態\n（北極）')
-# | 
-# |         # === |1⟩ 態 ===
-# |         ax2 = fig.add_subplot(2, 3, 2, projection='3d')
-# |         self.bloch_sphere(ax2, [0, 1], '|1⟩ 態\n（南極）')
-# | 
-# |         # === |+⟩ 態（疊加態）===
-# |         ax3 = fig.add_subplot(2, 3, 3, projection='3d')
-# |         self.bloch_sphere(ax3, [1/np.sqrt(2), 1/np.sqrt(2)],
-# |                          '|+⟩ = (|0⟩+|1⟩)/√2\n（赤道）')
-# | 
-# |         # === |-⟩ 態（疊加態）===
-# |         ax4 = fig.add_subplot(2, 3, 4, projection='3d')
-# |         self.bloch_sphere(ax4, [1/np.sqrt(2), -1/np.sqrt(2)],
-# |                          '|−⟩ = (|0⟩−|1⟩)/√2\n（赤道）')
-# | 
-# |         # === 任意疊加態 ===
-# |         ax5 = fig.add_subplot(2, 3, 5, projection='3d')
-# |         alpha = np.cos(np.pi/6)
-# |         beta = np.sin(np.pi/6) * np.exp(1j * np.pi/4)
-# |         self.bloch_sphere(ax5, [alpha, beta],
-# |                          '任意疊加態\n球面上任意點')
-# | 
-# |         # === 對比說明 ===
-# |         ax6 = fig.add_subplot(2, 3, 6)
-# |         ax6.axis('off')
-# | 
-# |         text = '''
-# |         【量子比特 vs 經典比特】
-# | 
-# |         經典比特：
-# |         • 只有兩個狀態：0 或 1
-# |         • 非黑即白
-# |         • 二元邏輯
-# | 
-# |         量子比特：
-# |         • 疊加態：α|0⟩ + β|1⟩
-# |         • |α|² + |β|² = 1
-# |         • 既0又1
-# |         • 超越二元
-# | 
-# |         Bloch球：
-# |         • 球面上每個點 = 一個量子態
-# |         • 北極 = |0⟩
-# |         • 南極 = |1⟩
-# |         • 赤道 = 疊加態
-# |         • 球內沒有量子態（純態）
-# | 
-# |         禪宗類比：
-# |         • 經典：有 or 無
-# |         • 量子：既有又無（疊加）
-# |         • 禪：超越有無（不二）
-# | 
-# |         Hadamard門：
-# |         H|0⟩ = (|0⟩+|1⟩)/√2
-# |         → 從北極到赤道
-# |         → 創造疊加態
-# |         → 打破二元對立
-# |         '''
-# | 
-# |         ax6.text(0.1, 0.5, text, fontsize=10, va='center',
-# |                 family='monospace',
-# |                 bbox=dict(boxstyle='round', facecolor='lightyellow',
-# |                          alpha=0.9, edgecolor='black', linewidth=2))
-# | 
-# |         plt.tight_layout()
-# |         plt.savefig('quantum_bit_bloch_sphere.png', dpi=300, bbox_inches='tight')
-# |         plt.show()
+    def visualize_quantum_states(self):
+        """
+        視覺化不同的量子態
+        """
+        fig = plt.figure(figsize=(18, 12))
+
+        # === |0⟩ 態 ===
+        ax1 = fig.add_subplot(2, 3, 1, projection='3d')
+        self.bloch_sphere(ax1, [1, 0], '|0⟩ 態\n（北極）')
+
+        # === |1⟩ 態 ===
+        ax2 = fig.add_subplot(2, 3, 2, projection='3d')
+        self.bloch_sphere(ax2, [0, 1], '|1⟩ 態\n（南極）')
+
+        # === |+⟩ 態（疊加態）===
+        ax3 = fig.add_subplot(2, 3, 3, projection='3d')
+        self.bloch_sphere(ax3, [1/np.sqrt(2), 1/np.sqrt(2)],
+                         '|+⟩ = (|0⟩+|1⟩)/√2\n（赤道）')
+
+        # === |-⟩ 態（疊加態）===
+        ax4 = fig.add_subplot(2, 3, 4, projection='3d')
+        self.bloch_sphere(ax4, [1/np.sqrt(2), -1/np.sqrt(2)],
+                         '|−⟩ = (|0⟩−|1⟩)/√2\n（赤道）')
+
+        # === 任意疊加態 ===
+        ax5 = fig.add_subplot(2, 3, 5, projection='3d')
+        alpha = np.cos(np.pi/6)
+        beta = np.sin(np.pi/6) * np.exp(1j * np.pi/4)
+        self.bloch_sphere(ax5, [alpha, beta],
+                         '任意疊加態\n球面上任意點')
+
+        # === 對比說明 ===
+        ax6 = fig.add_subplot(2, 3, 6)
+        ax6.axis('off')
+
+        text = '''
+        【量子比特 vs 經典比特】
+
+        經典比特：
+        • 只有兩個狀態：0 或 1
+        • 非黑即白
+        • 二元邏輯
+
+        量子比特：
+        • 疊加態：α|0⟩ + β|1⟩
+        • |α|² + |β|² = 1
+        • 既0又1
+        • 超越二元
+
+        Bloch球：
+        • 球面上每個點 = 一個量子態
+        • 北極 = |0⟩
+        • 南極 = |1⟩
+        • 赤道 = 疊加態
+        • 球內沒有量子態（純態）
+
+        禪宗類比：
+        • 經典：有 or 無
+        • 量子：既有又無（疊加）
+        • 禪：超越有無（不二）
+
+        Hadamard門：
+        H|0⟩ = (|0⟩+|1⟩)/√2
+        → 從北極到赤道
+        → 創造疊加態
+        → 打破二元對立
+        '''
+
+        ax6.text(0.1, 0.5, text, fontsize=10, va='center',
+                family='monospace',
+                bbox=dict(boxstyle='round', facecolor='lightyellow',
+                         alpha=0.9, edgecolor='black', linewidth=2))
+
+        plt.tight_layout()
+        plt.savefig('quantum_bit_bloch_sphere.png', dpi=300, bbox_inches='tight')
+        plt.show()
 
         print("\n" + "="*70)
         print("【量子比特：超越0與1】")

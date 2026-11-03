@@ -97,83 +97,83 @@ class QuantumConsciousnessSimulator:
         ax3.set_title('After Measurement: Collapse\n|psi> -> |0>',
                      fontsize=13, fontweight='bold')
 
-# |         # === Panel 4: Classical view ===
-# |         ax4 = fig.add_subplot(2, 3, 4)
-# |         ax4.axis('off')
-# | 
-# |         text_classical = '''
-# |         Classical View (Materialism):
-# | 
-# |         * Matter exists independently of observers
-# |         * Observation merely "discovers"
-# |         * Consciousness is an epiphenomenon
-# |         * The brain is a classical computer
-# | 
-# |         Problem:
-# |         -> Cannot explain the measurement problem
-# |         -> Cannot explain the unity of consciousness
-# |         '''
-# | 
-# |         ax4.text(0.1, 0.5, text_classical, fontsize=10, va='center',
-# |                 bbox=dict(boxstyle='round', facecolor='lightblue', alpha=0.8))
-# | 
-# |         # === Panel 5: Quantum consciousness view ===
-# |         ax5 = fig.add_subplot(2, 3, 5)
-# |         ax5.axis('off')
-# | 
-# |         text_quantum = '''
-# |         Quantum Consciousness (Orch OR):
-# | 
-# |         * Consciousness is a quantum process
-# |         * It occurs in microtubules
-# |         * Consciousness causes wave function collapse
-# |         * Each collapse = a moment of awareness
-# | 
-# |         Strengths:
-# |         -> Explains the unity of consciousness
-# |         -> Explains non-computability
-# |         -> Links quantum mechanics to consciousness
-# |         '''
-# | 
-# |         ax5.text(0.1, 0.5, text_quantum, fontsize=10, va='center',
-# |                 bbox=dict(boxstyle='round', facecolor='lightpink', alpha=0.8))
-# | 
-# |         # === Panel 6: Eastern philosophy of mind ===
-# |         ax6 = fig.add_subplot(2, 3, 6)
-# |         ax6.axis('off')
-# | 
-# |         text_eastern = '''
-# |         Eastern Philosophy of Mind / Zen:
-# | 
-# |         * Mind is the ground of all phenomena
-# |         * Apart from mind, things cannot be discussed
-# |         * Mind is not identical with the brain
-# |         * Mind has ontological primacy
-# | 
-# |         Wang Yangming:
-# |         "Outside the mind, there are no things"
-# | 
-# |         Zen:
-# |         "Directly pointing to the mind,
-# |          seeing one's nature"
-# | 
-# |         Common ground:
-# |         -> Mind/consciousness has ontological status
-# |         -> Observation participates in creating reality
-# |         '''
-# | 
-# |         ax6.text(0.1, 0.5, text_eastern, fontsize=10, va='center',
-# |                 bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.8))
-# | 
-# |         # Main title
-# |         fig.text(0.5, 0.98, 'Quantum Measurement and Consciousness: Three Perspectives',
-# |                 ha='center', fontsize=16, fontweight='bold')
-# | 
-# |         plt.tight_layout()
-# |         plt.subplots_adjust(top=0.93)
-# |         plt.savefig('quantum_measurement_consciousness.png',
-# |                    dpi=300, bbox_inches='tight')
-# |         plt.show()
+        # === Panel 4: Classical view ===
+        ax4 = fig.add_subplot(2, 3, 4)
+        ax4.axis('off')
+
+        text_classical = '''
+        Classical View (Materialism):
+
+        * Matter exists independently of observers
+        * Observation merely "discovers"
+        * Consciousness is an epiphenomenon
+        * The brain is a classical computer
+
+        Problem:
+        -> Cannot explain the measurement problem
+        -> Cannot explain the unity of consciousness
+        '''
+
+        ax4.text(0.1, 0.5, text_classical, fontsize=10, va='center',
+                bbox=dict(boxstyle='round', facecolor='lightblue', alpha=0.8))
+
+        # === Panel 5: Quantum consciousness view ===
+        ax5 = fig.add_subplot(2, 3, 5)
+        ax5.axis('off')
+
+        text_quantum = '''
+        Quantum Consciousness (Orch OR):
+
+        * Consciousness is a quantum process
+        * It occurs in microtubules
+        * Consciousness causes wave function collapse
+        * Each collapse = a moment of awareness
+
+        Strengths:
+        -> Explains the unity of consciousness
+        -> Explains non-computability
+        -> Links quantum mechanics to consciousness
+        '''
+
+        ax5.text(0.1, 0.5, text_quantum, fontsize=10, va='center',
+                bbox=dict(boxstyle='round', facecolor='lightpink', alpha=0.8))
+
+        # === Panel 6: Eastern philosophy of mind ===
+        ax6 = fig.add_subplot(2, 3, 6)
+        ax6.axis('off')
+
+        text_eastern = '''
+        Eastern Philosophy of Mind / Zen:
+
+        * Mind is the ground of all phenomena
+        * Apart from mind, things cannot be discussed
+        * Mind is not identical with the brain
+        * Mind has ontological primacy
+
+        Wang Yangming:
+        "Outside the mind, there are no things"
+
+        Zen:
+        "Directly pointing to the mind,
+         seeing one's nature"
+
+        Common ground:
+        -> Mind/consciousness has ontological status
+        -> Observation participates in creating reality
+        '''
+
+        ax6.text(0.1, 0.5, text_eastern, fontsize=10, va='center',
+                bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.8))
+
+        # Main title
+        fig.text(0.5, 0.98, 'Quantum Measurement and Consciousness: Three Perspectives',
+                ha='center', fontsize=16, fontweight='bold')
+
+        plt.tight_layout()
+        plt.subplots_adjust(top=0.93)
+        plt.savefig('quantum_measurement_consciousness.png',
+                   dpi=300, bbox_inches='tight')
+        plt.show()
 
         print("\n" + "="*70)
         print("QUANTUM MEASUREMENT AND CONSCIOUSNESS")

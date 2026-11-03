@@ -651,64 +651,64 @@ def visualize_convergence():
     ax1.text(0.8, 0.08, '哲學/修行路徑', ha='center', fontsize=12,
             fontweight='bold', color='orange')
 
-# |     # 匯合點
-# |     convergence_y = 0.85
-# |     ax1.plot([0.2, 0.5], [0.7, convergence_y], 'b-', linewidth=3)
-# |     ax1.plot([0.8, 0.5], [0.7, convergence_y], color='orange', linewidth=3)
-# | 
-# |     ax1.scatter(0.5, convergence_y, s=500, marker='*',
-# |                color='gold', edgecolors='black', linewidths=2, zorder=5)
-# |     ax1.text(0.5, convergence_y, '匯合', ha='center', va='center',
-# |             fontsize=12, fontweight='bold')
-# | 
-# |     ax1.text(0.5, 0.95, '統一的實在觀', ha='center',
-# |             fontsize=14, fontweight='bold', color='purple')
-# | 
-# |     ax1.set_title('兩條認識路徑的驚人匯合', fontsize=14, fontweight='bold')
-# | 
-# |     # === 右圖：共同洞見 ===
-# |     ax2.axis('off')
-# | 
-# |     insights_text = (
-# |         "【三大共同洞見】\n\n"
-# |         "1. 實在的關係性本質\n"
-# |         "   科學：量子糾纏、非局域性\n"
-# |         "   哲學：緣起、因陀羅網\n"
-# |         "   -> 關係先於實體\n\n"
-# |         "2. 觀察者的參與性角色\n"
-# |         "   科學：測量問題、波函數坍縮\n"
-# |         "   哲學：心外無物、主客不二\n"
-# |         "   -> 心物不可分\n\n"
-# |         "3. 超越二元對立\n"
-# |         "   科學：波粒二象性、互補原理\n"
-# |         "   哲學：不二法門、中觀\n"
-# |         "   -> 需要新邏輯\n\n"
-# |         "---\n\n"
-# |         "兩條完全不同的路徑：\n"
-# |         "  科學：外向觀察，數學建模\n"
-# |         "  哲學：內向體驗，概念思辨\n\n"
-# |         "在這三點上指向相近的結論！\n\n"
-# |         "這暗示：\n"
-# |         "它們可能觸及了\n"
-# |         "實在的同一個深層真理\n\n"
-# |         "---\n\n"
-# |         "但要注意：\n"
-# |         "  這不意味它們完全等同\n"
-# |         "  科學有可驗證性\n"
-# |         "  哲學有直接體驗\n"
-# |         "  兩者互補，不可替代"
-# |     )
-# | 
-# |     ax2.text(0.5, 0.5, insights_text, ha='center', va='center',
-# |             fontsize=9.5,
-# |             bbox=dict(boxstyle='round', facecolor='lightyellow',
-# |                      alpha=0.9, edgecolor='purple', linewidth=3))
-# | 
-# |     ax2.set_title('共同指向的真理', fontsize=14, fontweight='bold')
-# | 
-# |     plt.tight_layout()
-# |     plt.savefig('paths_convergence.png', dpi=300, bbox_inches='tight')
-# |     plt.show()
+    # 匯合點
+    convergence_y = 0.85
+    ax1.plot([0.2, 0.5], [0.7, convergence_y], 'b-', linewidth=3)
+    ax1.plot([0.8, 0.5], [0.7, convergence_y], color='orange', linewidth=3)
+
+    ax1.scatter(0.5, convergence_y, s=500, marker='*',
+               color='gold', edgecolors='black', linewidths=2, zorder=5)
+    ax1.text(0.5, convergence_y, '匯合', ha='center', va='center',
+            fontsize=12, fontweight='bold')
+
+    ax1.text(0.5, 0.95, '統一的實在觀', ha='center',
+            fontsize=14, fontweight='bold', color='purple')
+
+    ax1.set_title('兩條認識路徑的驚人匯合', fontsize=14, fontweight='bold')
+
+    # === 右圖：共同洞見 ===
+    ax2.axis('off')
+
+    insights_text = (
+        "【三大共同洞見】\n\n"
+        "1. 實在的關係性本質\n"
+        "   科學：量子糾纏、非局域性\n"
+        "   哲學：緣起、因陀羅網\n"
+        "   -> 關係先於實體\n\n"
+        "2. 觀察者的參與性角色\n"
+        "   科學：測量問題、波函數坍縮\n"
+        "   哲學：心外無物、主客不二\n"
+        "   -> 心物不可分\n\n"
+        "3. 超越二元對立\n"
+        "   科學：波粒二象性、互補原理\n"
+        "   哲學：不二法門、中觀\n"
+        "   -> 需要新邏輯\n\n"
+        "---\n\n"
+        "兩條完全不同的路徑：\n"
+        "  科學：外向觀察，數學建模\n"
+        "  哲學：內向體驗，概念思辨\n\n"
+        "在這三點上指向相近的結論！\n\n"
+        "這暗示：\n"
+        "它們可能觸及了\n"
+        "實在的同一個深層真理\n\n"
+        "---\n\n"
+        "但要注意：\n"
+        "  這不意味它們完全等同\n"
+        "  科學有可驗證性\n"
+        "  哲學有直接體驗\n"
+        "  兩者互補，不可替代"
+    )
+
+    ax2.text(0.5, 0.5, insights_text, ha='center', va='center',
+            fontsize=9.5,
+            bbox=dict(boxstyle='round', facecolor='lightyellow',
+                     alpha=0.9, edgecolor='purple', linewidth=3))
+
+    ax2.set_title('共同指向的真理', fontsize=14, fontweight='bold')
+
+    plt.tight_layout()
+    plt.savefig('paths_convergence.png', dpi=300, bbox_inches='tight')
+    plt.show()
 
     print("\n" + "="*70)
     print("【兩條認識路徑的驚人匯合】")

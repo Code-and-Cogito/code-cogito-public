@@ -97,82 +97,82 @@ class QuantumConsciousnessSimulator:
         ax3.set_title('測量後：坍縮\n|ψ⟩ → |0⟩',
                      fontsize=13, fontweight='bold')
 
-# |         # === 圖4：經典觀點 ===
-# |         ax4 = fig.add_subplot(2, 3, 4)
-# |         ax4.axis('off')
-# | 
-# |         text_classical = '''
-# |         經典觀點（唯物論）：
-# | 
-# |         • 物質獨立於觀察者
-# |         • 觀察只是「發現」
-# |         • 意識是副產品
-# |         • 大腦是經典計算機
-# | 
-# |         問題：
-# |         → 無法解釋測量問題
-# |         → 無法解釋意識的統一性
-# |         '''
-# | 
-# |         ax4.text(0.1, 0.5, text_classical, fontsize=10, va='center',
-# |                 bbox=dict(boxstyle='round', facecolor='lightblue', alpha=0.8))
-# | 
-# |         # === 圖5：量子意識觀點 ===
-# |         ax5 = fig.add_subplot(2, 3, 5)
-# |         ax5.axis('off')
-# | 
-# |         text_quantum = '''
-# |         量子意識（Orch OR）：
-# | 
-# |         • 意識是量子過程
-# |         • 發生在微管中
-# |         • 意識導致波函數坍縮
-# |         • 每次坍縮 = 意識瞬間
-# | 
-# |         優點：
-# |         → 解釋意識的統一性
-# |         → 解釋意識的非計算性
-# |         → 連結量子力學與意識
-# |         '''
-# | 
-# |         ax5.text(0.1, 0.5, text_quantum, fontsize=10, va='center',
-# |                 bbox=dict(boxstyle='round', facecolor='lightpink', alpha=0.8))
-# | 
-# |         # === 圖6：東方心學觀點 ===
-# |         ax6 = fig.add_subplot(2, 3, 6)
-# |         ax6.axis('off')
-# | 
-# |         text_eastern = '''
-# |         東方心學/禪宗：
-# | 
-# |         • 心是萬法根源
-# |         • 離開心，無法談物
-# |         • 心不是大腦
-# |         • 心是本體
-# | 
-# |         王陽明：
-# |         「心外無物，心外無理」
-# | 
-# |         禪宗：
-# |         「直指人心，見性成佛」
-# | 
-# |         共同點：
-# |         → 心/意識有本體地位
-# |         → 觀察創造實在
-# |         '''
-# | 
-# |         ax6.text(0.1, 0.5, text_eastern, fontsize=10, va='center',
-# |                 bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.8))
-# | 
-# |         # 總標題
-# |         fig.text(0.5, 0.98, '量子測量與意識：三種觀點',
-# |                 ha='center', fontsize=16, fontweight='bold')
-# | 
-# |         plt.tight_layout()
-# |         plt.subplots_adjust(top=0.93)
-# |         plt.savefig('quantum_measurement_consciousness.png',
-# |                    dpi=300, bbox_inches='tight')
-# |         plt.show()
+        # === 圖4：經典觀點 ===
+        ax4 = fig.add_subplot(2, 3, 4)
+        ax4.axis('off')
+
+        text_classical = '''
+        經典觀點（唯物論）：
+
+        • 物質獨立於觀察者
+        • 觀察只是「發現」
+        • 意識是副產品
+        • 大腦是經典計算機
+
+        問題：
+        → 無法解釋測量問題
+        → 無法解釋意識的統一性
+        '''
+
+        ax4.text(0.1, 0.5, text_classical, fontsize=10, va='center',
+                bbox=dict(boxstyle='round', facecolor='lightblue', alpha=0.8))
+
+        # === 圖5：量子意識觀點 ===
+        ax5 = fig.add_subplot(2, 3, 5)
+        ax5.axis('off')
+
+        text_quantum = '''
+        量子意識（Orch OR）：
+
+        • 意識是量子過程
+        • 發生在微管中
+        • 意識導致波函數坍縮
+        • 每次坍縮 = 意識瞬間
+
+        優點：
+        → 解釋意識的統一性
+        → 解釋意識的非計算性
+        → 連結量子力學與意識
+        '''
+
+        ax5.text(0.1, 0.5, text_quantum, fontsize=10, va='center',
+                bbox=dict(boxstyle='round', facecolor='lightpink', alpha=0.8))
+
+        # === 圖6：東方心學觀點 ===
+        ax6 = fig.add_subplot(2, 3, 6)
+        ax6.axis('off')
+
+        text_eastern = '''
+        東方心學/禪宗：
+
+        • 心是萬法根源
+        • 離開心，無法談物
+        • 心不是大腦
+        • 心是本體
+
+        王陽明：
+        「心外無物，心外無理」
+
+        禪宗：
+        「直指人心，見性成佛」
+
+        共同點：
+        → 心/意識有本體地位
+        → 觀察創造實在
+        '''
+
+        ax6.text(0.1, 0.5, text_eastern, fontsize=10, va='center',
+                bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.8))
+
+        # 總標題
+        fig.text(0.5, 0.98, '量子測量與意識：三種觀點',
+                ha='center', fontsize=16, fontweight='bold')
+
+        plt.tight_layout()
+        plt.subplots_adjust(top=0.93)
+        plt.savefig('quantum_measurement_consciousness.png',
+                   dpi=300, bbox_inches='tight')
+        plt.show()
 
         print("\n" + "="*70)
         print("【量子測量與意識】")
@@ -221,30 +221,30 @@ class QuantumConsciousnessSimulator:
 simulator = QuantumConsciousnessSimulator()
 simulator.visualize_measurement_consciousness()
 
-# | class OrchORSimulator:
-# |     """
-# |     Orch OR理論模擬
-# |     展示：微管如何可能產生意識
-# |     """
-# | 
-# |     def __init__(self):
-# |         self.hbar = 1.054571817e-34  # 約化普朗克常數 (J·s)
-# |         self.c = 299792458  # 光速 (m/s)
-# | 
-# |     def calculate_collapse_time(self, delta_mass):
-# |         """
-# |         計算客觀坍縮時間
-# |         τ = ℏ / (ΔM · c²)
-# |         """
-# |         delta_energy = delta_mass * self.c**2
-# |         tau = self.hbar / delta_energy
-# |         return tau
-# | 
-# |     def visualize_orch_or(self):
-# |         """
-# |         視覺化Orch OR理論
-# |         """
-# |         fig = plt.figure(figsize=(18, 10))
+class OrchORSimulator:
+    """
+    Orch OR理論模擬
+    展示：微管如何可能產生意識
+    """
+
+    def __init__(self):
+        self.hbar = 1.054571817e-34  # 約化普朗克常數 (J·s)
+        self.c = 299792458  # 光速 (m/s)
+
+    def calculate_collapse_time(self, delta_mass):
+        """
+        計算客觀坍縮時間
+        τ = ℏ / (ΔM · c²)
+        """
+        delta_energy = delta_mass * self.c**2
+        tau = self.hbar / delta_energy
+        return tau
+
+    def visualize_orch_or(self):
+        """
+        視覺化Orch OR理論
+        """
+        fig = plt.figure(figsize=(18, 10))
 
         # === 圖1：微管結構 ===
         ax1 = fig.add_subplot(2, 3, 1)

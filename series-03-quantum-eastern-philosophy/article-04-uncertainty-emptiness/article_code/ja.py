@@ -343,65 +343,65 @@ def indras_net_quantum():
     ax2.set_ylabel('Y')
     ax2.set_zlabel('Z')
 
-# |     # === Lower left: entangled state mathematics ===
-# |     ax3 = fig.add_subplot(2, 2, 3)
-# |     ax3.axis('off')
-# | 
-# |     text = '''
-# |     もつれ状態（ベル状態）：
-# | 
-# |     |ψ⟩ = (|↑↓⟩ - |↓↑⟩) / √2
-# | 
-# |     特性：
-# |     • 粒子AとBは分離不可能
-# |     • Aを測定 → 即座にBが判明
-# |     • Aの状態は単独で定義できない
-# |     • 全体 ≠ 部分の和
-# | 
-# |     ベルの不等式（1964年）：
-# |     粒子が「局所実在性」を持つなら
-# |     → ある不等式を満たすはず
-# | 
-# |     実験結果（1982-2022年）：
-# |     不等式は破れた！
-# |     → 局所実在性はない
-# |     → もつれは実在する
-# |     '''
-# | 
-# |     ax3.text(0.1, 0.5, text, fontsize=11, va='center', family='monospace',
-# |             bbox=dict(boxstyle='round', facecolor='lightblue', alpha=0.7))
-# | 
-# |     # === Lower right: Indra's Net vs entanglement ===
-# |     ax4 = fig.add_subplot(2, 2, 4)
-# |     ax4.axis('off')
-# | 
-# |     comparison = '''
-# |     【インドラの網 vs 量子もつれ】
-# | 
-# |     インドラの網：
-# |     • 各珠は網全体を含む
-# |     • 一珠を変えれば、全網が動く
-# |     • 部分が全体である
-# |     • 一即一切
-# | 
-# |     量子もつれ：
-# |     • 各粒子はシステム全体の情報を含む
-# |     • 一粒子を測定すれば、全もつれ粒子に影響
-# |     • 粒子の状態は単独で定義不可能
-# |     • 全体は分割不可能
-# | 
-# |     共通点：
-# |     → 「独立した」部分は存在しない
-# |     → 一切は相互に依存する
-# |     → 局部を変える＝全体を変える
-# |     '''
-# | 
-# |     ax4.text(0.1, 0.5, comparison, fontsize=11, va='center',
-# |             bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.7))
-# | 
-# |     plt.tight_layout()
-# |     plt.savefig('indras_net_entanglement.png', dpi=300, bbox_inches='tight')
-# |     plt.show()
+    # === Lower left: entangled state mathematics ===
+    ax3 = fig.add_subplot(2, 2, 3)
+    ax3.axis('off')
+
+    text = '''
+    もつれ状態（ベル状態）：
+
+    |ψ⟩ = (|↑↓⟩ - |↓↑⟩) / √2
+
+    特性：
+    • 粒子AとBは分離不可能
+    • Aを測定 → 即座にBが判明
+    • Aの状態は単独で定義できない
+    • 全体 ≠ 部分の和
+
+    ベルの不等式（1964年）：
+    粒子が「局所実在性」を持つなら
+    → ある不等式を満たすはず
+
+    実験結果（1982-2022年）：
+    不等式は破れた！
+    → 局所実在性はない
+    → もつれは実在する
+    '''
+
+    ax3.text(0.1, 0.5, text, fontsize=11, va='center', family='monospace',
+            bbox=dict(boxstyle='round', facecolor='lightblue', alpha=0.7))
+
+    # === Lower right: Indra's Net vs entanglement ===
+    ax4 = fig.add_subplot(2, 2, 4)
+    ax4.axis('off')
+
+    comparison = '''
+    【インドラの網 vs 量子もつれ】
+
+    インドラの網：
+    • 各珠は網全体を含む
+    • 一珠を変えれば、全網が動く
+    • 部分が全体である
+    • 一即一切
+
+    量子もつれ：
+    • 各粒子はシステム全体の情報を含む
+    • 一粒子を測定すれば、全もつれ粒子に影響
+    • 粒子の状態は単独で定義不可能
+    • 全体は分割不可能
+
+    共通点：
+    → 「独立した」部分は存在しない
+    → 一切は相互に依存する
+    → 局部を変える＝全体を変える
+    '''
+
+    ax4.text(0.1, 0.5, comparison, fontsize=11, va='center',
+            bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.7))
+
+    plt.tight_layout()
+    plt.savefig('indras_net_entanglement.png', dpi=300, bbox_inches='tight')
+    plt.show()
 
     # Data explanation
     print("\n" + "="*70)

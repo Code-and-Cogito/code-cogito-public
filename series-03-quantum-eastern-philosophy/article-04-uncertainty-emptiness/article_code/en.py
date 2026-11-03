@@ -342,65 +342,65 @@ def indras_net_quantum():
     ax2.set_ylabel('Y')
     ax2.set_zlabel('Z')
 
-# |     # === Bottom left: Entangled state mathematics ===
-# |     ax3 = fig.add_subplot(2, 2, 3)
-# |     ax3.axis('off')
-# | 
-# |     text = '''
-# |     Entangled State (Bell State):
-# | 
-# |     |ψ⟩ = (|↑↓⟩ - |↓↑⟩) / √2
-# | 
-# |     Properties:
-# |     • Particles A and B are inseparable
-# |     • Measure A → instantly know B
-# |     • A's state cannot be defined alone
-# |     • The whole ≠ sum of parts
-# | 
-# |     Bell's Inequality (1964):
-# |     If particles have "local realism"
-# |     → a certain inequality must hold
-# | 
-# |     Experimental results (1982-2022):
-# |     The inequality is violated!
-# |     → No local realism
-# |     → Entanglement is real
-# |     '''
-# | 
-# |     ax3.text(0.1, 0.5, text, fontsize=11, va='center', family='monospace',
-# |             bbox=dict(boxstyle='round', facecolor='lightblue', alpha=0.7))
-# | 
-# |     # === Bottom right: Indra's Net vs Entanglement ===
-# |     ax4 = fig.add_subplot(2, 2, 4)
-# |     ax4.axis('off')
-# | 
-# |     comparison = '''
-# |     Indra's Net vs Quantum Entanglement
-# | 
-# |     Indra's Net:
-# |     • Each jewel contains the entire net
-# |     • Change one jewel, the whole net shifts
-# |     • The part is the whole
-# |     • One is all
-# | 
-# |     Quantum Entanglement:
-# |     • Each particle carries information about the whole system
-# |     • Measure one particle, affect all entangled partners
-# |     • Individual particle states cannot be defined alone
-# |     • The whole is irreducible
-# | 
-# |     Common ground:
-# |     → No truly "independent" parts
-# |     → Everything is interdependent
-# |     → Changing a part = changing the whole
-# |     '''
-# | 
-# |     ax4.text(0.1, 0.5, comparison, fontsize=11, va='center',
-# |             bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.7))
-# | 
-# |     plt.tight_layout()
-# |     plt.savefig('indras_net_entanglement.png', dpi=300, bbox_inches='tight')
-# |     plt.show()
+    # === Bottom left: Entangled state mathematics ===
+    ax3 = fig.add_subplot(2, 2, 3)
+    ax3.axis('off')
+
+    text = '''
+    Entangled State (Bell State):
+
+    |ψ⟩ = (|↑↓⟩ - |↓↑⟩) / √2
+
+    Properties:
+    • Particles A and B are inseparable
+    • Measure A → instantly know B
+    • A's state cannot be defined alone
+    • The whole ≠ sum of parts
+
+    Bell's Inequality (1964):
+    If particles have "local realism"
+    → a certain inequality must hold
+
+    Experimental results (1982-2022):
+    The inequality is violated!
+    → No local realism
+    → Entanglement is real
+    '''
+
+    ax3.text(0.1, 0.5, text, fontsize=11, va='center', family='monospace',
+            bbox=dict(boxstyle='round', facecolor='lightblue', alpha=0.7))
+
+    # === Bottom right: Indra's Net vs Entanglement ===
+    ax4 = fig.add_subplot(2, 2, 4)
+    ax4.axis('off')
+
+    comparison = '''
+    Indra's Net vs Quantum Entanglement
+
+    Indra's Net:
+    • Each jewel contains the entire net
+    • Change one jewel, the whole net shifts
+    • The part is the whole
+    • One is all
+
+    Quantum Entanglement:
+    • Each particle carries information about the whole system
+    • Measure one particle, affect all entangled partners
+    • Individual particle states cannot be defined alone
+    • The whole is irreducible
+
+    Common ground:
+    → No truly "independent" parts
+    → Everything is interdependent
+    → Changing a part = changing the whole
+    '''
+
+    ax4.text(0.1, 0.5, comparison, fontsize=11, va='center',
+            bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.7))
+
+    plt.tight_layout()
+    plt.savefig('indras_net_entanglement.png', dpi=300, bbox_inches='tight')
+    plt.show()
 
     # Detailed text output
     print("\n" + "="*70)

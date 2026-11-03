@@ -1,7 +1,7 @@
 # Code & Cogito: 量子革命前夜——當牛頓的宇宙開始崩解
 # Article: https://code-cogito.com/quantum-revolution-newton-universe-collapse/
 # All the code blocks of the article, in order. Program output is kept as comments.
-# Note: the article shows this code in excerpts, so this file does not run on its own.
+
 # | nabla·E = rho/epsilon_0        （高斯定律）
 # | nabla·B = 0                    （磁場無源）
 # | nabla x E = -dB/dt             （法拉第定律）
@@ -90,20 +90,20 @@ def visualize_blackbody_radiation():
 # 執行
 visualize_blackbody_radiation()
 
-# | def photoelectric_effect_simulation():
-# |     """光電效應互動模擬"""
-# | 
-# |     metals = {
-# |         '鈉 (Na)': 2.28,
-# |         '鋁 (Al)': 4.08,
-# |         '銅 (Cu)': 4.70,
-# |         '鋅 (Zn)': 4.31,
-# |         '銀 (Ag)': 4.73
-# |     }
-# | 
-# |     wavelengths = np.linspace(200, 600, 100)
-# |     frequencies = c / (wavelengths * 1e-9)
-# |     photon_energies = h * frequencies / 1.6e-19  # 轉換為eV
+def photoelectric_effect_simulation():
+    """光電效應互動模擬"""
+
+    metals = {
+        '鈉 (Na)': 2.28,
+        '鋁 (Al)': 4.08,
+        '銅 (Cu)': 4.70,
+        '鋅 (Zn)': 4.31,
+        '銀 (Ag)': 4.73
+    }
+
+    wavelengths = np.linspace(200, 600, 100)
+    frequencies = c / (wavelengths * 1e-9)
+    photon_energies = h * frequencies / 1.6e-19  # 轉換為eV
 
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 6))
 
@@ -210,23 +210,23 @@ photoelectric_effect_simulation()
 # | 400        3.10            0.00            無法射出
 # | 500        2.48            0.00            無法射出
 
-# | def determinism_timeline():
-# |     """視覺化物理學世界觀的轉變"""
-# | 
-# |     fig, ax = plt.subplots(figsize=(14, 10))
-# | 
-# |     events = [
-# |         (1687, "牛頓\n《原理》", "確定論宇宙\nF=ma", 'blue', 1.0),
-# |         (1814, "拉普拉斯\n妖精", "給我初始條件\n我知道一切", 'blue', 1.0),
-# |         (1865, "馬克士威\n電磁理論", "統一電磁光\n宇宙是可知的", 'blue', 0.9),
-# |         (1900, "普朗克\n量子假說", "能量量子化\nE=nhv", 'orange', 0.5),
-# |         (1905, "愛因斯坦\n光量子", "光是粒子\nE=hv", 'orange', 0.4),
-# |         (1913, "波耳\n原子模型", "電子軌道量子化\nn=1,2,3...", 'orange', 0.3),
-# |         (1923, "德布羅意\n物質波", "粒子也是波\nlambda=h/p", 'red', 0.2),
-# |         (1925, "海森堡\n矩陣力學", "告別可視化\n萬物皆矩陣", 'red', 0.1),
-# |         (1926, "薛丁格\n波動力學", "波函數 psi\n機率詮釋", 'red', 0.1),
-# |         (1927, "海森堡\n不確定性原理", "Dx·Dp >= h-bar/2\n確定性死亡", 'red', 0.0)
-# |     ]
+def determinism_timeline():
+    """視覺化物理學世界觀的轉變"""
+
+    fig, ax = plt.subplots(figsize=(14, 10))
+
+    events = [
+        (1687, "牛頓\n《原理》", "確定論宇宙\nF=ma", 'blue', 1.0),
+        (1814, "拉普拉斯\n妖精", "給我初始條件\n我知道一切", 'blue', 1.0),
+        (1865, "馬克士威\n電磁理論", "統一電磁光\n宇宙是可知的", 'blue', 0.9),
+        (1900, "普朗克\n量子假說", "能量量子化\nE=nhv", 'orange', 0.5),
+        (1905, "愛因斯坦\n光量子", "光是粒子\nE=hv", 'orange', 0.4),
+        (1913, "波耳\n原子模型", "電子軌道量子化\nn=1,2,3...", 'orange', 0.3),
+        (1923, "德布羅意\n物質波", "粒子也是波\nlambda=h/p", 'red', 0.2),
+        (1925, "海森堡\n矩陣力學", "告別可視化\n萬物皆矩陣", 'red', 0.1),
+        (1926, "薛丁格\n波動力學", "波函數 psi\n機率詮釋", 'red', 0.1),
+        (1927, "海森堡\n不確定性原理", "Dx·Dp >= h-bar/2\n確定性死亡", 'red', 0.0)
+    ]
 
     years = [e[0] for e in events]
     certainties = [e[4] for e in events]
@@ -275,30 +275,30 @@ photoelectric_effect_simulation()
     plt.savefig('determinism_timeline.png', dpi=300, bbox_inches='tight')
     plt.show()
 
-# |     print("\n" + "="*70)
-# |     print("【物理學的三個世界觀】")
-# |     print("="*70)
-# | 
-# |     worldviews = [
-# |         {'時代': '經典時代（1687-1900）', '代表人物': '牛頓、拉普拉斯',
-# |          '核心信念': '確定論', '宇宙比喻': '精密時鐘',
-# |          '因果': '過去決定未來', '自由意志': '幻覺（一切已註定）',
-# |          '上帝角色': '第一推動者'},
-# |         {'時代': '量子萌芽（1900-1925）', '代表人物': '普朗克、愛因斯坦',
-# |          '核心信念': '能量不連續', '宇宙比喻': '故障的時鐘',
-# |          '因果': '仍有因果，但有限制', '自由意志': '不確定',
-# |          '上帝角色': '「不擲骰子」（愛因斯坦堅信）'},
-# |         {'時代': '量子革命（1925-至今）', '代表人物': '海森堡、薛丁格、波耳',
-# |          '核心信念': '根本不確定性', '宇宙比喻': '機率雲',
-# |          '因果': '只有機率，無必然', '自由意志': '可能存在（有空間）',
-# |          '上帝角色': '「確實擲骰子」（波耳）'}
-# |     ]
-# | 
-# |     for wv in worldviews:
-# |         print(f"\n【{wv['時代']}】")
-# |         for key, value in wv.items():
-# |             if key != '時代':
-# |                 print(f"  {key:<10}: {value}")
-# | 
-# | # 執行
-# | determinism_timeline()
+    print("\n" + "="*70)
+    print("【物理學的三個世界觀】")
+    print("="*70)
+
+    worldviews = [
+        {'時代': '經典時代（1687-1900）', '代表人物': '牛頓、拉普拉斯',
+         '核心信念': '確定論', '宇宙比喻': '精密時鐘',
+         '因果': '過去決定未來', '自由意志': '幻覺（一切已註定）',
+         '上帝角色': '第一推動者'},
+        {'時代': '量子萌芽（1900-1925）', '代表人物': '普朗克、愛因斯坦',
+         '核心信念': '能量不連續', '宇宙比喻': '故障的時鐘',
+         '因果': '仍有因果，但有限制', '自由意志': '不確定',
+         '上帝角色': '「不擲骰子」（愛因斯坦堅信）'},
+        {'時代': '量子革命（1925-至今）', '代表人物': '海森堡、薛丁格、波耳',
+         '核心信念': '根本不確定性', '宇宙比喻': '機率雲',
+         '因果': '只有機率，無必然', '自由意志': '可能存在（有空間）',
+         '上帝角色': '「確實擲骰子」（波耳）'}
+    ]
+
+    for wv in worldviews:
+        print(f"\n【{wv['時代']}】")
+        for key, value in wv.items():
+            if key != '時代':
+                print(f"  {key:<10}: {value}")
+
+# 執行
+determinism_timeline()

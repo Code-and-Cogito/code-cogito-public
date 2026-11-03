@@ -652,64 +652,64 @@ def visualize_convergence():
     ax1.text(0.8, 0.08, 'Philosophical/Contemplative Path', ha='center', fontsize=12,
             fontweight='bold', color='orange')
 
-# |     # Convergence point
-# |     convergence_y = 0.85
-# |     ax1.plot([0.2, 0.5], [0.7, convergence_y], 'b-', linewidth=3)
-# |     ax1.plot([0.8, 0.5], [0.7, convergence_y], color='orange', linewidth=3)
-# | 
-# |     ax1.scatter(0.5, convergence_y, s=500, marker='*',
-# |                color='gold', edgecolors='black', linewidths=2, zorder=5)
-# |     ax1.text(0.5, convergence_y, 'Convergence', ha='center', va='center',
-# |             fontsize=11, fontweight='bold')
-# | 
-# |     ax1.text(0.5, 0.95, 'A Unified View of Reality', ha='center',
-# |             fontsize=14, fontweight='bold', color='purple')
-# | 
-# |     ax1.set_title('The Remarkable Convergence of Two Paths', fontsize=14, fontweight='bold')
-# | 
-# |     # === Right panel: Shared insights ===
-# |     ax2.axis('off')
-# | 
-# |     insights_text = (
-# |         "[Three Shared Insights]\n\n"
-# |         "1. The Relational Nature of Reality\n"
-# |         "   Science: quantum entanglement, non-locality\n"
-# |         "   Philosophy: dependent origination, Indra's Net\n"
-# |         "   -> Relations are prior to entities\n\n"
-# |         "2. The Participatory Role of the Observer\n"
-# |         "   Science: measurement problem, wave function collapse\n"
-# |         "   Philosophy: nothing outside the mind, non-duality\n"
-# |         "   -> Mind and matter are inseparable\n\n"
-# |         "3. Transcending Binary Opposition\n"
-# |         "   Science: wave-particle duality, complementarity\n"
-# |         "   Philosophy: non-duality, the Middle Way\n"
-# |         "   -> A new logic is needed\n\n"
-# |         "---\n\n"
-# |         "Two radically different paths:\n"
-# |         "  Science: outward observation, mathematical modeling\n"
-# |         "  Philosophy: inward experience, conceptual reflection\n\n"
-# |         "Arriving at similar conclusions on these three points!\n\n"
-# |         "This suggests:\n"
-# |         "They may be touching\n"
-# |         "the same deep truth about reality.\n\n"
-# |         "---\n\n"
-# |         "But a caveat:\n"
-# |         "  This does not mean they are identical\n"
-# |         "  Science has verifiability\n"
-# |         "  Philosophy has direct experience\n"
-# |         "  The two complement, not replace, each other"
-# |     )
-# | 
-# |     ax2.text(0.5, 0.5, insights_text, ha='center', va='center',
-# |             fontsize=9.5, family='monospace',
-# |             bbox=dict(boxstyle='round', facecolor='lightyellow',
-# |                      alpha=0.9, edgecolor='purple', linewidth=3))
-# | 
-# |     ax2.set_title('The Truth They Share', fontsize=14, fontweight='bold')
-# | 
-# |     plt.tight_layout()
-# |     plt.savefig('paths_convergence.png', dpi=300, bbox_inches='tight')
-# |     plt.show()
+    # Convergence point
+    convergence_y = 0.85
+    ax1.plot([0.2, 0.5], [0.7, convergence_y], 'b-', linewidth=3)
+    ax1.plot([0.8, 0.5], [0.7, convergence_y], color='orange', linewidth=3)
+
+    ax1.scatter(0.5, convergence_y, s=500, marker='*',
+               color='gold', edgecolors='black', linewidths=2, zorder=5)
+    ax1.text(0.5, convergence_y, 'Convergence', ha='center', va='center',
+            fontsize=11, fontweight='bold')
+
+    ax1.text(0.5, 0.95, 'A Unified View of Reality', ha='center',
+            fontsize=14, fontweight='bold', color='purple')
+
+    ax1.set_title('The Remarkable Convergence of Two Paths', fontsize=14, fontweight='bold')
+
+    # === Right panel: Shared insights ===
+    ax2.axis('off')
+
+    insights_text = (
+        "[Three Shared Insights]\n\n"
+        "1. The Relational Nature of Reality\n"
+        "   Science: quantum entanglement, non-locality\n"
+        "   Philosophy: dependent origination, Indra's Net\n"
+        "   -> Relations are prior to entities\n\n"
+        "2. The Participatory Role of the Observer\n"
+        "   Science: measurement problem, wave function collapse\n"
+        "   Philosophy: nothing outside the mind, non-duality\n"
+        "   -> Mind and matter are inseparable\n\n"
+        "3. Transcending Binary Opposition\n"
+        "   Science: wave-particle duality, complementarity\n"
+        "   Philosophy: non-duality, the Middle Way\n"
+        "   -> A new logic is needed\n\n"
+        "---\n\n"
+        "Two radically different paths:\n"
+        "  Science: outward observation, mathematical modeling\n"
+        "  Philosophy: inward experience, conceptual reflection\n\n"
+        "Arriving at similar conclusions on these three points!\n\n"
+        "This suggests:\n"
+        "They may be touching\n"
+        "the same deep truth about reality.\n\n"
+        "---\n\n"
+        "But a caveat:\n"
+        "  This does not mean they are identical\n"
+        "  Science has verifiability\n"
+        "  Philosophy has direct experience\n"
+        "  The two complement, not replace, each other"
+    )
+
+    ax2.text(0.5, 0.5, insights_text, ha='center', va='center',
+            fontsize=9.5, family='monospace',
+            bbox=dict(boxstyle='round', facecolor='lightyellow',
+                     alpha=0.9, edgecolor='purple', linewidth=3))
+
+    ax2.set_title('The Truth They Share', fontsize=14, fontweight='bold')
+
+    plt.tight_layout()
+    plt.savefig('paths_convergence.png', dpi=300, bbox_inches='tight')
+    plt.show()
 
     print("\n" + "="*70)
     print("[The Remarkable Convergence of Two Paths]")
