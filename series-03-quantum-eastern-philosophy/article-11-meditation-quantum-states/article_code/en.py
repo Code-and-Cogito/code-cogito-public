@@ -239,7 +239,7 @@ brainwave_sim.visualize_meditation_states()
 class NeuroplasticitySimulator:
     """
     Neuroplasticity Simulator
-    Demonstrates: how long-term meditation changes brain structure
+    Demonstrates: a hand-set model of brain differences in long-term meditators
     """
 
     def __init__(self):
@@ -441,10 +441,10 @@ class NeuroplasticitySimulator:
         Key Takeaway:
         Contemplative practice is not just
         a psychological trick --
-        it physically restructures the brain.
+        the brain may differ structurally too.
 
-        This is measurable, replicable
-        evidence of neuroplasticity.
+        This is measurable
+        evidence that may reflect neuroplasticity.
         '''
 
         ax.text(0.05, 0.5, text_summary, fontsize=9, va='center',
@@ -492,13 +492,13 @@ class NeuroplasticitySimulator:
 
         print("\nNeuroplasticity:")
         print("  * The brain can change its structure based on experience")
-        print("  * Not just function -- physical structure")
+        print("  * Structural differences remain debated; cause is unsettled")
         print("  * Contemplative practice has a biological basis")
 
         print("\nPhilosophical significance:")
         print("  * Eastern contemplative traditions say: 'Practice transforms the mind'")
-        print("  * Modern neuroscience confirms:")
-        print("    Practice genuinely changes the brain (the physical basis of mind)")
+        print("  * Modern neuroscience is asking:")
+        print("    Does practice change the brain (the physical basis of mind)?")
         print("  * Theory and practice converge")
         print("="*70)
 

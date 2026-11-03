@@ -81,7 +81,7 @@ class EPRExperiment:
             correlations_quantum.append(corr_q)
 
             # Classical prediction (local hidden variables)
-            corr_c = 1 - 2*angle/np.pi if angle <= np.pi/2 else -1
+            corr_c = -1 + 2*angle/np.pi
             correlations_classical.append(corr_c)
 
         # Quantum mechanical theoretical prediction

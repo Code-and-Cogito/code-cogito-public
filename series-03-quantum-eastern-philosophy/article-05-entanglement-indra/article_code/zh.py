@@ -81,7 +81,7 @@ class EPRExperiment:
             correlations_quantum.append(corr_q)
 
             # 經典預測（局域隱變量）
-            corr_c = 1 - 2*angle/np.pi if angle <= np.pi/2 else -1
+            corr_c = -1 + 2*angle/np.pi
             correlations_classical.append(corr_c)
 
         # 量子力學理論預測
@@ -605,7 +605,7 @@ def nonlocal_correlation_demo():
 
     ax1.text(0.5, 0.15,
             '關鍵：無論距離多遠，關聯強度不變！\n'
-            '信息「瞬間」到達，不需要傳播時間',
+            '資訊「瞬間」到達，不需要傳播時間',
             transform=ax1.transAxes, ha='center', fontsize=11,
             bbox=dict(boxstyle='round', facecolor='lightcoral', alpha=0.7))
 
@@ -658,7 +658,7 @@ def nonlocal_correlation_demo():
     print("  3. Alice測量 → Bob的粒子瞬間確定")
     print("  4. 關聯強度不隨距離減弱")
     print("\n三種可能解釋：")
-    print("  X 信息超光速傳播？")
+    print("  X 資訊超光速傳播？")
     print("     → 違反相對論")
     print("  X 粒子事先「約定」？")
     print("     → 貝爾不等式排除了")

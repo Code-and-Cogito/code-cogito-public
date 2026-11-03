@@ -237,7 +237,7 @@ brainwave_sim.visualize_meditation_states()
 class NeuroplasticitySimulator:
     """
     Neuroplasticity simulator
-    Demonstrates how long-term meditation changes brain structure
+    Demonstrates a hand-set model of brain differences in long-term meditators
     """
 
     def __init__(self):
@@ -439,10 +439,10 @@ class NeuroplasticitySimulator:
         主要な知見：
         「修行」は心理的テクニックにとどまらず
         生物学的基盤を持つ
-        脳の物理的構造の変化である
+        脳構造にも違いが見られる可能性がある
 
-        これは測定可能かつ再現可能な
-        神経可塑性の証拠である
+        これは測定可能な
+        神経可塑性の手がかりである
         '''
 
         ax.text(0.05, 0.5, text_summary, fontsize=9, va='center',
@@ -481,7 +481,7 @@ class NeuroplasticitySimulator:
         print("\n時間効果（用量-反応）：")
         print("  • 効果は瞑想時間に比例して増加")
         print("  • 10,000時間：顕著な変化")
-        print("  • ただし初心者（8週間）でも測定可能な効果あり")
+        print("  • 8週間の講座の結果は一致しない：Kralら（2022）は構造変化を確認できず")
 
         print("\n重要な研究：")
         print("  • Davidson et al. (2004)：熟練瞑想者")
@@ -490,13 +490,13 @@ class NeuroplasticitySimulator:
 
         print("\n神経可塑性（Neuroplasticity）：")
         print("  • 脳は経験に基づいて構造を変化させることができる")
-        print("  • 機能だけでなく、物理的構造が変わる")
+        print("  • 構造の違いは議論が続き、因果は未確定")
         print("  • 「修行」には生物学的基盤がある")
 
         print("\n哲学的意義：")
         print("  • 東洋の修行伝統は「修行は心を変える」と説く")
-        print("  • 現代の神経科学は確認する：")
-        print("    修行は確かに脳を変える（心の物質的基盤を）")
+        print("  • 現代の神経科学が問うていること：")
+        print("    修行は脳を変えるのか（心の物質的基盤を）")
         print("  • 理論と実践の統一")
         print("="*70)
 

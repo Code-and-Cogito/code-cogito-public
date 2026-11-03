@@ -423,7 +423,7 @@ class NeuroplasticitySimulator:
 
         白質連接：
         • 不同腦區連接增強
-        • 信息傳遞更高效
+        • 資訊傳遞更高效
         • 大腦網絡更整合
 
         默認模式網絡（DMN）：
@@ -439,10 +439,10 @@ class NeuroplasticitySimulator:
         關鍵發現：
         「修行」不只是心理技巧
         而是有生物學基礎的
-        大腦物理結構的改變
+        大腦結構也可能有差異
 
-        這是可測量、可重複的
-        神經可塑性的證據
+        這是可以測量的
+        神經可塑性線索
         '''
 
         ax.text(0.05, 0.5, text_summary, fontsize=9, va='center',
@@ -468,7 +468,7 @@ class NeuroplasticitySimulator:
 
         print("\n白質連接：")
         print("  • 不同腦區之間的連接增強")
-        print("  • 信息傳遞更高效")
+        print("  • 資訊傳遞更高效")
         print("  • 大腦網絡更整合")
 
         print("\n默認模式網絡（DMN）：")
@@ -481,7 +481,7 @@ class NeuroplasticitySimulator:
         print("\n時間效應（劑量-反應）：")
         print("  • 效果隨冥想時數增加")
         print("  • 10,000小時：顯著改變")
-        print("  • 但初學者（8週）也有可測量的效果")
+        print("  • 8週課程的結果不一：Kral 等人（2022）未發現結構變化")
 
         print("\n重要研究：")
         print("  • Davidson et al. (2004)：資深冥想者")
@@ -490,13 +490,13 @@ class NeuroplasticitySimulator:
 
         print("\n神經可塑性（Neuroplasticity）：")
         print("  • 大腦可以根據經驗改變結構")
-        print("  • 不只是功能，而是物理結構")
+        print("  • 結構差異仍有爭議，因果尚無定論")
         print("  • 「修行」有生物學基礎")
 
         print("\n哲學意義：")
         print("  • 東方修行傳統說：「修行改變心性」")
-        print("  • 現代神經科學證實：")
-        print("    修行確實改變大腦（心的物質基礎）")
+        print("  • 現代神經科學正在研究：")
+        print("    修行是否改變大腦（心的物質基礎）")
         print("  • 理論與實踐的統一")
         print("="*70)
 

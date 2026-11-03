@@ -21,13 +21,13 @@ HEAD = 1.0
 # Vitruvian body proportions (head length as base unit)
 BODY_PROPORTIONS = {
     'Head': HEAD,
-    'Face': HEAD * 10/8,              # Face = 1.25x head
+    'Face': HEAD * 8/10,              # Face = 1/10 height = 0.8x head
     'Height': HEAD * 8,               # Height = 8 heads
     'Arm span': HEAD * 8,             # Arm span = height
     'Navel to crown': HEAD * 8 - (HEAD * 8 / PHI),
     'Navel to sole': HEAD * 8 / PHI, # Assumption: navel at the golden section (a set value, not a measurement)
     'Shoulder width': HEAD * 2,
-    'Palm length': HEAD * 10/8,       # Palm = face
+    'Palm length': HEAD * 8/10,       # Palm = face
     'Foot length': HEAD * 8/7
 }
 
