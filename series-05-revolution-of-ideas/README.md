@@ -10,9 +10,11 @@ Using Python to draw parallels between Renaissance intellectual revolutions and 
 | 02 | Printing Revolution vs Social Media Explosion | printing_vs_social_analysis.py | [Read](https://code-cogito.com/en/thought-revolution-02-en/) |
 | 03 | Reformation vs Decentralization Movement | reformation_vs_decentralization_analysis.py | [Read](https://code-cogito.com/en/thought-revolution-03-en/) |
 
+Article 01's script runs on illustrative inputs: see [its Data Notes](./article-01-humanism-vs-personal-brand/README.md#data-notes).
+
 ## About This Series
 
-3 articles comparing Renaissance-era intellectual revolutions with their modern equivalents: Pico della Mirandola vs YouTubers, Gutenberg vs Zuckerberg, Martin Luther vs Satoshi Nakamoto. Each article includes Python code for network analysis, information diffusion modeling, and historical data visualization.
+3 articles comparing Renaissance-era intellectual revolutions with their modern equivalents: Pico della Mirandola vs YouTubers, Gutenberg vs Zuckerberg, Martin Luther vs Satoshi Nakamoto. Each article includes Python code for network analysis, information diffusion modeling, and data visualization.
 
 ## Quick Start
 

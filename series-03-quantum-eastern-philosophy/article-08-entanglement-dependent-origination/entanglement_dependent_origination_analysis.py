@@ -1,6 +1,6 @@
 """
 Quantum Entanglement vs Dependent Origination - Free Version
-Season 2 Article 08: Basic Visualizations
+Series 3 (Quantum Mechanics Meets Eastern Philosophy), Article 08: Basic Visualizations
 
 Author: Wina Wu
 Date: 2025-12
@@ -11,6 +11,15 @@ This free version includes:
 - Basic Bell inequality demonstration
 
 For complete version with 12 sub-plots, see premium content.
+
+What is computed and what is not:
+- The quantum CHSH value S is computed from an idealised, noise-free model
+  with the standard textbook analyzer angles (illustrative settings, not the
+  settings of any specific experiment).
+- The local hidden-variable limit S <= 2 is a mathematical bound.
+- The 'experiment' value (S ~ 2.7) is a hard-coded, rounded reference value,
+  not the output of any simulation here.
+- The Buddhist-physics parallels are conceptual analogies, not physics results.
 
 Requirements:
 pip install numpy matplotlib networkx
@@ -25,7 +34,7 @@ plt.rcParams['axes.unicode_minus'] = False
 
 print("=" * 70)
 print("Quantum Entanglement vs Dependent Origination - Free Version")
-print("Season 2 Article 08")
+print("Series 3 Article 08")
 print("=" * 70)
 print()
 
@@ -94,7 +103,7 @@ def twelve_links_basic():
 
     print("\n  Twelve Links (Pratityasamutpada):")
     print("  Each link depends on the previous one")
-    print("  Break any link -> the cycle ends -> Nirvana")
+    print("  Traditional teaching: break any link -> the cycle ends -> Nirvana")
     print("  ")
     print("  Key insight:")
     print("  'Because this exists, that exists'")
@@ -198,7 +207,7 @@ def entangled_state_basic():
     print("  Entangled state: |psi> = (|up,down> - |down,up>)/sqrt(2)")
     print("    - CANNOT describe A and B independently")
     print("    - Quantum inseparability")
-    print("    - Measuring A instantly affects B")
+    print("    - Measurement outcomes on A and B are correlated (no signal can be sent this way)")
 
 # ============================================================================
 # Visualization 3: Bell Inequality Violation (Simple)
@@ -211,29 +220,16 @@ def bell_inequality_basic():
     print("\n[Visualization 3] Bell Inequality Violation")
     print("-" * 70)
 
-    # Angle combinations
+    # Analyzer angles (degrees -> radians): the standard textbook CHSH choice.
+    # These are illustrative settings for an idealised, noise-free model,
+    # not the settings of any specific experiment.
     angles = np.array([0, 22.5, 45, 67.5]) * np.pi / 180
 
-    # Classical prediction (local realism)
-    classical_predictions = []
-    for i in range(4):
-        for j in range(4):
-            if i != j:
-                correlation = np.cos(2*(angles[i] - angles[j]))
-                classical_predictions.append(abs(correlation))
-
-    # Quantum prediction
-    quantum_correlations = []
-    for i in range(4):
-        for j in range(4):
-            if i != j:
-                correlation = -np.cos(2*(angles[i] - angles[j]))
-                quantum_correlations.append(correlation)
-
-    # Bell's S parameter
-    # S = |E(a,b) - E(a,b')| + |E(a',b) + E(a',b')|
-    # Classical: S <= 2
-    # Quantum: S can reach 2*sqrt(2) ~ 2.828
+    # CHSH form of Bell's inequality:
+    #   S = |E(a,b) - E(a,b')| + |E(a',b) + E(a',b')|
+    #   Local hidden-variable models: S <= 2
+    #   Quantum mechanics (ideal):    S can reach 2*sqrt(2) ~ 2.828
+    # Idealised singlet-type correlation used here: E = -cos(2*(angle_a - angle_b))
 
     a, b, ap, bp = 0, 1, 2, 3  # angle indices
 
@@ -244,59 +240,72 @@ def bell_inequality_basic():
 
     S_quantum = abs(E_ab - E_abp) + abs(E_apb + E_apbp)
 
+    # Local hidden-variable limit: a mathematical bound, not a measurement.
+    S_LOCAL_BOUND = 2.0
+
+    # Hard-coded, rounded reference value -- NOT computed by this script.
+    # It is the approximate S usually quoted for the early (1982) Aspect photon
+    # experiments. Real experiments report S with an uncertainty, so see the
+    # Aspect et al. (1982) papers listed in the article's references for exact
+    # figures.
+    S_EXPERIMENT_APPROX = 2.7
+
     fig, ax = plt.subplots(figsize=(12, 8))
 
     # Bar chart
-    categories = ['Classical\nLimit', 'Quantum\nPrediction', 'Experimental\nResult']
-    values = [2.0, S_quantum, 2.7]  # Experimental ~2.7
+    categories = ['Local hidden-variable\nlimit', 'Quantum prediction\n(ideal model)',
+                  'Experiment\n(Aspect 1982, approx.,\nhard-coded)']
+    values = [S_LOCAL_BOUND, S_quantum, S_EXPERIMENT_APPROX]
+    bar_labels = [f'{S_LOCAL_BOUND:.1f} (limit)', f'{S_quantum:.3f}',
+                  f'~{S_EXPERIMENT_APPROX:.1f}']
     colors = ['lightblue', 'lightcoral', 'lightgreen']
 
     bars = ax.bar(categories, values, color=colors, edgecolor='black', linewidth=2)
 
-    # Classical limit line
-    ax.axhline(y=2.0, color='blue', linestyle='--', linewidth=2, label='Classical limit (S=2)')
+    # Local hidden-variable limit line
+    ax.axhline(y=S_LOCAL_BOUND, color='blue', linestyle='--', linewidth=2,
+               label='Local hidden-variable limit (S=2)')
 
     # Values on bars
-    for i, (bar, val) in enumerate(zip(bars, values)):
+    for bar, text in zip(bars, bar_labels):
         height = bar.get_height()
         ax.text(bar.get_x() + bar.get_width()/2., height + 0.05,
-               f'{val:.3f}', ha='center', va='bottom', fontsize=14, fontweight='bold')
+               text, ha='center', va='bottom', fontsize=14, fontweight='bold')
 
-    ax.set_ylabel("Bell's S Parameter", fontsize=12)
-    ax.set_title("Bell Inequality Violation\n" +
-                "Quantum mechanics VIOLATES classical predictions!",
+    ax.set_ylabel("Bell's S Parameter (CHSH)", fontsize=12)
+    ax.set_title("Bell (CHSH) Inequality Violation\n" +
+                "Quantum predictions exceed the local hidden-variable limit",
                 fontsize=13, fontweight='bold')
-    ax.set_ylim(0, 3.5)
-    ax.legend(fontsize=11)
+    ax.set_ylim(0, 3.7)
+    ax.legend(fontsize=11, loc='upper left')
     ax.grid(alpha=0.3, axis='y')
 
     # Explanation
-    ax.text(1, 3.2,
-           'Classical (local realism): S <= 2\n' +
-           'Quantum mechanics: S ~ 2.828\n' +
-           'Experiment (1982 Aspect): S ~ 2.7\n\n' +
-           '-> LOCAL REALISM is FALSE!\n' +
-           '-> Particles do NOT have definite properties',
-           ha='center', fontsize=10, style='italic',
+    ax.text(1, 3.6,
+           'Local hidden-variable models: S <= 2\n' +
+           'Quantum mechanics (ideal): S up to 2*sqrt(2) ~ 2.828\n' +
+           'Experiment (Aspect 1982): S ~ 2.7 (approx., hard-coded)\n\n' +
+           '-> LOCAL hidden-variable theories are ruled out\n' +
+           '-> Non-local theories are not excluded',
+           ha='center', va='top', fontsize=10, style='italic',
            bbox=dict(boxstyle='round', facecolor='yellow', alpha=0.6))
 
     plt.tight_layout()
     plt.savefig('bell_inequality_basic.png', dpi=300, bbox_inches='tight')
     plt.show()
 
-    print(f"\n  Bell's Inequality:")
-    print(f"  If local realism is true -> S <= 2")
+    print(f"\n  Bell's Inequality (CHSH form):")
+    print(f"  If a local hidden-variable model holds -> S <= 2")
     print(f"  ")
     print(f"  Results:")
-    print(f"  Classical prediction: S = 2.000")
-    print(f"  Quantum prediction:   S = {S_quantum:.3f}")
-    print(f"  Experimental (1982):  S ~ 2.700")
+    print(f"  Local hidden-variable limit:       S <= {S_LOCAL_BOUND:.1f}")
+    print(f"  Quantum prediction (ideal model):  S = {S_quantum:.3f}")
+    print(f"  Experiment (Aspect 1982):          S ~ {S_EXPERIMENT_APPROX:.1f} (approx., hard-coded reference value)")
     print(f"  ")
     print(f"  CONCLUSION:")
-    print(f"  Quantum mechanics VIOLATES Bell inequality")
-    print(f"  -> Local realism is FALSE")
-    print(f"  -> Particles have NO definite properties before measurement")
-    print(f"  -> Properties DEPEND on measurement context")
+    print(f"  Measured S values above 2 rule out LOCAL hidden-variable theories")
+    print(f"  -> Particles cannot have purely local, independent properties")
+    print(f"  -> Non-local theories (e.g. Bohmian mechanics) are not excluded")
 
 # ============================================================================
 # Execute All Visualizations
@@ -326,11 +335,11 @@ print("  - Entanglement & relational ontology (3 sub-plots)")
 print("  - Bell inequality verification detailed (3 sub-plots)")
 print("  - Emptiness & superposition (2 sub-plots)")
 print("  - Total: 12 professional sub-plots")
-print("\n[Key Findings]")
+print("\n[Reading Notes - conceptual analogies, not physics results]")
 print("  - Buddha: 'Because this exists, that exists'")
-print("  - Bell: Particles have NO independent properties")
-print("  - Dependent origination ~ Quantum entanglement")
-print("  - No svabhava (self-nature) ~ No definite properties")
-print("  - Relational ontology: Relations precede entities")
-print("  - Nagarjuna was RIGHT: Neither existence nor non-existence")
+print("  - Bell: violating the inequality rules out LOCAL hidden-variable theories")
+print("  - Dependent origination and quantum entanglement can be read side by side (analogy, not equivalence)")
+print("  - No svabhava (self-nature) echoes 'no purely local independent properties' (analogy)")
+print("  - Relational ontology: relations before entities (a philosophical reading)")
+print("  - Nagarjuna's 'neither existence nor non-existence' echoes superposition (conceptual parallel)")
 print("=" * 70)

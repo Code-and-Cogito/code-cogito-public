@@ -1,6 +1,6 @@
 """
 Quantum Superposition vs the Dao of Laozi and Zhuangzi
-Season 2, Article 03 | Free Version
+Series 3, Article 03 | Free Version
 
 Author: Wina @ Code & Cogito
 Series: Quantum Mechanics Meets Eastern Philosophy #03/12
@@ -10,19 +10,40 @@ This standalone free script includes:
   2. Taiji (Yin-Yang) diagram: Being and Non-being
   3. Zhuangzi's Butterfly Dream superposition illustration
 
+DATA NOTES (read before quoting any number from the plots):
+  - Nothing here is measured data. Every input is a hand-set illustrative
+    value: the 1-hour half-life (the usual textbook telling of the cat
+    thought experiment; a modelling choice), the 0.5 / 1 / 2 h sample times,
+    the 100 simulated box-openings per time, the equal 50/50 amplitudes in
+    the butterfly panel, and the layout of the taiji drawing.
+  - The simulated box-openings use a fixed random seed (RANDOM_SEED below),
+    so the printed counts are identical on every run. Set it to None to get
+    a different sample each time.
+  - The Dao/quantum mappings (Yang = Being, Yin = Non-being, Zhuangzi and
+    butterfly as two basis states) are illustrative analogies drawn in the
+    article, not physical models.
+  - The decoherence simulation from the article is not part of this free
+    script.
+
 Requirements:
     pip install numpy matplotlib
 """
 
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib.patches import Circle, Wedge
 
-plt.rcParams['font.sans-serif'] = ['Arial', 'Helvetica']
+plt.rcParams['font.sans-serif'] = ['Arial', 'Helvetica', 'DejaVu Sans']
 plt.rcParams['axes.unicode_minus'] = False
+
+# Fixed seed so the simulated box-openings print the same counts on every run.
+# Set to None for a different random sample each time.
+RANDOM_SEED = 42
+np.random.seed(RANDOM_SEED)
 
 print("=" * 70)
 print("Quantum Superposition vs the Dao of Laozi and Zhuangzi")
-print("Season 2 Article 03 | Free Version")
+print("Series 3 Article 03 | Free Version")
 print("=" * 70)
 print()
 
@@ -32,11 +53,14 @@ print()
 
 class SchrodingerCat:
     """
-    Complete Schrodinger's Cat simulation.
+    Schrodinger's Cat simulation (idealised model: one atom, exponential
+    decay, no decoherence).
     Includes: atom state, cat state, time evolution, and measurement.
     """
 
     def __init__(self, half_life=1.0):
+        # half_life is in hours. One hour follows the usual telling of the
+        # thought experiment; it is a modelling choice, not a measured value.
         self.half_life = half_life
         self.lambda_decay = np.log(2) / half_life  # Decay constant
 
@@ -64,10 +88,12 @@ class SchrodingerCat:
 def schrodinger_cat_basic():
     """
     Schrodinger's cat probability evolution over time.
-    The key insight: superposition is NOT ignorance -- it is genuine both-ness.
+    The key insight (Copenhagen reading, as argued in the article):
+    superposition is NOT ignorance -- it is genuine both-ness.
     """
     print("\n[Model 1] Schrodinger's Cat: Superposition Evolution")
     print("-" * 70)
+    print(f"  Illustrative model: half-life = 1 h, random seed = {RANDOM_SEED}")
 
     cat = SchrodingerCat(half_life=1.0)
     max_time = 3.0
@@ -93,7 +119,7 @@ def schrodinger_cat_basic():
              fontsize=9, bbox=dict(boxstyle='round', facecolor='yellow', alpha=0.7))
 
     plt.text(max_time * 0.72, 0.55,
-             'Key point: this is NOT\n'
+             'Copenhagen reading: this is NOT\n'
              '"either dead or alive"!\n'
              'It is "genuinely both\n'
              'dead AND alive"!\n'
@@ -101,10 +127,10 @@ def schrodinger_cat_basic():
              fontsize=9, ha='center',
              bbox=dict(boxstyle='round', facecolor='lightblue', alpha=0.8))
 
-    plt.xlabel('Time (hours)', fontsize=12)
+    plt.xlabel('Time (hours) -- illustrative 1-hour half-life', fontsize=12)
     plt.ylabel('Probability', fontsize=12)
     plt.title("Schrodinger's Cat: Superposition Evolving Over Time\n"
-              "(Before opening the box)",
+              "(Before opening the box; idealised model)",
               fontsize=14, fontweight='bold')
     plt.legend(fontsize=12, loc='center left')
     plt.grid(alpha=0.3)
@@ -114,7 +140,8 @@ def schrodinger_cat_basic():
     plt.savefig('schrodinger_cat_basic.png', dpi=300, bbox_inches='tight')
     plt.show()
 
-    # Run experiment simulations
+    # Run experiment simulations: each trial opens the box once and draws
+    # alive/dead at random with the theoretical probabilities
     for t_exp in [0.5, 1.0, 2.0]:
         prob_alive, prob_dead = cat.cat_state(t_exp)
         n_trials = 100
@@ -125,7 +152,7 @@ def schrodinger_cat_basic():
         print(f"\n  t = {t_exp}h | Theory: P(alive)={prob_alive:.2%}, P(dead)={prob_dead:.2%}")
         print(f"           | Experiment ({n_trials} trials): alive={count_alive}, dead={count_dead}")
 
-    print(f"\n  Key insight:")
+    print(f"\n  Key insight (Copenhagen reading):")
     print(f"  At t=1h (half-life): 50% alive, 50% dead")
     print(f"  But NOT 'either alive or dead, we don't know'")
     print(f"  Rather: 'genuinely in superposition of both states'")
@@ -146,41 +173,32 @@ def taiji_you_wu():
 
     fig, ax = plt.subplots(figsize=(10, 11))
 
-    theta = np.linspace(0, 2 * np.pi, 1000)
+    # Schematic drawing (Yang = white = Being, Yin = black = Non-being, as
+    # mapped in the article). Left half black, right half white ...
+    ax.add_patch(Wedge((0, 0), 1, 90, 270, facecolor='black', edgecolor='none'))
+    ax.add_patch(Wedge((0, 0), 1, -90, 90, facecolor='white', edgecolor='none'))
 
-    # Outer circle
-    ax.fill(np.cos(theta), np.sin(theta), color='white',
-            edgecolor='black', linewidth=3)
+    # ... then two half-size discs make the S-curve: black bulges into the
+    # white side at the top, white bulges into the black side at the bottom
+    ax.add_patch(Circle((0, 0.5), 0.5, facecolor='black', edgecolor='none'))
+    ax.add_patch(Circle((0, -0.5), 0.5, facecolor='white', edgecolor='none'))
 
-    # Black half (Wu - Non-being)
-    ax.fill_between(np.cos(theta[theta <= np.pi]),
-                    np.sin(theta[theta <= np.pi]),
-                    color='black')
+    # Fish eyes: a seed of white inside the black, a seed of black inside the white
+    ax.add_patch(Circle((0, 0.5), 0.12, facecolor='white', edgecolor='none'))
+    ax.add_patch(Circle((0, -0.5), 0.12, facecolor='black', edgecolor='none'))
 
-    # S-curve approximation
-    y_curve = np.linspace(-1, 1, 100)
-    x_curve = np.sqrt(np.maximum(0, 1 - y_curve**2 / 4))
-    ax.fill_betweenx(y_curve, -x_curve, x_curve,
-                     where=(y_curve >= 0), color='white', zorder=2)
-    ax.fill_betweenx(y_curve, -x_curve, x_curve,
-                     where=(y_curve < 0), color='black', zorder=2)
-
-    # Fish eyes
-    circle_yang = plt.Circle((0, 0.5), 0.15, color='white', zorder=3,
-                              edgecolor='black', linewidth=2)
-    circle_yin = plt.Circle((0, -0.5), 0.15, color='black', zorder=3,
-                             edgecolor='black', linewidth=2)
-    ax.add_patch(circle_yang)
-    ax.add_patch(circle_yin)
+    # Outer outline
+    ax.add_patch(Circle((0, 0), 1, fill=False, edgecolor='black', linewidth=3))
 
     ax.set_xlim(-1.3, 1.3)
     ax.set_ylim(-1.6, 1.3)
     ax.set_aspect('equal')
     ax.axis('off')
 
-    ax.text(0.5, 0.7, 'Yang\n(Being)', ha='center', fontsize=11, fontweight='bold')
-    ax.text(-0.5, -0.7, 'Yin\n(Non-being)', ha='center', fontsize=11,
-            fontweight='bold', color='white')
+    ax.text(0.72, 0, 'Yang\n(Being)', ha='center', va='center',
+            fontsize=11, fontweight='bold')
+    ax.text(-0.72, 0, 'Yin\n(Non-being)', ha='center', va='center',
+            fontsize=11, fontweight='bold', color='white')
 
     ax.set_title('Taiji: Being and Non-Being Give Rise to Each Other\n'
                  '"The Dao that can be spoken is not the eternal Dao"',
@@ -196,8 +214,8 @@ def taiji_you_wu():
     plt.show()
 
     print("\n  Laozi, Dao De Jing:")
-    print("  'The Dao that can be spoken is not the eternal Dao'")
-    print("  'Being and non-being give rise to each other'")
+    print("  Ch. 1: 'The Dao that can be spoken is not the eternal Dao'")
+    print("  Ch. 2: 'Being and non-being give rise to each other'")
     print()
     print("  Quantum parallel:")
     print("  Before measurement: no definite state (like the unnamed Dao)")
@@ -221,8 +239,9 @@ def butterfly_dream():
 
     # Left: Superposition state (before waking)
     states = ['Zhuangzi', 'Butterfly']
+    # Equal weights chosen for illustration; the story gives no numbers
     amplitudes = [1 / np.sqrt(2), 1 / np.sqrt(2)]
-    probabilities = [0.5, 0.5]
+    probabilities = [a ** 2 for a in amplitudes]
 
     bars = ax1.bar(states, amplitudes, color=['#4ECDC4', '#FFD700'],
                    alpha=0.8, edgecolor='black', linewidth=2)
@@ -261,7 +280,7 @@ def butterfly_dream():
                   'Wavefunction collapsed to |Zhuangzi>',
                   fontsize=13, fontweight='bold')
     ax2.grid(axis='y', alpha=0.3)
-    ax2.text(0.5, 0.9, 'Wavefunction collapsed\n-- could have gone either way',
+    ax2.text(0.5, 0.9, 'One possible outcome (50/50)\n-- could have gone either way',
              ha='center', fontsize=10, style='italic',
              transform=ax2.transAxes,
              bbox=dict(boxstyle='round', facecolor='lightcoral', alpha=0.5))
@@ -270,11 +289,11 @@ def butterfly_dream():
     plt.savefig('butterfly_dream_basic.png', dpi=300, bbox_inches='tight')
     plt.show()
 
-    print("\n  Zhuangzi's question:")
+    print("\n  Zhuangzi's question (Qiwulun chapter of the Zhuangzi, paraphrased):")
     print("  'Was it Zhuang Zhou dreaming he was a butterfly?")
     print("   Or a butterfly dreaming it was Zhuang Zhou?'")
     print()
-    print("  Quantum answer:")
+    print("  Quantum reading (an analogy, not physics):")
     print("  Before 'waking' (measurement): BOTH -- in superposition")
     print("  After 'waking' (measurement): one outcome collapses")
     print("  Which is 'real'? Both are, and neither is.")
@@ -302,7 +321,7 @@ print("\nGenerated plots:")
 print("  1. schrodinger_cat_basic.png  -- Probability evolution over time")
 print("  2. taiji_you_wu_basic.png     -- Yin-Yang: being/non-being mutual arising")
 print("  3. butterfly_dream_basic.png  -- Zhuangzi's superposition interpretation")
-print("\nKey insights from this article:")
+print("\nKey insights from this article (Copenhagen reading plus the article's analogies):")
 print("  - Superposition is REAL, not ignorance")
 print("  - Measurement creates definite state (like naming creates distinctions)")
 print("  - Laozi's 'Dao' parallels the superposition before measurement")

@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """Free highlight code from Code & Cogito Renaissance Series.
-Article 02: Medici Bank Network - Hub-and-spoke financial empire analysis.
+Article 02: Medici Bank Network - a hub-and-spoke model of the branch network.
+
+NOTE: the branch revenues are hand-set illustrative inputs, not historical
+accounts (see the comment above the `branches` dict).
 """
 
 import networkx as nx
@@ -8,6 +11,14 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # === Medici Bank Branch Data (1397-1494) ===
+# NOTE: the revenue values are hand-set illustrative inputs used to size the
+# network chart; they are NOT taken from Medici accounts. The open/close years
+# are simplified, not archival: the historical Bruges branch was wound up in
+# 1478 (the table says 1480), Geneva's business moved to Lyon in 1466, and Rome
+# and Lyon were still open in 1492 (the table closes Rome in 1478).
+# Sources for the historical facts: Raymond de Roover, "The Rise and Decline of
+# the Medici Bank, 1397-1494" (Harvard University Press, 1963); Wikipedia,
+# "Medici Bank". (Fact-check 2026-09-29, article S1-02, claims C18-C20.)
 
 branches = {
     'Florence': {'pos': (11.25, 43.77), 'opened': 1397, 'closed': 1494, 'revenue': 100000, 'type': 'headquarters'},
@@ -21,6 +32,8 @@ branches = {
 }
 
 # === Build Hub-and-Spoke Network ===
+# The star shape is built into the model: every edge joins Florence to a branch.
+# This is a simplification; real branches also traded bills with one another.
 
 G = nx.Graph()
 for city, data in branches.items():
@@ -45,8 +58,10 @@ for city, data in sorted(branches.items(), key=lambda x: x[1]['revenue'], revers
 total_revenue = sum(b['revenue'] for b in branches.values())
 print(f"\nTotal branches: {len(branches)}")
 print(f"Operating period: 1397-1494 (97 years)")
-print(f"Peak (1450-1470): 8 branches simultaneously")
-print(f"Total annual revenue: {total_revenue:,} florins")
+# With the open/close years above, all 8 entries overlap only from 1452 (Milan
+# opens) to 1469 (Venice closes).
+print(f"Peak (1452-1469): 8 branches simultaneously")
+print(f"Total annual revenue (illustrative inputs): {total_revenue:,} florins")
 
 # === Visualization ===
 
@@ -66,7 +81,7 @@ nx.draw_networkx_nodes(G, pos, ax=ax, node_size=node_sizes,
                        edgecolors='black', linewidths=2)
 nx.draw_networkx_labels(G, pos, ax=ax, font_size=10, font_weight='bold')
 
-ax.set_title('Medici Bank European Branch Network (1397-1494)\nNode size = revenue',
+ax.set_title('Medici Bank European Branch Network (1397-1494)\nNode size = illustrative revenue (not historical accounts)',
              fontsize=14, fontweight='bold', pad=15)
 ax.axis('off')
 

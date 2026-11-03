@@ -7,6 +7,10 @@ import networkx as nx
 import matplotlib.pyplot as plt
 
 # === 8-City Italian Trade Network (15th Century) ===
+# NOTE: the cities, trade routes, edge weights and populations below are
+# author-chosen illustrative values for demonstrating the analysis method,
+# not reconstructed from historical trade records or population censuses.
+# (Fact-check 2026-09-29, claims C42/C43.)
 
 cities = {
     'Florence': {'population': 60000},
@@ -30,8 +34,11 @@ trade_routes = [
     ('Venice', 'Bologna', 5),
     ('Milan', 'Genoa', 8),
     ('Rome', 'Naples', 7),
-    ('Genoa', 'Milan', 5),
-    ('Bologna', 'Venice', 4)
+    ('Genoa', 'Milan', 5),      # duplicate undirected pair with ('Milan', 'Genoa', 8) above;
+                                 # this weight overwrites it when the graph is built
+    ('Bologna', 'Venice', 4)    # duplicate undirected pair with ('Venice', 'Bologna', 5) above;
+                                 # same overwrite behavior (edge count/density/betweenness unaffected,
+                                 # since betweenness below is computed unweighted)
 ]
 
 G = nx.Graph()
@@ -68,7 +75,7 @@ print(f"Florence betweenness centrality:")
 print(f"  - {florence_bc/venice_bc:.2f}x Venice")
 print(f"  - {florence_bc/milan_bc:.2f}x Milan")
 print(f"  - {florence_bc/betweenness_centrality['Rome']:.2f}x Rome")
-print(f"\n=> More information, capital, and talent flowed through Florence")
+print(f"\n=> In this model, Florence lies on more shortest paths than any other city")
 
 # === Visualization ===
 
@@ -87,7 +94,7 @@ nx.draw_networkx_edges(G, pos, width=[w/3 for w in edge_weights],
 
 nx.draw_networkx_labels(G, pos, font_size=11, font_weight='bold')
 
-plt.title('15th Century Italian Trade Network\nNode color = betweenness centrality, size = population',
+plt.title('15th Century Italian Trade Network (illustrative model)\nNode color = betweenness centrality, size = population',
           fontsize=14, fontweight='bold')
 plt.axis('off')
 plt.tight_layout()

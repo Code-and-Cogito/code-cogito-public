@@ -11,11 +11,19 @@ pip install numpy matplotlib networkx
 python uncertainty_emptiness_analysis.py
 ```
 
+Each figure opens in its own window; close it to continue. To run without windows, set `MPLBACKEND=Agg` first. The script overwrites the three PNG files below in the current directory.
+
 ## Charts
 
-- `wave_packet_uncertainty.png` — Wave packet uncertainty
+- `wave_packet_uncertainty.png` — Two Gaussian wave packets (probability density |ψ|², σ = 0.5 and σ = 2.0): the narrower the position spread Δx, the wider the momentum spread Δp
 - `uncertainty_tradeoff.png` — Heisenberg tradeoff visualization
 - `emptiness_network.png` — Buddhist interdependent origination network
+
+## About the Inputs
+
+Everything the script plots is an illustrative input chosen by the author, not a measurement: the two Gaussian widths (σ = 0.5 and σ = 2.0, arbitrary length units), ħ normalized to 1, and the seven-node "table" dependency network. The real constant is ħ = 1.055×10⁻³⁴ J·s (rounded to four significant figures); it is set to 1 here only so the shape of the trade-off curve is easy to read.
+
+The only real-world facts are historical: Heisenberg's uncertainty paper (1927) and Nagarjuna (2nd century CE). The Buddhist parallel is a structural analogy, not a claim that physics proves Buddhism (or the other way around).
 
 ## Read the Full Article
 
