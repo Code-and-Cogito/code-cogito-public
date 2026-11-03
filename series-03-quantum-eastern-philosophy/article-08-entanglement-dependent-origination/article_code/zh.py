@@ -127,7 +127,7 @@ class DependentOriginationNetwork:
 
         G2.add_edges_from(relations)
 
-        # 春天佈局（force-directed）
+        # 彈簧佈局（force-directed）
         pos2 = nx.spring_layout(G2, k=2, iterations=50, seed=42)
 
         # 繪製
@@ -716,7 +716,7 @@ def visualize_indra_net_holographic():
     nx.draw_networkx_edges(G, pos, edgelist=edges_from_0,
                           edge_color='red', alpha=0.7, width=3, ax=ax2)
 
-    ax2.set_title('量子糾纏網絡：全息結構\n每個粒子包含整個系統信息',
+    ax2.set_title('量子糾纏網絡：全息結構\n每個粒子包含整個系統資訊',
                  fontsize=14, fontweight='bold')
 
     # 底部說明
@@ -730,7 +730,7 @@ def visualize_indra_net_holographic():
     量子糾纏網絡：
     - 每個粒子與所有粒子糾纏
     - 測量一個粒子，影響所有粒子
-    - 部分包含整體信息（全息性）
+    - 部分包含整體資訊（全息性）
     - 非局域關聯
 
     共同洞見：
@@ -762,13 +762,13 @@ def visualize_indra_net_holographic():
     print("\n量子糾纏的全息性：")
     print("  - 糾纏態：|psi>_AB 不可分解")
     print("  - 測量粒子A -> 瞬間影響粒子B")
-    print("  - 每個粒子包含整個系統的信息")
+    print("  - 每個粒子包含整個系統的資訊")
     print("  - 部分不能脫離整體")
 
     print("\n全息原理（Holographic Principle）：")
     print("  - 物理學的重要概念")
-    print("  - 一個區域的信息可以編碼在其邊界上")
-    print("  - 體積的信息 = 表面的信息")
+    print("  - 一個區域的資訊可以編碼在其邊界上")
+    print("  - 體積的資訊 = 表面的資訊")
     print("  - 3D宇宙可能是2D全息圖")
 
     print("\n緣起的全息性：")

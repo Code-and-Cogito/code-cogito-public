@@ -750,7 +750,7 @@ def visualize_mind_principle_observer():
 
     # 觀察者
     circle_observer = plt.Circle((0.5, 0.75), 0.1, color='purple', alpha=0.7,
-                                edgecolor='darkpurple', linewidth=2)
+                                edgecolor='indigo', linewidth=2)
     ax3.add_patch(circle_observer)
     ax3.text(0.5, 0.75, '觀察者', ha='center', va='center',
             fontsize=10, fontweight='bold', color='white')

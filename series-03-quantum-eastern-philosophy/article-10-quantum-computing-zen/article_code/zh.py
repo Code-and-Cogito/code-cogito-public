@@ -558,7 +558,7 @@ class QuantumParallelismSimulator:
 
         print("\n陷阱：")
         print("  • 測量會坍縮，只得到一個結果")
-        print("  • 需要量子干涉來「提取」信息")
+        print("  • 需要量子干涉來「提取」資訊")
 
         print("\n禪宗類比：")
         print("  經典思維：")

@@ -233,7 +233,7 @@ class ParticipationVisualizer:
                                arrowstyle='->', mutation_scale=30,
                                linewidth=3, color='green')
         ax.add_patch(arrow)
-        ax.text(0.55, 0.32, '信息', ha='left', fontsize=10, color='green')
+        ax.text(0.55, 0.32, '資訊', ha='left', fontsize=10, color='green')
 
         ax.text(0.5, 0.9, '經典物理：客觀實在觀', ha='center',
                fontsize=14, fontweight='bold')
