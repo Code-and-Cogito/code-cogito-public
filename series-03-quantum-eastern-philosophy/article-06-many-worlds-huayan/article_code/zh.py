@@ -1,7 +1,7 @@
 # Code & Cogito: 多世界詮釋 vs 華嚴宗「重重無盡」——無限的平行宇宙
 # Article: https://code-cogito.com/many-worlds-interpretation-huayan/
 # All the code blocks of the article, in order. Program output is kept as comments.
-# Note: the article shows this code in excerpts, so this file does not run on its own.
+
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
@@ -303,33 +303,33 @@ simulator = MultiverseSimulator()
 simulator.visualize_branching(n_measurements=5)
 simulator.compare_interpretations()
 
-# | class QuantumBiography:
-# |     """
-# |     量子自傳：「我」在多少個世界裡
-# |     """
-# | 
-# |     def __init__(self):
-# |         self.decisions = []
-# | 
-# |     def add_decision(self, description, n_choices=2):
-# |         """
-# |         添加一個人生決定
-# |         description: 決定的描述
-# |         n_choices: 選擇數量
-# |         """
-# |         self.decisions.append({
-# |             'description': description,
-# |             'n_choices': n_choices
-# |         })
-# | 
-# |     def calculate_parallel_lives(self):
-# |         """
-# |         計算平行生命數量
-# |         """
-# |         total_worlds = 1
-# |         for decision in self.decisions:
-# |             total_worlds *= decision['n_choices']
-# |         return total_worlds
+class QuantumBiography:
+    """
+    量子自傳：「我」在多少個世界裡
+    """
+
+    def __init__(self):
+        self.decisions = []
+
+    def add_decision(self, description, n_choices=2):
+        """
+        添加一個人生決定
+        description: 決定的描述
+        n_choices: 選擇數量
+        """
+        self.decisions.append({
+            'description': description,
+            'n_choices': n_choices
+        })
+
+    def calculate_parallel_lives(self):
+        """
+        計算平行生命數量
+        """
+        total_worlds = 1
+        for decision in self.decisions:
+            total_worlds *= decision['n_choices']
+        return total_worlds
 
     def visualize_life_tree(self):
         """

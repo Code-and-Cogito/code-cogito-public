@@ -1,7 +1,7 @@
 # Code & Cogito: Quantum Entanglement vs. Buddhist "Dependent Origination" — Nothing Exists Alone
 # Article: https://code-cogito.com/en/quantum-entanglement-vs-buddhist-dependent-origination-nothing-exists-alone-en/
 # All the code blocks of the article, in order. Program output is kept as comments.
-# Note: the article shows this code in excerpts, so this file does not run on its own.
+
 import numpy as np
 import matplotlib.pyplot as plt
 import networkx as nx
@@ -20,91 +20,91 @@ class DependentOriginationNetwork:
     def __init__(self):
         self.G = nx.DiGraph()
 
-# |     def create_twelve_links(self):
-# |         """
-# |         Create the Twelve Links of Dependent Origination network
-# |         """
-# |         # The twelve links
-# |         links = [
-# |             ('Ignorance', 'Formations'),
-# |             ('Formations', 'Consciousness'),
-# |             ('Consciousness', 'Name & Form'),
-# |             ('Name & Form', 'Six Senses'),
-# |             ('Six Senses', 'Contact'),
-# |             ('Contact', 'Feeling'),
-# |             ('Feeling', 'Craving'),
-# |             ('Craving', 'Clinging'),
-# |             ('Clinging', 'Becoming'),
-# |             ('Becoming', 'Birth'),
-# |             ('Birth', 'Aging & Death'),
-# |             ('Aging & Death', 'Ignorance'),  # The cycle repeats
-# |         ]
-# | 
-# |         self.G.add_edges_from(links)
+    def create_twelve_links(self):
+        """
+        Create the Twelve Links of Dependent Origination network
+        """
+        # The twelve links
+        links = [
+            ('Ignorance', 'Formations'),
+            ('Formations', 'Consciousness'),
+            ('Consciousness', 'Name & Form'),
+            ('Name & Form', 'Six Senses'),
+            ('Six Senses', 'Contact'),
+            ('Contact', 'Feeling'),
+            ('Feeling', 'Craving'),
+            ('Craving', 'Clinging'),
+            ('Clinging', 'Becoming'),
+            ('Becoming', 'Birth'),
+            ('Birth', 'Aging & Death'),
+            ('Aging & Death', 'Ignorance'),  # The cycle repeats
+        ]
 
-# |     def visualize_twelve_links(self):
-# |         """
-# |         Visualize the Twelve Links of Dependent Origination
-# |         """
-# |         fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(18, 9))
-# | 
-# |         # === Left panel: The Twelve Links cycle ===
-# |         self.create_twelve_links()
-# | 
-# |         # Circular layout
-# |         pos = nx.circular_layout(self.G)
-# | 
-# |         # Node colors (by category)
-# |         node_colors = {
-# |             'Ignorance': 'gray',
-# |             'Formations': 'orange',
-# |             'Consciousness': 'yellow',
-# |             'Name & Form': 'lightblue',
-# |             'Six Senses': 'lightgreen',
-# |             'Contact': 'cyan',
-# |             'Feeling': 'pink',
-# |             'Craving': 'red',
-# |             'Clinging': 'darkred',
-# |             'Becoming': 'purple',
-# |             'Birth': 'green',
-# |             'Aging & Death': 'black',
-# |         }
-# | 
-# |         colors = [node_colors[node] for node in self.G.nodes()]
-# | 
-# |         # Draw the network
-# |         nx.draw_networkx_nodes(self.G, pos, node_color=colors,
-# |                               node_size=1500, alpha=0.8,
-# |                               edgecolors='black', linewidths=2, ax=ax1)
-# | 
-# |         nx.draw_networkx_labels(self.G, pos, font_size=10,
-# |                                font_weight='bold', ax=ax1)
-# | 
-# |         nx.draw_networkx_edges(self.G, pos, edge_color='gray',
-# |                               arrows=True, arrowsize=20, arrowstyle='->',
-# |                               width=2, connectionstyle='arc3,rad=0.1', ax=ax1)
-# | 
-# |         ax1.set_title('The Twelve Links: The Mechanism of Cyclic Existence\n'
-# |                      '"When this exists, that comes to be"',
-# |                      fontsize=14, fontweight='bold')
-# |         ax1.axis('off')
-# | 
-# |         # Add explanation
-# |         explanation = '''
-# |         The Twelve Links:
-# | 
-# |         1. Ignorance -> 2. Formations -> 3. Consciousness
-# |         -> 4. Name & Form -> 5. Six Senses -> 6. Contact
-# |         -> 7. Feeling -> 8. Craving -> 9. Clinging
-# |         -> 10. Becoming -> 11. Birth -> 12. Aging & Death
-# |         -> 1. Ignorance (the cycle repeats)
-# | 
-# |         Break any single link -> the entire chain collapses
-# |         '''
-# | 
-# |         ax1.text(0.5, -1.3, explanation, ha='center', fontsize=10,
-# |                 transform=ax1.transAxes,
-# |                 bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.8))
+        self.G.add_edges_from(links)
+
+    def visualize_twelve_links(self):
+        """
+        Visualize the Twelve Links of Dependent Origination
+        """
+        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(18, 9))
+
+        # === Left panel: The Twelve Links cycle ===
+        self.create_twelve_links()
+
+        # Circular layout
+        pos = nx.circular_layout(self.G)
+
+        # Node colors (by category)
+        node_colors = {
+            'Ignorance': 'gray',
+            'Formations': 'orange',
+            'Consciousness': 'yellow',
+            'Name & Form': 'lightblue',
+            'Six Senses': 'lightgreen',
+            'Contact': 'cyan',
+            'Feeling': 'pink',
+            'Craving': 'red',
+            'Clinging': 'darkred',
+            'Becoming': 'purple',
+            'Birth': 'green',
+            'Aging & Death': 'black',
+        }
+
+        colors = [node_colors[node] for node in self.G.nodes()]
+
+        # Draw the network
+        nx.draw_networkx_nodes(self.G, pos, node_color=colors,
+                              node_size=1500, alpha=0.8,
+                              edgecolors='black', linewidths=2, ax=ax1)
+
+        nx.draw_networkx_labels(self.G, pos, font_size=10,
+                               font_weight='bold', ax=ax1)
+
+        nx.draw_networkx_edges(self.G, pos, edge_color='gray',
+                              arrows=True, arrowsize=20, arrowstyle='->',
+                              width=2, connectionstyle='arc3,rad=0.1', ax=ax1)
+
+        ax1.set_title('The Twelve Links: The Mechanism of Cyclic Existence\n'
+                     '"When this exists, that comes to be"',
+                     fontsize=14, fontweight='bold')
+        ax1.axis('off')
+
+        # Add explanation
+        explanation = '''
+        The Twelve Links:
+
+        1. Ignorance -> 2. Formations -> 3. Consciousness
+        -> 4. Name & Form -> 5. Six Senses -> 6. Contact
+        -> 7. Feeling -> 8. Craving -> 9. Clinging
+        -> 10. Becoming -> 11. Birth -> 12. Aging & Death
+        -> 1. Ignorance (the cycle repeats)
+
+        Break any single link -> the entire chain collapses
+        '''
+
+        ax1.text(0.5, -1.3, explanation, ha='center', fontsize=10,
+                transform=ax1.transAxes,
+                bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.8))
 
         # === Right panel: Interdependence network ===
 
@@ -331,103 +331,103 @@ class QuantumEntanglementOntology:
                 bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.7),
                 transform=ax3.transAxes)
 
-# |         # === Panel 4: The density matrix (mathematics) ===
-# |         ax4 = fig.add_subplot(2, 3, 4)
-# |         ax4.axis('off')
-# | 
-# |         text = '''
-# |         Mathematics of Entanglement:
-# | 
-# |         Bell state:
-# |         |psi> = (|up,down> - |down,up>)/sqrt(2)
-# | 
-# |         Reduced density matrix of particle A:
-# |         rho_A = Tr_B(|psi><psi|)
-# |              = (|up><up| + |down><down|)/2
-# | 
-# |         This is a mixed state, NOT a pure state!
-# | 
-# |         Implications:
-# |         - Particle A has no definite state
-# |         - A's state depends on the whole system AB
-# |         - Parts cannot be separated from the whole
-# | 
-# |         Key insight:
-# |         Relationships come before things
-# |         '''
-# | 
-# |         ax4.text(0.1, 0.5, text, fontsize=10, va='center',
-# |                 family='monospace',
-# |                 bbox=dict(boxstyle='round', facecolor='white', alpha=0.9,
-# |                          edgecolor='black', linewidth=2))
-# | 
-# |         # === Panel 5: The formal structure of dependent origination ===
-# |         ax5 = fig.add_subplot(2, 3, 5)
-# |         ax5.axis('off')
-# | 
-# |         text2 = '''
-# |         Formal Structure of Dependent Origination:
-# | 
-# |         If A exists -> B exists
-# |         If B exists -> C exists
-# |         If C exists -> A exists
-# | 
-# |         A <-> B <-> C <-> A (circular)
-# | 
-# |         There is no independent starting point
-# |         There is no absolute "First Cause"
-# | 
-# |         Implications:
-# |         - Nothing has "intrinsic nature"
-# |         - "Existence" is relational
-# |         - Everything arises conditionally
-# | 
-# |         Key insight:
-# |         Dependent origination = emptiness
-# |         '''
-# | 
-# |         ax5.text(0.1, 0.5, text2, fontsize=10, va='center',
-# |                 family='monospace',
-# |                 bbox=dict(boxstyle='round', facecolor='white', alpha=0.9,
-# |                          edgecolor='black', linewidth=2))
-# | 
-# |         # === Panel 6: Comparative summary ===
-# |         ax6 = fig.add_subplot(2, 3, 6)
-# |         ax6.axis('off')
-# | 
-# |         comparison = '''
-# |         ENTANGLEMENT vs. DEPENDENT ORIGINATION
-# | 
-# |         Quantum Entanglement:
-# |         - Inseparable
-# |         - Parts cannot be independently defined
-# |         - Relationships before things
-# |         - The whole is greater than the sum of parts
-# | 
-# |         Buddhist Dependent Origination:
-# |         - Mutually conditioned
-# |         - All dharmas lack intrinsic nature
-# |         - Origination before existence
-# |         - Reality is an indivisible whole
-# | 
-# |         Shared structure:
-# |         * Rejects substance ontology
-# |         * Affirms relational ontology
-# |         * "Existence" is relational
-# |         * Parts depend on the whole
-# | 
-# |         Profound insight:
-# |         The universe is not a "collection of things"
-# |         but a "web of relationships"
-# |         '''
-# | 
-# |         ax6.text(0.1, 0.5, comparison, fontsize=10, va='center',
-# |                 bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.9,
-# |                          edgecolor='black', linewidth=2))
-# | 
-# |         plt.tight_layout()
-# |         plt.savefig('entanglement_ontology.png', dpi=300, bbox_inches='tight')
-# |         plt.show()
+        # === Panel 4: The density matrix (mathematics) ===
+        ax4 = fig.add_subplot(2, 3, 4)
+        ax4.axis('off')
+
+        text = '''
+        Mathematics of Entanglement:
+
+        Bell state:
+        |psi> = (|up,down> - |down,up>)/sqrt(2)
+
+        Reduced density matrix of particle A:
+        rho_A = Tr_B(|psi><psi|)
+             = (|up><up| + |down><down|)/2
+
+        This is a mixed state, NOT a pure state!
+
+        Implications:
+        - Particle A has no definite state
+        - A's state depends on the whole system AB
+        - Parts cannot be separated from the whole
+
+        Key insight:
+        Relationships come before things
+        '''
+
+        ax4.text(0.1, 0.5, text, fontsize=10, va='center',
+                family='monospace',
+                bbox=dict(boxstyle='round', facecolor='white', alpha=0.9,
+                         edgecolor='black', linewidth=2))
+
+        # === Panel 5: The formal structure of dependent origination ===
+        ax5 = fig.add_subplot(2, 3, 5)
+        ax5.axis('off')
+
+        text2 = '''
+        Formal Structure of Dependent Origination:
+
+        If A exists -> B exists
+        If B exists -> C exists
+        If C exists -> A exists
+
+        A <-> B <-> C <-> A (circular)
+
+        There is no independent starting point
+        There is no absolute "First Cause"
+
+        Implications:
+        - Nothing has "intrinsic nature"
+        - "Existence" is relational
+        - Everything arises conditionally
+
+        Key insight:
+        Dependent origination = emptiness
+        '''
+
+        ax5.text(0.1, 0.5, text2, fontsize=10, va='center',
+                family='monospace',
+                bbox=dict(boxstyle='round', facecolor='white', alpha=0.9,
+                         edgecolor='black', linewidth=2))
+
+        # === Panel 6: Comparative summary ===
+        ax6 = fig.add_subplot(2, 3, 6)
+        ax6.axis('off')
+
+        comparison = '''
+        ENTANGLEMENT vs. DEPENDENT ORIGINATION
+
+        Quantum Entanglement:
+        - Inseparable
+        - Parts cannot be independently defined
+        - Relationships before things
+        - The whole is greater than the sum of parts
+
+        Buddhist Dependent Origination:
+        - Mutually conditioned
+        - All dharmas lack intrinsic nature
+        - Origination before existence
+        - Reality is an indivisible whole
+
+        Shared structure:
+        * Rejects substance ontology
+        * Affirms relational ontology
+        * "Existence" is relational
+        * Parts depend on the whole
+
+        Profound insight:
+        The universe is not a "collection of things"
+        but a "web of relationships"
+        '''
+
+        ax6.text(0.1, 0.5, comparison, fontsize=10, va='center',
+                bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.9,
+                         edgecolor='black', linewidth=2))
+
+        plt.tight_layout()
+        plt.savefig('entanglement_ontology.png', dpi=300, bbox_inches='tight')
+        plt.show()
 
         print("\n" + "="*70)
         print("RELATIONAL ONTOLOGY: The Shared Insight of Quantum Physics and Dependent Origination")
@@ -728,34 +728,34 @@ def visualize_indra_net_holographic():
                  'Each particle contains information about the entire system',
                  fontsize=14, fontweight='bold')
 
-# |     # Bottom annotation
-# |     explanation = '''
-# |     Indra's Net (Avatamsaka/Huayan Buddhism):
-# |     - Every jewel reflects all other jewels
-# |     - Change one jewel, and the whole net changes
-# |     - The part contains the whole
-# |     - Infinite mutual reflection
-# | 
-# |     Quantum Entanglement Network:
-# |     - Every particle is entangled with all others
-# |     - Measuring one particle affects all others
-# |     - The part contains information about the whole (holography)
-# |     - Non-local correlations
-# | 
-# |     Shared insight:
-# |     * The universe is an indivisible whole
-# |     * Part and whole are inseparable
-# |     * One is all, all is one
-# |     * Relationships constitute reality
-# |     '''
-# | 
-# |     fig.text(0.5, 0.02, explanation, ha='center', fontsize=10,
-# |             bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.9))
-# | 
-# |     plt.tight_layout()
-# |     plt.subplots_adjust(bottom=0.25)
-# |     plt.savefig('indra_net_holographic.png', dpi=300, bbox_inches='tight')
-# |     plt.show()
+    # Bottom annotation
+    explanation = '''
+    Indra's Net (Avatamsaka/Huayan Buddhism):
+    - Every jewel reflects all other jewels
+    - Change one jewel, and the whole net changes
+    - The part contains the whole
+    - Infinite mutual reflection
+
+    Quantum Entanglement Network:
+    - Every particle is entangled with all others
+    - Measuring one particle affects all others
+    - The part contains information about the whole (holography)
+    - Non-local correlations
+
+    Shared insight:
+    * The universe is an indivisible whole
+    * Part and whole are inseparable
+    * One is all, all is one
+    * Relationships constitute reality
+    '''
+
+    fig.text(0.5, 0.02, explanation, ha='center', fontsize=10,
+            bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.9))
+
+    plt.tight_layout()
+    plt.subplots_adjust(bottom=0.25)
+    plt.savefig('indra_net_holographic.png', dpi=300, bbox_inches='tight')
+    plt.show()
 
     print("\n" + "="*70)
     print("INDRA'S NET AND QUANTUM HOLOGRAPHY")

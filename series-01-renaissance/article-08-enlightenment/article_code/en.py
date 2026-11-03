@@ -67,58 +67,58 @@ for name, info in thinkers.items():
 patches = [mpatches.Patch(color=c, label=d.capitalize())
            for d, c in domain_colors.items()]
 
-# | import numpy as np
-# | 
-# | # Three revolutions inspired by Enlightenment ideas
-# | revolutions = {
-# |     "American (1775-1783)": {
-# |         "duration_years": 8,
-# |         "deaths_estimate": 37_000,
-# |         "population": 2_500_000,
-# |         "outcome_democracy_years": 248,  # still ongoing
-# |         "key_documents": ["Declaration of Independence", "Constitution",
-# |                           "Bill of Rights"],
-# |         "terror_deaths": 0,
-# |         "color": "#3498db"
-# |     },
-# |     "French (1789-1799)": {
-# |         "duration_years": 10,
-# |         "deaths_estimate": 600_000,
-# |         "population": 28_000_000,
-# |         "outcome_democracy_years": 0,  # ended in Napoleon
-# |         "key_documents": ["Declaration of Rights of Man",
-# |                           "Civil Constitution of the Clergy"],
-# |         "terror_deaths": 16_594,
-# |         "color": "#e74c3c"
-# |     },
-# |     "Haitian (1791-1804)": {
-# |         "duration_years": 13,
-# |         "deaths_estimate": 350_000,
-# |         "population": 500_000,
-# |         "outcome_democracy_years": 0,  # cycles of instability
-# |         "key_documents": ["Declaration of Independence (1804)"],
-# |         "terror_deaths": 5_000,
-# |         "color": "#2ecc71"
-# |     }
-# | }
-# | 
-# | # Chart 1: Deaths as % of population
-# | names = list(revolutions.keys())
-# | death_pcts = [revolutions[r]["deaths_estimate"] / revolutions[r]["population"] * 100
-# |               for r in names]
-# | colors = [revolutions[r]["color"] for r in names]
-# | axes[0].barh(names, death_pcts, color=colors, edgecolor="black")
-# | axes[0].set_xlabel("Deaths as % of Population")
-# | axes[0].set_title("Human Cost", fontweight="bold")
-# | 
-# | # Chart 2: Duration
-# | durations = [revolutions[r]["duration_years"] for r in names]
-# | axes[1].barh(names, durations, color=colors, edgecolor="black")
-# | axes[1].set_xlabel("Years")
-# | axes[1].set_title("Duration", fontweight="bold")
-# | 
-# | # Chart 3: Terror deaths (state-sponsored executions)
-# | terror = [revolutions[r]["terror_deaths"] for r in names]
-# | axes[2].barh(names, terror, color=colors, edgecolor="black")
-# | axes[2].set_xlabel("Executed by Revolutionary Government")
-# | axes[2].set_title("State Terror", fontweight="bold")
+import numpy as np
+
+# Three revolutions inspired by Enlightenment ideas
+revolutions = {
+    "American (1775-1783)": {
+        "duration_years": 8,
+        "deaths_estimate": 37_000,
+        "population": 2_500_000,
+        "outcome_democracy_years": 248,  # still ongoing
+        "key_documents": ["Declaration of Independence", "Constitution",
+                          "Bill of Rights"],
+        "terror_deaths": 0,
+        "color": "#3498db"
+    },
+    "French (1789-1799)": {
+        "duration_years": 10,
+        "deaths_estimate": 600_000,
+        "population": 28_000_000,
+        "outcome_democracy_years": 0,  # ended in Napoleon
+        "key_documents": ["Declaration of Rights of Man",
+                          "Civil Constitution of the Clergy"],
+        "terror_deaths": 16_594,
+        "color": "#e74c3c"
+    },
+    "Haitian (1791-1804)": {
+        "duration_years": 13,
+        "deaths_estimate": 350_000,
+        "population": 500_000,
+        "outcome_democracy_years": 0,  # cycles of instability
+        "key_documents": ["Declaration of Independence (1804)"],
+        "terror_deaths": 5_000,
+        "color": "#2ecc71"
+    }
+}
+
+# Chart 1: Deaths as % of population
+names = list(revolutions.keys())
+death_pcts = [revolutions[r]["deaths_estimate"] / revolutions[r]["population"] * 100
+              for r in names]
+colors = [revolutions[r]["color"] for r in names]
+axes[0].barh(names, death_pcts, color=colors, edgecolor="black")
+axes[0].set_xlabel("Deaths as % of Population")
+axes[0].set_title("Human Cost", fontweight="bold")
+
+# Chart 2: Duration
+durations = [revolutions[r]["duration_years"] for r in names]
+axes[1].barh(names, durations, color=colors, edgecolor="black")
+axes[1].set_xlabel("Years")
+axes[1].set_title("Duration", fontweight="bold")
+
+# Chart 3: Terror deaths (state-sponsored executions)
+terror = [revolutions[r]["terror_deaths"] for r in names]
+axes[2].barh(names, terror, color=colors, edgecolor="black")
+axes[2].set_xlabel("Executed by Revolutionary Government")
+axes[2].set_title("State Terror", fontweight="bold")

@@ -1,7 +1,7 @@
 # Code & Cogito: Quantum Computing vs Zen — Beyond Binary Logic
 # Article: https://code-cogito.com/en/quantum-computing-vs-zen-beyond-binary-logic-en/
 # All the code blocks of the article, in order. Program output is kept as comments.
-# Note: the article shows this code in excerpts, so this file does not run on its own.
+
 # | H = (1/√2) × [1   1]
 # |               [1  -1]
 
@@ -71,82 +71,82 @@ class QuantumBitSimulator:
         ax.set_zlabel('Z')
         ax.set_title(label, fontsize=13, fontweight='bold')
 
-# |     def visualize_quantum_states(self):
-# |         """
-# |         Visualize different quantum states on the Bloch sphere
-# |         """
-# |         fig = plt.figure(figsize=(18, 12))
-# | 
-# |         # === |0⟩ state ===
-# |         ax1 = fig.add_subplot(2, 3, 1, projection='3d')
-# |         self.bloch_sphere(ax1, [1, 0], '|0⟩ State\n(North Pole)')
-# | 
-# |         # === |1⟩ state ===
-# |         ax2 = fig.add_subplot(2, 3, 2, projection='3d')
-# |         self.bloch_sphere(ax2, [0, 1], '|1⟩ State\n(South Pole)')
-# | 
-# |         # === |+⟩ state (superposition) ===
-# |         ax3 = fig.add_subplot(2, 3, 3, projection='3d')
-# |         self.bloch_sphere(ax3, [1/np.sqrt(2), 1/np.sqrt(2)],
-# |                          '|+⟩ = (|0⟩+|1⟩)/√2\n(Equator)')
-# | 
-# |         # === |-⟩ state (superposition) ===
-# |         ax4 = fig.add_subplot(2, 3, 4, projection='3d')
-# |         self.bloch_sphere(ax4, [1/np.sqrt(2), -1/np.sqrt(2)],
-# |                          '|−⟩ = (|0⟩−|1⟩)/√2\n(Equator)')
-# | 
-# |         # === Arbitrary superposition ===
-# |         ax5 = fig.add_subplot(2, 3, 5, projection='3d')
-# |         alpha = np.cos(np.pi/6)
-# |         beta = np.sin(np.pi/6) * np.exp(1j * np.pi/4)
-# |         self.bloch_sphere(ax5, [alpha, beta],
-# |                          'Arbitrary Superposition\n(Any Point on Sphere)')
-# | 
-# |         # === Comparison panel ===
-# |         ax6 = fig.add_subplot(2, 3, 6)
-# |         ax6.axis('off')
-# | 
-# |         text = '''
-# |         [Qubit vs Classical Bit]
-# | 
-# |         Classical Bit:
-# |         • Only two states: 0 or 1
-# |         • Black or white
-# |         • Binary logic
-# | 
-# |         Qubit:
-# |         • Superposition: α|0⟩ + β|1⟩
-# |         • |α|² + |β|² = 1
-# |         • Both 0 and 1
-# |         • Beyond binary
-# | 
-# |         Bloch Sphere:
-# |         • Each surface point = one quantum state
-# |         • North pole = |0⟩
-# |         • South pole = |1⟩
-# |         • Equator = superposition states
-# |         • No pure states inside the sphere
-# | 
-# |         Zen Analogy:
-# |         • Classical: being OR non-being
-# |         • Quantum: both (superposition)
-# |         • Zen: beyond both (non-duality)
-# | 
-# |         Hadamard Gate:
-# |         H|0⟩ = (|0⟩+|1⟩)/√2
-# |         → From north pole to equator
-# |         → Creating superposition
-# |         → Shattering binary opposition
-# |         '''
-# | 
-# |         ax6.text(0.1, 0.5, text, fontsize=10, va='center',
-# |                 family='monospace',
-# |                 bbox=dict(boxstyle='round', facecolor='lightyellow',
-# |                          alpha=0.9, edgecolor='black', linewidth=2))
-# | 
-# |         plt.tight_layout()
-# |         plt.savefig('quantum_bit_bloch_sphere.png', dpi=300, bbox_inches='tight')
-# |         plt.show()
+    def visualize_quantum_states(self):
+        """
+        Visualize different quantum states on the Bloch sphere
+        """
+        fig = plt.figure(figsize=(18, 12))
+
+        # === |0⟩ state ===
+        ax1 = fig.add_subplot(2, 3, 1, projection='3d')
+        self.bloch_sphere(ax1, [1, 0], '|0⟩ State\n(North Pole)')
+
+        # === |1⟩ state ===
+        ax2 = fig.add_subplot(2, 3, 2, projection='3d')
+        self.bloch_sphere(ax2, [0, 1], '|1⟩ State\n(South Pole)')
+
+        # === |+⟩ state (superposition) ===
+        ax3 = fig.add_subplot(2, 3, 3, projection='3d')
+        self.bloch_sphere(ax3, [1/np.sqrt(2), 1/np.sqrt(2)],
+                         '|+⟩ = (|0⟩+|1⟩)/√2\n(Equator)')
+
+        # === |-⟩ state (superposition) ===
+        ax4 = fig.add_subplot(2, 3, 4, projection='3d')
+        self.bloch_sphere(ax4, [1/np.sqrt(2), -1/np.sqrt(2)],
+                         '|−⟩ = (|0⟩−|1⟩)/√2\n(Equator)')
+
+        # === Arbitrary superposition ===
+        ax5 = fig.add_subplot(2, 3, 5, projection='3d')
+        alpha = np.cos(np.pi/6)
+        beta = np.sin(np.pi/6) * np.exp(1j * np.pi/4)
+        self.bloch_sphere(ax5, [alpha, beta],
+                         'Arbitrary Superposition\n(Any Point on Sphere)')
+
+        # === Comparison panel ===
+        ax6 = fig.add_subplot(2, 3, 6)
+        ax6.axis('off')
+
+        text = '''
+        [Qubit vs Classical Bit]
+
+        Classical Bit:
+        • Only two states: 0 or 1
+        • Black or white
+        • Binary logic
+
+        Qubit:
+        • Superposition: α|0⟩ + β|1⟩
+        • |α|² + |β|² = 1
+        • Both 0 and 1
+        • Beyond binary
+
+        Bloch Sphere:
+        • Each surface point = one quantum state
+        • North pole = |0⟩
+        • South pole = |1⟩
+        • Equator = superposition states
+        • No pure states inside the sphere
+
+        Zen Analogy:
+        • Classical: being OR non-being
+        • Quantum: both (superposition)
+        • Zen: beyond both (non-duality)
+
+        Hadamard Gate:
+        H|0⟩ = (|0⟩+|1⟩)/√2
+        → From north pole to equator
+        → Creating superposition
+        → Shattering binary opposition
+        '''
+
+        ax6.text(0.1, 0.5, text, fontsize=10, va='center',
+                family='monospace',
+                bbox=dict(boxstyle='round', facecolor='lightyellow',
+                         alpha=0.9, edgecolor='black', linewidth=2))
+
+        plt.tight_layout()
+        plt.savefig('quantum_bit_bloch_sphere.png', dpi=300, bbox_inches='tight')
+        plt.show()
 
         print("\n" + "="*70)
         print("[QUBITS: BEYOND 0 AND 1]")

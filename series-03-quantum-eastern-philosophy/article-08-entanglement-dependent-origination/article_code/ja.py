@@ -1,7 +1,7 @@
 # Code & Cogito: 量子もつれ vs 仏教「縁起」——万物は互いの因縁によって在る
 # Article: https://code-cogito.com/ja/quantum-entanglement-dependent-origination-ja/
 # All the code blocks of the article, in order. Program output is kept as comments.
-# Note: the article shows this code in excerpts, so this file does not run on its own.
+
 import numpy as np
 import matplotlib.pyplot as plt
 import networkx as nx
@@ -20,27 +20,27 @@ class DependentOriginationNetwork:
     def __init__(self):
         self.G = nx.DiGraph()
 
-# |     def create_twelve_links(self):
-# |         """
-# |         Create the Twelve Links of Dependent Origination network
-# |         """
-# |         # Twelve links (in Japanese Buddhist terminology)
-# |         links = [
-# |             ('無明', '行'),
-# |             ('行', '識'),
-# |             ('識', '名色'),
-# |             ('名色', '六処'),
-# |             ('六処', '触'),
-# |             ('触', '受'),
-# |             ('受', '愛'),
-# |             ('愛', '取'),
-# |             ('取', '有'),
-# |             ('有', '生'),
-# |             ('生', '老死'),
-# |             ('老死', '無明'),  # cycle
-# |         ]
-# | 
-# |         self.G.add_edges_from(links)
+    def create_twelve_links(self):
+        """
+        Create the Twelve Links of Dependent Origination network
+        """
+        # Twelve links (in Japanese Buddhist terminology)
+        links = [
+            ('無明', '行'),
+            ('行', '識'),
+            ('識', '名色'),
+            ('名色', '六処'),
+            ('六処', '触'),
+            ('触', '受'),
+            ('受', '愛'),
+            ('愛', '取'),
+            ('取', '有'),
+            ('有', '生'),
+            ('生', '老死'),
+            ('老死', '無明'),  # cycle
+        ]
+
+        self.G.add_edges_from(links)
 
     def visualize_twelve_links(self):
         """
@@ -324,103 +324,103 @@ class QuantumEntanglementOntology:
                 bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.7),
                 transform=ax3.transAxes)
 
-# |         # === Panel 4: Density Matrix (Mathematics) ===
-# |         ax4 = fig.add_subplot(2, 3, 4)
-# |         ax4.axis('off')
-# | 
-# |         text = '''
-# |         もつれ状態の数学：
-# | 
-# |         ベル状態：
-# |         |ψ⟩ = (|↑↓⟩ − |↓↑⟩)/√2
-# | 
-# |         粒子Aの縮約密度行列：
-# |         ρ_A = Tr_B(|ψ⟩⟨ψ|)
-# |              = (|↑⟩⟨↑| + |↓⟩⟨↓|)/2
-# | 
-# |         これは混合状態であり、純粋状態ではない！
-# | 
-# |         意味：
-# |         - 粒子Aには確定した状態がない
-# |         - Aの状態は系全体ABに依存する
-# |         - 部分は全体から切り離せない
-# | 
-# |         鍵となる洞察：
-# |         関係が実体に先立つ
-# |         '''
-# | 
-# |         ax4.text(0.1, 0.5, text, fontsize=10, va='center',
-# |                 family='monospace',
-# |                 bbox=dict(boxstyle='round', facecolor='white', alpha=0.9,
-# |                          edgecolor='black', linewidth=2))
-# | 
-# |         # === Panel 5: Formal Structure of Dependent Origination ===
-# |         ax5 = fig.add_subplot(2, 3, 5)
-# |         ax5.axis('off')
-# | 
-# |         text2 = '''
-# |         縁起の形式構造：
-# | 
-# |         Aが存在する → Bが存在する
-# |         Bが存在する → Cが存在する
-# |         Cが存在する → Aが存在する
-# | 
-# |         A ↔ B ↔ C ↔ A（循環）
-# | 
-# |         独立した起点は存在しない
-# |         絶対的な「第一因」はない
-# | 
-# |         意味：
-# |         - いかなるものにも「自性」はない
-# |         - 「存在」は相対的である
-# |         - 一切は条件によって有る
-# | 
-# |         鍵となる洞察：
-# |         縁起すなわち空性
-# |         '''
-# | 
-# |         ax5.text(0.1, 0.5, text2, fontsize=10, va='center',
-# |                 family='monospace',
-# |                 bbox=dict(boxstyle='round', facecolor='white', alpha=0.9,
-# |                          edgecolor='black', linewidth=2))
-# | 
-# |         # === Panel 6: Summary Comparison ===
-# |         ax6 = fig.add_subplot(2, 3, 6)
-# |         ax6.axis('off')
-# | 
-# |         comparison = '''
-# |         【量子もつれ vs 縁起】
-# | 
-# |         量子もつれ状態：
-# |         - 分解不可能
-# |         - 部分を独立に定義できない
-# |         - 関係が実体に先立つ
-# |         - 全体は部分の和を超える
-# | 
-# |         仏教の縁起：
-# |         - 互いに因縁
-# |         - 諸法無自性
-# |         - 縁起が存在に先立つ
-# |         - 法界は分割不可能な一体
-# | 
-# |         共通構造：
-# |         * 実体存在論に反対
-# |         * 関係存在論を主張
-# |         * 「存在」は相対的
-# |         * 部分は全体に依存する
-# | 
-# |         深い洞察：
-# |         宇宙は「実体の集合」ではなく
-# |         「関係のネットワーク」である
-# |         '''
-# | 
-# |         ax6.text(0.1, 0.5, comparison, fontsize=10, va='center',
-# |                 bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.9,
-# |                          edgecolor='black', linewidth=2))
-# | 
-# |         plt.tight_layout()
-# |         plt.savefig('entanglement_ontology.png', dpi=300, bbox_inches='tight')
-# |         plt.show()
+        # === Panel 4: Density Matrix (Mathematics) ===
+        ax4 = fig.add_subplot(2, 3, 4)
+        ax4.axis('off')
+
+        text = '''
+        もつれ状態の数学：
+
+        ベル状態：
+        |ψ⟩ = (|↑↓⟩ − |↓↑⟩)/√2
+
+        粒子Aの縮約密度行列：
+        ρ_A = Tr_B(|ψ⟩⟨ψ|)
+             = (|↑⟩⟨↑| + |↓⟩⟨↓|)/2
+
+        これは混合状態であり、純粋状態ではない！
+
+        意味：
+        - 粒子Aには確定した状態がない
+        - Aの状態は系全体ABに依存する
+        - 部分は全体から切り離せない
+
+        鍵となる洞察：
+        関係が実体に先立つ
+        '''
+
+        ax4.text(0.1, 0.5, text, fontsize=10, va='center',
+                family='monospace',
+                bbox=dict(boxstyle='round', facecolor='white', alpha=0.9,
+                         edgecolor='black', linewidth=2))
+
+        # === Panel 5: Formal Structure of Dependent Origination ===
+        ax5 = fig.add_subplot(2, 3, 5)
+        ax5.axis('off')
+
+        text2 = '''
+        縁起の形式構造：
+
+        Aが存在する → Bが存在する
+        Bが存在する → Cが存在する
+        Cが存在する → Aが存在する
+
+        A ↔ B ↔ C ↔ A（循環）
+
+        独立した起点は存在しない
+        絶対的な「第一因」はない
+
+        意味：
+        - いかなるものにも「自性」はない
+        - 「存在」は相対的である
+        - 一切は条件によって有る
+
+        鍵となる洞察：
+        縁起すなわち空性
+        '''
+
+        ax5.text(0.1, 0.5, text2, fontsize=10, va='center',
+                family='monospace',
+                bbox=dict(boxstyle='round', facecolor='white', alpha=0.9,
+                         edgecolor='black', linewidth=2))
+
+        # === Panel 6: Summary Comparison ===
+        ax6 = fig.add_subplot(2, 3, 6)
+        ax6.axis('off')
+
+        comparison = '''
+        【量子もつれ vs 縁起】
+
+        量子もつれ状態：
+        - 分解不可能
+        - 部分を独立に定義できない
+        - 関係が実体に先立つ
+        - 全体は部分の和を超える
+
+        仏教の縁起：
+        - 互いに因縁
+        - 諸法無自性
+        - 縁起が存在に先立つ
+        - 法界は分割不可能な一体
+
+        共通構造：
+        * 実体存在論に反対
+        * 関係存在論を主張
+        * 「存在」は相対的
+        * 部分は全体に依存する
+
+        深い洞察：
+        宇宙は「実体の集合」ではなく
+        「関係のネットワーク」である
+        '''
+
+        ax6.text(0.1, 0.5, comparison, fontsize=10, va='center',
+                bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.9,
+                         edgecolor='black', linewidth=2))
+
+        plt.tight_layout()
+        plt.savefig('entanglement_ontology.png', dpi=300, bbox_inches='tight')
+        plt.show()
 
         print("\n" + "="*70)
         print("【関係存在論：量子と縁起の共通洞察】")
@@ -719,34 +719,34 @@ def visualize_indra_net_holographic():
     ax2.set_title('量子もつれネットワーク：全息構造\n各粒子が系全体の情報を含む',
                  fontsize=14, fontweight='bold')
 
-# |     # Bottom explanation
-# |     explanation = '''
-# |     因陀羅網（華厳宗）：
-# |     - 各珠がすべての珠を映し出す
-# |     - 一珠を変えれば、全網が変わる
-# |     - 部分が全体を含む
-# |     - 重重無尽
-# | 
-# |     量子もつれネットワーク：
-# |     - 各粒子がすべての粒子ともつれる
-# |     - 一粒子を測定すれば、すべての粒子に影響する
-# |     - 部分が全体の情報を含む（全息性）
-# |     - 非局所的相関
-# | 
-# |     共通の洞察：
-# |     * 宇宙は分割不可能な全体である
-# |     * 部分と全体は不可分である
-# |     * 一即一切、一切即一
-# |     * 関係が実在を構成する
-# |     '''
-# | 
-# |     fig.text(0.5, 0.02, explanation, ha='center', fontsize=10,
-# |             bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.9))
-# | 
-# |     plt.tight_layout()
-# |     plt.subplots_adjust(bottom=0.25)
-# |     plt.savefig('indra_net_holographic.png', dpi=300, bbox_inches='tight')
-# |     plt.show()
+    # Bottom explanation
+    explanation = '''
+    因陀羅網（華厳宗）：
+    - 各珠がすべての珠を映し出す
+    - 一珠を変えれば、全網が変わる
+    - 部分が全体を含む
+    - 重重無尽
+
+    量子もつれネットワーク：
+    - 各粒子がすべての粒子ともつれる
+    - 一粒子を測定すれば、すべての粒子に影響する
+    - 部分が全体の情報を含む（全息性）
+    - 非局所的相関
+
+    共通の洞察：
+    * 宇宙は分割不可能な全体である
+    * 部分と全体は不可分である
+    * 一即一切、一切即一
+    * 関係が実在を構成する
+    '''
+
+    fig.text(0.5, 0.02, explanation, ha='center', fontsize=10,
+            bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.9))
+
+    plt.tight_layout()
+    plt.subplots_adjust(bottom=0.25)
+    plt.savefig('indra_net_holographic.png', dpi=300, bbox_inches='tight')
+    plt.show()
 
     print("\n" + "="*70)
     print("【因陀羅網と量子全息性】")

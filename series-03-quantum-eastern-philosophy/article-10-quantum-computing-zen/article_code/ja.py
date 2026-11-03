@@ -1,7 +1,7 @@
 # Code & Cogito: 量子コンピューティング vs 禅 ── 二元論理を超えて
 # Article: https://code-cogito.com/ja/quantum-computing-zen-beyond-binary-ja/
 # All the code blocks of the article, in order. Program output is kept as comments.
-# Note: the article shows this code in excerpts, so this file does not run on its own.
+
 # | H = (1/√2) × [1   1]
 # |               [1  -1]
 
@@ -71,82 +71,82 @@ class QuantumBitSimulator:
         ax.set_zlabel('Z')
         ax.set_title(label, fontsize=13, fontweight='bold')
 
-# |     def visualize_quantum_states(self):
-# |         """
-# |         Visualize different quantum states on the Bloch sphere
-# |         """
-# |         fig = plt.figure(figsize=(18, 12))
-# | 
-# |         # === |0⟩ state ===
-# |         ax1 = fig.add_subplot(2, 3, 1, projection='3d')
-# |         self.bloch_sphere(ax1, [1, 0], '|0⟩ 状態\n（北極）')
-# | 
-# |         # === |1⟩ state ===
-# |         ax2 = fig.add_subplot(2, 3, 2, projection='3d')
-# |         self.bloch_sphere(ax2, [0, 1], '|1⟩ 状態\n（南極）')
-# | 
-# |         # === |+⟩ state (superposition) ===
-# |         ax3 = fig.add_subplot(2, 3, 3, projection='3d')
-# |         self.bloch_sphere(ax3, [1/np.sqrt(2), 1/np.sqrt(2)],
-# |                          '|+⟩ = (|0⟩+|1⟩)/√2\n（赤道）')
-# | 
-# |         # === |-⟩ state (superposition) ===
-# |         ax4 = fig.add_subplot(2, 3, 4, projection='3d')
-# |         self.bloch_sphere(ax4, [1/np.sqrt(2), -1/np.sqrt(2)],
-# |                          '|−⟩ = (|0⟩−|1⟩)/√2\n（赤道）')
-# | 
-# |         # === Arbitrary superposition state ===
-# |         ax5 = fig.add_subplot(2, 3, 5, projection='3d')
-# |         alpha = np.cos(np.pi/6)
-# |         beta = np.sin(np.pi/6) * np.exp(1j * np.pi/4)
-# |         self.bloch_sphere(ax5, [alpha, beta],
-# |                          '任意の重ね合わせ状態\n球面上の任意の点')
-# | 
-# |         # === Comparison panel ===
-# |         ax6 = fig.add_subplot(2, 3, 6)
-# |         ax6.axis('off')
-# | 
-# |         text = '''
-# |         【量子ビット vs 古典ビット】
-# | 
-# |         古典ビット：
-# |         ・2つの状態のみ：0 または 1
-# |         ・白か黒か
-# |         ・二元論理
-# | 
-# |         量子ビット：
-# |         ・重ね合わせ状態：α|0⟩ + β|1⟩
-# |         ・|α|² + |β|² = 1
-# |         ・0でもあり1でもある
-# |         ・二元を超越
-# | 
-# |         ブロッホ球：
-# |         ・球面上の各点 = 一つの量子状態
-# |         ・北極 = |0⟩
-# |         ・南極 = |1⟩
-# |         ・赤道 = 重ね合わせ状態
-# |         ・球内には量子状態なし（純粋状態）
-# | 
-# |         禅との対応：
-# |         ・古典：有 or 無
-# |         ・量子：有でもあり無でもある（重ね合わせ）
-# |         ・禅：有無を超える（不二）
-# | 
-# |         アダマールゲート：
-# |         H|0⟩ = (|0⟩+|1⟩)/√2
-# |         → 北極から赤道へ
-# |         → 重ね合わせ状態を生成
-# |         → 二元対立を打ち破る
-# |         '''
-# | 
-# |         ax6.text(0.1, 0.5, text, fontsize=10, va='center',
-# |                 family='monospace',
-# |                 bbox=dict(boxstyle='round', facecolor='lightyellow',
-# |                          alpha=0.9, edgecolor='black', linewidth=2))
-# | 
-# |         plt.tight_layout()
-# |         plt.savefig('quantum_bit_bloch_sphere.png', dpi=300, bbox_inches='tight')
-# |         plt.show()
+    def visualize_quantum_states(self):
+        """
+        Visualize different quantum states on the Bloch sphere
+        """
+        fig = plt.figure(figsize=(18, 12))
+
+        # === |0⟩ state ===
+        ax1 = fig.add_subplot(2, 3, 1, projection='3d')
+        self.bloch_sphere(ax1, [1, 0], '|0⟩ 状態\n（北極）')
+
+        # === |1⟩ state ===
+        ax2 = fig.add_subplot(2, 3, 2, projection='3d')
+        self.bloch_sphere(ax2, [0, 1], '|1⟩ 状態\n（南極）')
+
+        # === |+⟩ state (superposition) ===
+        ax3 = fig.add_subplot(2, 3, 3, projection='3d')
+        self.bloch_sphere(ax3, [1/np.sqrt(2), 1/np.sqrt(2)],
+                         '|+⟩ = (|0⟩+|1⟩)/√2\n（赤道）')
+
+        # === |-⟩ state (superposition) ===
+        ax4 = fig.add_subplot(2, 3, 4, projection='3d')
+        self.bloch_sphere(ax4, [1/np.sqrt(2), -1/np.sqrt(2)],
+                         '|−⟩ = (|0⟩−|1⟩)/√2\n（赤道）')
+
+        # === Arbitrary superposition state ===
+        ax5 = fig.add_subplot(2, 3, 5, projection='3d')
+        alpha = np.cos(np.pi/6)
+        beta = np.sin(np.pi/6) * np.exp(1j * np.pi/4)
+        self.bloch_sphere(ax5, [alpha, beta],
+                         '任意の重ね合わせ状態\n球面上の任意の点')
+
+        # === Comparison panel ===
+        ax6 = fig.add_subplot(2, 3, 6)
+        ax6.axis('off')
+
+        text = '''
+        【量子ビット vs 古典ビット】
+
+        古典ビット：
+        ・2つの状態のみ：0 または 1
+        ・白か黒か
+        ・二元論理
+
+        量子ビット：
+        ・重ね合わせ状態：α|0⟩ + β|1⟩
+        ・|α|² + |β|² = 1
+        ・0でもあり1でもある
+        ・二元を超越
+
+        ブロッホ球：
+        ・球面上の各点 = 一つの量子状態
+        ・北極 = |0⟩
+        ・南極 = |1⟩
+        ・赤道 = 重ね合わせ状態
+        ・球内には量子状態なし（純粋状態）
+
+        禅との対応：
+        ・古典：有 or 無
+        ・量子：有でもあり無でもある（重ね合わせ）
+        ・禅：有無を超える（不二）
+
+        アダマールゲート：
+        H|0⟩ = (|0⟩+|1⟩)/√2
+        → 北極から赤道へ
+        → 重ね合わせ状態を生成
+        → 二元対立を打ち破る
+        '''
+
+        ax6.text(0.1, 0.5, text, fontsize=10, va='center',
+                family='monospace',
+                bbox=dict(boxstyle='round', facecolor='lightyellow',
+                         alpha=0.9, edgecolor='black', linewidth=2))
+
+        plt.tight_layout()
+        plt.savefig('quantum_bit_bloch_sphere.png', dpi=300, bbox_inches='tight')
+        plt.show()
 
         print("\n" + "="*70)
         print("【量子ビット：0と1を超えて】")

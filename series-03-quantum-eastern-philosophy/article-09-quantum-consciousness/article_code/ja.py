@@ -97,85 +97,85 @@ class QuantumConsciousnessSimulator:
         ax3.set_title('測定後：収縮\n|ψ⟩ → |0⟩',
                      fontsize=13, fontweight='bold')
 
-# |         # === Panel 4: Classical view ===
-# |         ax4 = fig.add_subplot(2, 3, 4)
-# |         ax4.axis('off')
-# | 
-# |         text_classical = '''
-# |         古典的観点（唯物論）：
-# | 
-# |         • 物質は観察者から独立
-# |         • 観察は単なる「発見」
-# |         • 意識は副産物
-# |         • 脳は古典的コンピュータ
-# | 
-# |         問題点：
-# |         → 測定問題を説明できない
-# |         → 意識の統一性を説明できない
-# |         '''
-# | 
-# |         ax4.text(0.1, 0.5, text_classical, fontsize=10, va='center',
-# |                 bbox=dict(boxstyle='round', facecolor='lightblue', alpha=0.8))
-# | 
-# |         # === Panel 5: Quantum consciousness view ===
-# |         ax5 = fig.add_subplot(2, 3, 5)
-# |         ax5.axis('off')
-# | 
-# |         text_quantum = '''
-# |         量子意識（Orch OR）：
-# | 
-# |         • 意識は量子過程
-# |         • 微小管の中で発生
-# |         • 意識が波動関数を収縮させる
-# |         • 各収縮 = 意識の一瞬
-# | 
-# |         長所：
-# |         → 意識の統一性を説明
-# |         → 意識の非計算性を説明
-# |         → 量子力学と意識を結合
-# |         '''
-# | 
-# |         ax5.text(0.1, 0.5, text_quantum, fontsize=10, va='center',
-# |                 bbox=dict(boxstyle='round', facecolor='lightpink', alpha=0.8))
-# | 
-# |         # === Panel 6: Eastern philosophy view ===
-# |         ax6 = fig.add_subplot(2, 3, 6)
-# |         ax6.axis('off')
-# | 
-# |         text_eastern = '''
-# |         東洋の心の哲学・禅宗：
-# | 
-# |         • 心は万法の根源
-# |         • 心を離れて物を語れない
-# |         • 心は脳ではない
-# |         • 心は存在論的根源
-# | 
-# |         王陽明：
-# |         「心外無物、心外無理」
-# | 
-# |         禅宗：
-# |         「直指人心、見性成仏」
-# | 
-# |         西田幾多郎：
-# |         「純粋経験」＝主客未分
-# | 
-# |         共通点：
-# |         → 心/意識に存在論的地位
-# |         → 観察が実在を創造する
-# |         '''
-# | 
-# |         ax6.text(0.1, 0.5, text_eastern, fontsize=10, va='center',
-# |                 bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.8))
-# | 
-# |         # Main title
-# |         fig.text(0.5, 0.98, '量子測定と意識：三つの観点',
-# |                 ha='center', fontsize=16, fontweight='bold')
-# | 
-# |         plt.tight_layout()
-# |         plt.subplots_adjust(top=0.93)
-# |         plt.savefig('quantum_measurement_consciousness.png',
-# |                    dpi=300, bbox_inches='tight')
-# |         plt.show()
+        # === Panel 4: Classical view ===
+        ax4 = fig.add_subplot(2, 3, 4)
+        ax4.axis('off')
+
+        text_classical = '''
+        古典的観点（唯物論）：
+
+        • 物質は観察者から独立
+        • 観察は単なる「発見」
+        • 意識は副産物
+        • 脳は古典的コンピュータ
+
+        問題点：
+        → 測定問題を説明できない
+        → 意識の統一性を説明できない
+        '''
+
+        ax4.text(0.1, 0.5, text_classical, fontsize=10, va='center',
+                bbox=dict(boxstyle='round', facecolor='lightblue', alpha=0.8))
+
+        # === Panel 5: Quantum consciousness view ===
+        ax5 = fig.add_subplot(2, 3, 5)
+        ax5.axis('off')
+
+        text_quantum = '''
+        量子意識（Orch OR）：
+
+        • 意識は量子過程
+        • 微小管の中で発生
+        • 意識が波動関数を収縮させる
+        • 各収縮 = 意識の一瞬
+
+        長所：
+        → 意識の統一性を説明
+        → 意識の非計算性を説明
+        → 量子力学と意識を結合
+        '''
+
+        ax5.text(0.1, 0.5, text_quantum, fontsize=10, va='center',
+                bbox=dict(boxstyle='round', facecolor='lightpink', alpha=0.8))
+
+        # === Panel 6: Eastern philosophy view ===
+        ax6 = fig.add_subplot(2, 3, 6)
+        ax6.axis('off')
+
+        text_eastern = '''
+        東洋の心の哲学・禅宗：
+
+        • 心は万法の根源
+        • 心を離れて物を語れない
+        • 心は脳ではない
+        • 心は存在論的根源
+
+        王陽明：
+        「心外無物、心外無理」
+
+        禅宗：
+        「直指人心、見性成仏」
+
+        西田幾多郎：
+        「純粋経験」＝主客未分
+
+        共通点：
+        → 心/意識に存在論的地位
+        → 観察が実在を創造する
+        '''
+
+        ax6.text(0.1, 0.5, text_eastern, fontsize=10, va='center',
+                bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.8))
+
+        # Main title
+        fig.text(0.5, 0.98, '量子測定と意識：三つの観点',
+                ha='center', fontsize=16, fontweight='bold')
+
+        plt.tight_layout()
+        plt.subplots_adjust(top=0.93)
+        plt.savefig('quantum_measurement_consciousness.png',
+                   dpi=300, bbox_inches='tight')
+        plt.show()
 
         print("\n" + "="*70)
         print("【量子測定と意識】")
@@ -227,30 +227,30 @@ class QuantumConsciousnessSimulator:
 simulator = QuantumConsciousnessSimulator()
 simulator.visualize_measurement_consciousness()
 
-# | class OrchORSimulator:
-# |     """
-# |     Orch OR theory simulation
-# |     Demonstrates how microtubules may generate consciousness
-# |     """
-# | 
-# |     def __init__(self):
-# |         self.hbar = 1.054571817e-34  # Reduced Planck constant (J·s)
-# |         self.c = 299792458  # Speed of light (m/s)
-# | 
-# |     def calculate_collapse_time(self, delta_mass):
-# |         """
-# |         Calculate objective collapse time
-# |         τ = ℏ / (ΔM · c²)
-# |         """
-# |         delta_energy = delta_mass * self.c**2
-# |         tau = self.hbar / delta_energy
-# |         return tau
-# | 
-# |     def visualize_orch_or(self):
-# |         """
-# |         Visualize Orch OR theory
-# |         """
-# |         fig = plt.figure(figsize=(18, 10))
+class OrchORSimulator:
+    """
+    Orch OR theory simulation
+    Demonstrates how microtubules may generate consciousness
+    """
+
+    def __init__(self):
+        self.hbar = 1.054571817e-34  # Reduced Planck constant (J·s)
+        self.c = 299792458  # Speed of light (m/s)
+
+    def calculate_collapse_time(self, delta_mass):
+        """
+        Calculate objective collapse time
+        τ = ℏ / (ΔM · c²)
+        """
+        delta_energy = delta_mass * self.c**2
+        tau = self.hbar / delta_energy
+        return tau
+
+    def visualize_orch_or(self):
+        """
+        Visualize Orch OR theory
+        """
+        fig = plt.figure(figsize=(18, 10))
 
         # === Panel 1: Microtubule structure ===
         ax1 = fig.add_subplot(2, 3, 1)

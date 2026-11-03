@@ -342,65 +342,65 @@ def indras_net_quantum():
     ax2.set_ylabel('Y')
     ax2.set_zlabel('Z')
 
-# |     # === 下左：糾纏態數學 ===
-# |     ax3 = fig.add_subplot(2, 2, 3)
-# |     ax3.axis('off')
-# | 
-# |     text = '''
-# |     糾纏態（Bell態）：
-# | 
-# |     |ψ⟩ = (|↑↓⟩ - |↓↑⟩) / √2
-# | 
-# |     特性：
-# |     • 粒子A和B不可分離
-# |     • 測量A → 立刻知道B
-# |     • A的狀態無法單獨定義
-# |     • 整體 ≠ 部分之和
-# | 
-# |     貝爾不等式（1964）：
-# |     如果粒子有「定域實在性」
-# |     → 應滿足某個不等式
-# | 
-# |     實驗結果（1982-2022）：
-# |     不等式被違反！
-# |     → 沒有定域實在性
-# |     → 糾纏是真實的
-# |     '''
-# | 
-# |     ax3.text(0.1, 0.5, text, fontsize=11, va='center', family='monospace',
-# |             bbox=dict(boxstyle='round', facecolor='lightblue', alpha=0.7))
-# | 
-# |     # === 下右：因陀羅網與糾纏的對應 ===
-# |     ax4 = fig.add_subplot(2, 2, 4)
-# |     ax4.axis('off')
-# | 
-# |     comparison = '''
-# |     【因陀羅網 vs 量子糾纏】
-# | 
-# |     因陀羅網：
-# |     • 每顆珠子包含整張網
-# |     • 改變一珠，全網皆動
-# |     • 部分即整體
-# |     • 一即一切
-# | 
-# |     量子糾纏：
-# |     • 每個粒子包含整個系統信息
-# |     • 測量一粒子，影響所有糾纏粒子
-# |     • 粒子態不可單獨定義
-# |     • 整體不可分解
-# | 
-# |     共同點：
-# |     → 沒有「獨立」的部分
-# |     → 一切互相依存
-# |     → 改變局部 = 改變整體
-# |     '''
-# | 
-# |     ax4.text(0.1, 0.5, comparison, fontsize=11, va='center',
-# |             bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.7))
-# | 
-# |     plt.tight_layout()
-# |     plt.savefig('indras_net_entanglement.png', dpi=300, bbox_inches='tight')
-# |     plt.show()
+    # === 下左：糾纏態數學 ===
+    ax3 = fig.add_subplot(2, 2, 3)
+    ax3.axis('off')
+
+    text = '''
+    糾纏態（Bell態）：
+
+    |ψ⟩ = (|↑↓⟩ - |↓↑⟩) / √2
+
+    特性：
+    • 粒子A和B不可分離
+    • 測量A → 立刻知道B
+    • A的狀態無法單獨定義
+    • 整體 ≠ 部分之和
+
+    貝爾不等式（1964）：
+    如果粒子有「定域實在性」
+    → 應滿足某個不等式
+
+    實驗結果（1982-2022）：
+    不等式被違反！
+    → 沒有定域實在性
+    → 糾纏是真實的
+    '''
+
+    ax3.text(0.1, 0.5, text, fontsize=11, va='center', family='monospace',
+            bbox=dict(boxstyle='round', facecolor='lightblue', alpha=0.7))
+
+    # === 下右：因陀羅網與糾纏的對應 ===
+    ax4 = fig.add_subplot(2, 2, 4)
+    ax4.axis('off')
+
+    comparison = '''
+    【因陀羅網 vs 量子糾纏】
+
+    因陀羅網：
+    • 每顆珠子包含整張網
+    • 改變一珠，全網皆動
+    • 部分即整體
+    • 一即一切
+
+    量子糾纏：
+    • 每個粒子包含整個系統信息
+    • 測量一粒子，影響所有糾纏粒子
+    • 粒子態不可單獨定義
+    • 整體不可分解
+
+    共同點：
+    → 沒有「獨立」的部分
+    → 一切互相依存
+    → 改變局部 = 改變整體
+    '''
+
+    ax4.text(0.1, 0.5, comparison, fontsize=11, va='center',
+            bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.7))
+
+    plt.tight_layout()
+    plt.savefig('indras_net_entanglement.png', dpi=300, bbox_inches='tight')
+    plt.show()
 
     # 數據說明
     print("\n" + "="*70)

@@ -1,7 +1,7 @@
 # Code & Cogito: 多世界解釈 vs 華厳宗「重重無尽」——無限の並行宇宙
 # Article: https://code-cogito.com/ja/many-worlds-interpretation-huayan-ja/
 # All the code blocks of the article, in order. Program output is kept as comments.
-# Note: the article shows this code in excerpts, so this file does not run on its own.
+
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
@@ -303,33 +303,33 @@ simulator = MultiverseSimulator()
 simulator.visualize_branching(n_measurements=5)
 simulator.compare_interpretations()
 
-# | class QuantumBiography:
-# |     """
-# |     Quantum biography: how many worlds does "I" exist in?
-# |     """
-# | 
-# |     def __init__(self):
-# |         self.decisions = []
-# | 
-# |     def add_decision(self, description, n_choices=2):
-# |         """
-# |         Add a life decision.
-# |         description: description of the decision
-# |         n_choices: number of choices
-# |         """
-# |         self.decisions.append({
-# |             'description': description,
-# |             'n_choices': n_choices
-# |         })
-# | 
-# |     def calculate_parallel_lives(self):
-# |         """
-# |         Calculate the number of parallel lives
-# |         """
-# |         total_worlds = 1
-# |         for decision in self.decisions:
-# |             total_worlds *= decision['n_choices']
-# |         return total_worlds
+class QuantumBiography:
+    """
+    Quantum biography: how many worlds does "I" exist in?
+    """
+
+    def __init__(self):
+        self.decisions = []
+
+    def add_decision(self, description, n_choices=2):
+        """
+        Add a life decision.
+        description: description of the decision
+        n_choices: number of choices
+        """
+        self.decisions.append({
+            'description': description,
+            'n_choices': n_choices
+        })
+
+    def calculate_parallel_lives(self):
+        """
+        Calculate the number of parallel lives
+        """
+        total_worlds = 1
+        for decision in self.decisions:
+            total_worlds *= decision['n_choices']
+        return total_worlds
 
     def visualize_life_tree(self):
         """

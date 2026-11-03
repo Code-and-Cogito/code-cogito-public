@@ -651,64 +651,64 @@ def visualize_convergence():
     ax1.text(0.8, 0.08, '哲学/修行の道', ha='center', fontsize=12,
             fontweight='bold', color='orange')
 
-# |     # Convergence point
-# |     convergence_y = 0.85
-# |     ax1.plot([0.2, 0.5], [0.7, convergence_y], 'b-', linewidth=3)
-# |     ax1.plot([0.8, 0.5], [0.7, convergence_y], color='orange', linewidth=3)
-# | 
-# |     ax1.scatter(0.5, convergence_y, s=500, marker='*',
-# |                color='gold', edgecolors='black', linewidths=2, zorder=5)
-# |     ax1.text(0.5, convergence_y, '合流', ha='center', va='center',
-# |             fontsize=12, fontweight='bold')
-# | 
-# |     ax1.text(0.5, 0.95, '統一的実在観', ha='center',
-# |             fontsize=14, fontweight='bold', color='purple')
-# | 
-# |     ax1.set_title('2つの認識の道の驚嘆すべき合流', fontsize=14, fontweight='bold')
-# | 
-# |     # === Right: Common insights ===
-# |     ax2.axis('off')
-# | 
-# |     insights_text = (
-# |         "【3つの共通の洞察】\n\n"
-# |         "1. 実在の関係的本質\n"
-# |         "   科学：量子もつれ、非局所性\n"
-# |         "   哲学：縁起、インドラ網\n"
-# |         "   -> 関係は実体に先行する\n\n"
-# |         "2. 観測者の参与的役割\n"
-# |         "   科学：測定問題、波動関数の崩壊\n"
-# |         "   哲学：心外無物、主客不二\n"
-# |         "   -> 心物不可分\n\n"
-# |         "3. 二元対立の超越\n"
-# |         "   科学：波粒二重性、相補性原理\n"
-# |         "   哲学：不二法門、中観\n"
-# |         "   -> 新しい論理が必要\n\n"
-# |         "---\n\n"
-# |         "根本的に異なる2つの道：\n"
-# |         "  科学：外向的観察、数学的モデル化\n"
-# |         "  哲学：内向的体験、概念的思弁\n\n"
-# |         "にもかかわらずこの3点では近い結論に至った！\n\n"
-# |         "これが示唆すること：\n"
-# |         "両者はおそらく\n"
-# |         "実在の同一の深層真理に触れている\n\n"
-# |         "---\n\n"
-# |         "ただし注意：\n"
-# |         "  両者が完全に等価というわけではない\n"
-# |         "  科学には検証可能性がある\n"
-# |         "  哲学には直接体験がある\n"
-# |         "  両者は互いに補完し合い、代替不可能"
-# |     )
-# | 
-# |     ax2.text(0.5, 0.5, insights_text, ha='center', va='center',
-# |             fontsize=9.5,
-# |             bbox=dict(boxstyle='round', facecolor='lightyellow',
-# |                      alpha=0.9, edgecolor='purple', linewidth=3))
-# | 
-# |     ax2.set_title('共通に指し示す真理', fontsize=14, fontweight='bold')
-# | 
-# |     plt.tight_layout()
-# |     plt.savefig('paths_convergence.png', dpi=300, bbox_inches='tight')
-# |     plt.show()
+    # Convergence point
+    convergence_y = 0.85
+    ax1.plot([0.2, 0.5], [0.7, convergence_y], 'b-', linewidth=3)
+    ax1.plot([0.8, 0.5], [0.7, convergence_y], color='orange', linewidth=3)
+
+    ax1.scatter(0.5, convergence_y, s=500, marker='*',
+               color='gold', edgecolors='black', linewidths=2, zorder=5)
+    ax1.text(0.5, convergence_y, '合流', ha='center', va='center',
+            fontsize=12, fontweight='bold')
+
+    ax1.text(0.5, 0.95, '統一的実在観', ha='center',
+            fontsize=14, fontweight='bold', color='purple')
+
+    ax1.set_title('2つの認識の道の驚嘆すべき合流', fontsize=14, fontweight='bold')
+
+    # === Right: Common insights ===
+    ax2.axis('off')
+
+    insights_text = (
+        "【3つの共通の洞察】\n\n"
+        "1. 実在の関係的本質\n"
+        "   科学：量子もつれ、非局所性\n"
+        "   哲学：縁起、インドラ網\n"
+        "   -> 関係は実体に先行する\n\n"
+        "2. 観測者の参与的役割\n"
+        "   科学：測定問題、波動関数の崩壊\n"
+        "   哲学：心外無物、主客不二\n"
+        "   -> 心物不可分\n\n"
+        "3. 二元対立の超越\n"
+        "   科学：波粒二重性、相補性原理\n"
+        "   哲学：不二法門、中観\n"
+        "   -> 新しい論理が必要\n\n"
+        "---\n\n"
+        "根本的に異なる2つの道：\n"
+        "  科学：外向的観察、数学的モデル化\n"
+        "  哲学：内向的体験、概念的思弁\n\n"
+        "にもかかわらずこの3点では近い結論に至った！\n\n"
+        "これが示唆すること：\n"
+        "両者はおそらく\n"
+        "実在の同一の深層真理に触れている\n\n"
+        "---\n\n"
+        "ただし注意：\n"
+        "  両者が完全に等価というわけではない\n"
+        "  科学には検証可能性がある\n"
+        "  哲学には直接体験がある\n"
+        "  両者は互いに補完し合い、代替不可能"
+    )
+
+    ax2.text(0.5, 0.5, insights_text, ha='center', va='center',
+            fontsize=9.5,
+            bbox=dict(boxstyle='round', facecolor='lightyellow',
+                     alpha=0.9, edgecolor='purple', linewidth=3))
+
+    ax2.set_title('共通に指し示す真理', fontsize=14, fontweight='bold')
+
+    plt.tight_layout()
+    plt.savefig('paths_convergence.png', dpi=300, bbox_inches='tight')
+    plt.show()
 
     print("\n" + "="*70)
     print("【2つの認識の道の驚嘆すべき合流】")

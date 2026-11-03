@@ -1,7 +1,7 @@
 # Code & Cogito: The Eve of the Quantum Revolution — When Newton's Universe Began to Crumble
 # Article: https://code-cogito.com/en/quantum-revolution-newton-universe-collapse-en/
 # All the code blocks of the article, in order. Program output is kept as comments.
-# Note: the article shows this code in excerpts, so this file does not run on its own.
+
 # | nabla·E = rho/epsilon_0        (Gauss's law)
 # | nabla·B = 0                    (No magnetic monopoles)
 # | nabla x E = -dB/dt             (Faraday's law)
@@ -90,20 +90,20 @@ def visualize_blackbody_radiation():
 # Run
 visualize_blackbody_radiation()
 
-# | def photoelectric_effect_simulation():
-# |     """Photoelectric effect simulation"""
-# | 
-# |     metals = {
-# |         'Sodium (Na)': 2.28,
-# |         'Aluminum (Al)': 4.08,
-# |         'Copper (Cu)': 4.70,
-# |         'Zinc (Zn)': 4.31,
-# |         'Silver (Ag)': 4.73
-# |     }
-# | 
-# |     wavelengths = np.linspace(200, 600, 100)
-# |     frequencies = c / (wavelengths * 1e-9)
-# |     photon_energies = h * frequencies / 1.6e-19  # Convert to eV
+def photoelectric_effect_simulation():
+    """Photoelectric effect simulation"""
+
+    metals = {
+        'Sodium (Na)': 2.28,
+        'Aluminum (Al)': 4.08,
+        'Copper (Cu)': 4.70,
+        'Zinc (Zn)': 4.31,
+        'Silver (Ag)': 4.73
+    }
+
+    wavelengths = np.linspace(200, 600, 100)
+    frequencies = c / (wavelengths * 1e-9)
+    photon_energies = h * frequencies / 1.6e-19  # Convert to eV
 
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 6))
 
@@ -210,23 +210,23 @@ photoelectric_effect_simulation()
 # | 400              3.10             0.00             No ejection
 # | 500              2.48             0.00             No ejection
 
-# | def determinism_timeline():
-# |     """Visualize the transformation of physics' worldview"""
-# | 
-# |     fig, ax = plt.subplots(figsize=(14, 10))
-# | 
-# |     events = [
-# |         (1687, "Newton\nPrincipia", "Deterministic universe\nF=ma", 'blue', 1.0),
-# |         (1814, "Laplace's\nDemon", "Give me initial conditions\nI know everything", 'blue', 1.0),
-# |         (1865, "Maxwell\nElectromagnetics", "Unified E, M, light\nUniverse is knowable", 'blue', 0.9),
-# |         (1900, "Planck\nQuantum Hypothesis", "Energy is quantized\nE=nhv", 'orange', 0.5),
-# |         (1905, "Einstein\nLight Quanta", "Light is particles\nE=hv", 'orange', 0.4),
-# |         (1913, "Bohr\nAtomic Model", "Quantized electron orbits\nn=1,2,3...", 'orange', 0.3),
-# |         (1923, "de Broglie\nMatter Waves", "Particles are waves too\nlambda=h/p", 'red', 0.2),
-# |         (1925, "Heisenberg\nMatrix Mechanics", "Farewell to visualization\nEverything is matrices", 'red', 0.1),
-# |         (1926, "Schrodinger\nWave Mechanics", "Wave function psi\nProbability interpretation", 'red', 0.1),
-# |         (1927, "Heisenberg\nUncertainty Principle", "Dx*Dp >= h-bar/2\nCertainty is dead", 'red', 0.0)
-# |     ]
+def determinism_timeline():
+    """Visualize the transformation of physics' worldview"""
+
+    fig, ax = plt.subplots(figsize=(14, 10))
+
+    events = [
+        (1687, "Newton\nPrincipia", "Deterministic universe\nF=ma", 'blue', 1.0),
+        (1814, "Laplace's\nDemon", "Give me initial conditions\nI know everything", 'blue', 1.0),
+        (1865, "Maxwell\nElectromagnetics", "Unified E, M, light\nUniverse is knowable", 'blue', 0.9),
+        (1900, "Planck\nQuantum Hypothesis", "Energy is quantized\nE=nhv", 'orange', 0.5),
+        (1905, "Einstein\nLight Quanta", "Light is particles\nE=hv", 'orange', 0.4),
+        (1913, "Bohr\nAtomic Model", "Quantized electron orbits\nn=1,2,3...", 'orange', 0.3),
+        (1923, "de Broglie\nMatter Waves", "Particles are waves too\nlambda=h/p", 'red', 0.2),
+        (1925, "Heisenberg\nMatrix Mechanics", "Farewell to visualization\nEverything is matrices", 'red', 0.1),
+        (1926, "Schrodinger\nWave Mechanics", "Wave function psi\nProbability interpretation", 'red', 0.1),
+        (1927, "Heisenberg\nUncertainty Principle", "Dx*Dp >= h-bar/2\nCertainty is dead", 'red', 0.0)
+    ]
 
     years = [e[0] for e in events]
     certainties = [e[4] for e in events]
@@ -275,30 +275,30 @@ photoelectric_effect_simulation()
     plt.savefig('determinism_timeline.png', dpi=300, bbox_inches='tight')
     plt.show()
 
-# |     print("\n" + "="*70)
-# |     print("[Three Worldviews in Physics]")
-# |     print("="*70)
-# | 
-# |     worldviews = [
-# |         {'Era': 'Classical (1687-1900)', 'Key Figures': 'Newton, Laplace',
-# |          'Core Belief': 'Determinism', 'Universe Metaphor': 'Precision clockwork',
-# |          'Causality': 'Past determines future', 'Free Will': 'An illusion (all is predetermined)',
-# |          'Role of God': 'The Prime Mover'},
-# |         {'Era': 'Quantum Dawn (1900-1925)', 'Key Figures': 'Planck, Einstein',
-# |          'Core Belief': 'Energy is discontinuous', 'Universe Metaphor': 'A glitching clock',
-# |          'Causality': 'Still causal, but with limits', 'Free Will': 'Uncertain',
-# |          'Role of God': '"Does not play dice" (Einstein insisted)'},
-# |         {'Era': 'Quantum Revolution (1925-present)', 'Key Figures': 'Heisenberg, Schrodinger, Bohr',
-# |          'Core Belief': 'Fundamental uncertainty', 'Universe Metaphor': 'A probability cloud',
-# |          'Causality': 'Only probabilities, no certainties', 'Free Will': 'Possibly real (room exists)',
-# |          'Role of God': '"Does play dice" (Bohr)'}
-# |     ]
-# | 
-# |     for wv in worldviews:
-# |         print(f"\n[{wv['Era']}]")
-# |         for key, value in wv.items():
-# |             if key != 'Era':
-# |                 print(f"  {key:<18}: {value}")
-# | 
-# | # Run
-# | determinism_timeline()
+    print("\n" + "="*70)
+    print("[Three Worldviews in Physics]")
+    print("="*70)
+
+    worldviews = [
+        {'Era': 'Classical (1687-1900)', 'Key Figures': 'Newton, Laplace',
+         'Core Belief': 'Determinism', 'Universe Metaphor': 'Precision clockwork',
+         'Causality': 'Past determines future', 'Free Will': 'An illusion (all is predetermined)',
+         'Role of God': 'The Prime Mover'},
+        {'Era': 'Quantum Dawn (1900-1925)', 'Key Figures': 'Planck, Einstein',
+         'Core Belief': 'Energy is discontinuous', 'Universe Metaphor': 'A glitching clock',
+         'Causality': 'Still causal, but with limits', 'Free Will': 'Uncertain',
+         'Role of God': '"Does not play dice" (Einstein insisted)'},
+        {'Era': 'Quantum Revolution (1925-present)', 'Key Figures': 'Heisenberg, Schrodinger, Bohr',
+         'Core Belief': 'Fundamental uncertainty', 'Universe Metaphor': 'A probability cloud',
+         'Causality': 'Only probabilities, no certainties', 'Free Will': 'Possibly real (room exists)',
+         'Role of God': '"Does play dice" (Bohr)'}
+    ]
+
+    for wv in worldviews:
+        print(f"\n[{wv['Era']}]")
+        for key, value in wv.items():
+            if key != 'Era':
+                print(f"  {key:<18}: {value}")
+
+# Run
+determinism_timeline()

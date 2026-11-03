@@ -1,7 +1,7 @@
 # Code & Cogito: 量子糾纏態 vs 佛教「緣起」——萬物互為因緣
 # Article: https://code-cogito.com/quantum-entanglement-dependent-origination/
 # All the code blocks of the article, in order. Program output is kept as comments.
-# Note: the article shows this code in excerpts, so this file does not run on its own.
+
 import numpy as np
 import matplotlib.pyplot as plt
 import networkx as nx
@@ -20,27 +20,27 @@ class DependentOriginationNetwork:
     def __init__(self):
         self.G = nx.DiGraph()
 
-# |     def create_twelve_links(self):
-# |         """
-# |         創建十二因緣網絡
-# |         """
-# |         # 十二支
-# |         links = [
-# |             ('無明', '行'),
-# |             ('行', '識'),
-# |             ('識', '名色'),
-# |             ('名色', '六入'),
-# |             ('六入', '觸'),
-# |             ('觸', '受'),
-# |             ('受', '愛'),
-# |             ('愛', '取'),
-# |             ('取', '有'),
-# |             ('有', '生'),
-# |             ('生', '老死'),
-# |             ('老死', '無明'),  # 循環
-# |         ]
-# | 
-# |         self.G.add_edges_from(links)
+    def create_twelve_links(self):
+        """
+        創建十二因緣網絡
+        """
+        # 十二支
+        links = [
+            ('無明', '行'),
+            ('行', '識'),
+            ('識', '名色'),
+            ('名色', '六入'),
+            ('六入', '觸'),
+            ('觸', '受'),
+            ('受', '愛'),
+            ('愛', '取'),
+            ('取', '有'),
+            ('有', '生'),
+            ('生', '老死'),
+            ('老死', '無明'),  # 循環
+        ]
+
+        self.G.add_edges_from(links)
 
     def visualize_twelve_links(self):
         """
@@ -324,103 +324,103 @@ class QuantumEntanglementOntology:
                 bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.7),
                 transform=ax3.transAxes)
 
-# |         # === 圖4：密度矩陣（數學）===
-# |         ax4 = fig.add_subplot(2, 3, 4)
-# |         ax4.axis('off')
-# | 
-# |         text = '''
-# |         糾纏態的數學：
-# | 
-# |         貝爾態：
-# |         |psi> = (|up,down> - |down,up>)/sqrt(2)
-# | 
-# |         粒子A的約化密度矩陣：
-# |         rho_A = Tr_B(|psi><psi|)
-# |              = (|up><up| + |down><down|)/2
-# | 
-# |         這是混合態，不是純態！
-# | 
-# |         意義：
-# |         - 粒子A沒有確定的狀態
-# |         - A的狀態依賴整個系統AB
-# |         - 部分無法脫離整體
-# | 
-# |         關鍵洞見：
-# |         關係先於實體
-# |         '''
-# | 
-# |         ax4.text(0.1, 0.5, text, fontsize=10, va='center',
-# |                 family='monospace',
-# |                 bbox=dict(boxstyle='round', facecolor='white', alpha=0.9,
-# |                          edgecolor='black', linewidth=2))
-# | 
-# |         # === 圖5：緣起的數學結構 ===
-# |         ax5 = fig.add_subplot(2, 3, 5)
-# |         ax5.axis('off')
-# | 
-# |         text2 = '''
-# |         緣起的形式結構：
-# | 
-# |         若A存在 -> B存在
-# |         若B存在 -> C存在
-# |         若C存在 -> A存在
-# | 
-# |         A <-> B <-> C <-> A（循環）
-# | 
-# |         沒有獨立的起點
-# |         沒有絕對的「第一因」
-# | 
-# |         意義：
-# |         - 沒有事物有「自性」
-# |         - 「存在」是相對的
-# |         - 一切依條件而有
-# | 
-# |         關鍵洞見：
-# |         緣起即空性
-# |         '''
-# | 
-# |         ax5.text(0.1, 0.5, text2, fontsize=10, va='center',
-# |                 family='monospace',
-# |                 bbox=dict(boxstyle='round', facecolor='white', alpha=0.9,
-# |                          edgecolor='black', linewidth=2))
-# | 
-# |         # === 圖6：對應總結 ===
-# |         ax6 = fig.add_subplot(2, 3, 6)
-# |         ax6.axis('off')
-# | 
-# |         comparison = '''
-# |         【量子糾纏 vs 緣起】
-# | 
-# |         量子糾纏態：
-# |         - 不可分解
-# |         - 部分無法獨立定義
-# |         - 關係先於實體
-# |         - 整體大於部分之和
-# | 
-# |         佛教緣起：
-# |         - 互為因緣
-# |         - 諸法無自性
-# |         - 緣起先於存在
-# |         - 法界是不可分割的一體
-# | 
-# |         共同結構：
-# |         * 反對實體本體論
-# |         * 主張關係本體論
-# |         * 「存在」是相對的
-# |         * 部分依賴整體
-# | 
-# |         深刻洞見：
-# |         宇宙不是「實體的集合」
-# |         而是「關係的網絡」
-# |         '''
-# | 
-# |         ax6.text(0.1, 0.5, comparison, fontsize=10, va='center',
-# |                 bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.9,
-# |                          edgecolor='black', linewidth=2))
-# | 
-# |         plt.tight_layout()
-# |         plt.savefig('entanglement_ontology.png', dpi=300, bbox_inches='tight')
-# |         plt.show()
+        # === 圖4：密度矩陣（數學）===
+        ax4 = fig.add_subplot(2, 3, 4)
+        ax4.axis('off')
+
+        text = '''
+        糾纏態的數學：
+
+        貝爾態：
+        |psi> = (|up,down> - |down,up>)/sqrt(2)
+
+        粒子A的約化密度矩陣：
+        rho_A = Tr_B(|psi><psi|)
+             = (|up><up| + |down><down|)/2
+
+        這是混合態，不是純態！
+
+        意義：
+        - 粒子A沒有確定的狀態
+        - A的狀態依賴整個系統AB
+        - 部分無法脫離整體
+
+        關鍵洞見：
+        關係先於實體
+        '''
+
+        ax4.text(0.1, 0.5, text, fontsize=10, va='center',
+                family='monospace',
+                bbox=dict(boxstyle='round', facecolor='white', alpha=0.9,
+                         edgecolor='black', linewidth=2))
+
+        # === 圖5：緣起的數學結構 ===
+        ax5 = fig.add_subplot(2, 3, 5)
+        ax5.axis('off')
+
+        text2 = '''
+        緣起的形式結構：
+
+        若A存在 -> B存在
+        若B存在 -> C存在
+        若C存在 -> A存在
+
+        A <-> B <-> C <-> A（循環）
+
+        沒有獨立的起點
+        沒有絕對的「第一因」
+
+        意義：
+        - 沒有事物有「自性」
+        - 「存在」是相對的
+        - 一切依條件而有
+
+        關鍵洞見：
+        緣起即空性
+        '''
+
+        ax5.text(0.1, 0.5, text2, fontsize=10, va='center',
+                family='monospace',
+                bbox=dict(boxstyle='round', facecolor='white', alpha=0.9,
+                         edgecolor='black', linewidth=2))
+
+        # === 圖6：對應總結 ===
+        ax6 = fig.add_subplot(2, 3, 6)
+        ax6.axis('off')
+
+        comparison = '''
+        【量子糾纏 vs 緣起】
+
+        量子糾纏態：
+        - 不可分解
+        - 部分無法獨立定義
+        - 關係先於實體
+        - 整體大於部分之和
+
+        佛教緣起：
+        - 互為因緣
+        - 諸法無自性
+        - 緣起先於存在
+        - 法界是不可分割的一體
+
+        共同結構：
+        * 反對實體本體論
+        * 主張關係本體論
+        * 「存在」是相對的
+        * 部分依賴整體
+
+        深刻洞見：
+        宇宙不是「實體的集合」
+        而是「關係的網絡」
+        '''
+
+        ax6.text(0.1, 0.5, comparison, fontsize=10, va='center',
+                bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.9,
+                         edgecolor='black', linewidth=2))
+
+        plt.tight_layout()
+        plt.savefig('entanglement_ontology.png', dpi=300, bbox_inches='tight')
+        plt.show()
 
         print("\n" + "="*70)
         print("【關係本體論：量子與緣起的共同洞見】")
@@ -719,34 +719,34 @@ def visualize_indra_net_holographic():
     ax2.set_title('量子糾纏網絡：全息結構\n每個粒子包含整個系統信息',
                  fontsize=14, fontweight='bold')
 
-# |     # 底部說明
-# |     explanation = '''
-# |     因陀羅網（華嚴宗）：
-# |     - 每顆珠子映現所有珠子
-# |     - 改變一珠，全網改變
-# |     - 部分包含整體
-# |     - 重重無盡
-# | 
-# |     量子糾纏網絡：
-# |     - 每個粒子與所有粒子糾纏
-# |     - 測量一個粒子，影響所有粒子
-# |     - 部分包含整體信息（全息性）
-# |     - 非局域關聯
-# | 
-# |     共同洞見：
-# |     * 宇宙是不可分割的整體
-# |     * 部分與整體不可分
-# |     * 一即一切，一切即一
-# |     * 關係構成實在
-# |     '''
-# | 
-# |     fig.text(0.5, 0.02, explanation, ha='center', fontsize=10,
-# |             bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.9))
-# | 
-# |     plt.tight_layout()
-# |     plt.subplots_adjust(bottom=0.25)
-# |     plt.savefig('indra_net_holographic.png', dpi=300, bbox_inches='tight')
-# |     plt.show()
+    # 底部說明
+    explanation = '''
+    因陀羅網（華嚴宗）：
+    - 每顆珠子映現所有珠子
+    - 改變一珠，全網改變
+    - 部分包含整體
+    - 重重無盡
+
+    量子糾纏網絡：
+    - 每個粒子與所有粒子糾纏
+    - 測量一個粒子，影響所有粒子
+    - 部分包含整體信息（全息性）
+    - 非局域關聯
+
+    共同洞見：
+    * 宇宙是不可分割的整體
+    * 部分與整體不可分
+    * 一即一切，一切即一
+    * 關係構成實在
+    '''
+
+    fig.text(0.5, 0.02, explanation, ha='center', fontsize=10,
+            bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.9))
+
+    plt.tight_layout()
+    plt.subplots_adjust(bottom=0.25)
+    plt.savefig('indra_net_holographic.png', dpi=300, bbox_inches='tight')
+    plt.show()
 
     print("\n" + "="*70)
     print("【因陀羅網與量子全息性】")

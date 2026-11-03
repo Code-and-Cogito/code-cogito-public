@@ -1,7 +1,7 @@
 # Code & Cogito: 量子革命前夜——ニュートンの宇宙が崩壊し始めたとき
 # Article: https://code-cogito.com/ja/quantum-revolution-newton-universe-collapse-ja/
 # All the code blocks of the article, in order. Program output is kept as comments.
-# Note: the article shows this code in excerpts, so this file does not run on its own.
+
 # | ∇·E = ρ/ε₀        （ガウスの法則）
 # | ∇·B = 0            （磁場の発散なし）
 # | ∇×E = -∂B/∂t       （ファラデーの法則）
@@ -90,20 +90,20 @@ def visualize_blackbody_radiation():
 # Execute
 visualize_blackbody_radiation()
 
-# | def photoelectric_effect_simulation():
-# |     """Photoelectric effect simulation"""
-# | 
-# |     metals = {
-# |         'ナトリウム (Na)': 2.28,
-# |         'アルミニウム (Al)': 4.08,
-# |         '銅 (Cu)': 4.70,
-# |         '亜鉛 (Zn)': 4.31,
-# |         '銀 (Ag)': 4.73
-# |     }
-# | 
-# |     wavelengths = np.linspace(200, 600, 100)
-# |     frequencies = c / (wavelengths * 1e-9)
-# |     photon_energies = h * frequencies / 1.6e-19  # Convert to eV
+def photoelectric_effect_simulation():
+    """Photoelectric effect simulation"""
+
+    metals = {
+        'ナトリウム (Na)': 2.28,
+        'アルミニウム (Al)': 4.08,
+        '銅 (Cu)': 4.70,
+        '亜鉛 (Zn)': 4.31,
+        '銀 (Ag)': 4.73
+    }
+
+    wavelengths = np.linspace(200, 600, 100)
+    frequencies = c / (wavelengths * 1e-9)
+    photon_energies = h * frequencies / 1.6e-19  # Convert to eV
 
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 6))
 
@@ -210,23 +210,23 @@ photoelectric_effect_simulation()
 # | 400        3.10                 0.00                      放出不可
 # | 500        2.48                 0.00                      放出不可
 
-# | def determinism_timeline():
-# |     """Visualize the transformation of physics worldview"""
-# | 
-# |     fig, ax = plt.subplots(figsize=(14, 10))
-# | 
-# |     events = [
-# |         (1687, "ニュートン\n『プリンキピア』", "決定論的宇宙\nF=ma", 'blue', 1.0),
-# |         (1814, "ラプラスの\n悪魔", "初期条件を与えよ\nすべてが分かる", 'blue', 1.0),
-# |         (1865, "マクスウェル\n電磁理論", "電磁光の統一\n宇宙は知りうる", 'blue', 0.9),
-# |         (1900, "プランク\n量子仮説", "エネルギー量子化\nE=nhν", 'orange', 0.5),
-# |         (1905, "アインシュタイン\n光量子", "光は粒子\nE=hν", 'orange', 0.4),
-# |         (1913, "ボーア\n原子模型", "電子軌道の量子化\nn=1,2,3...", 'orange', 0.3),
-# |         (1923, "ド・ブロイ\n物質波", "粒子も波である\nλ=h/p", 'red', 0.2),
-# |         (1925, "ハイゼンベルク\n行列力学", "可視化との訣別\n万物は行列", 'red', 0.1),
-# |         (1926, "シュレーディンガー\n波動力学", "波動関数 ψ\n確率解釈", 'red', 0.1),
-# |         (1927, "ハイゼンベルク\n不確定性原理", "Δx·Δp ≥ ℏ/2\n確定性の死", 'red', 0.0)
-# |     ]
+def determinism_timeline():
+    """Visualize the transformation of physics worldview"""
+
+    fig, ax = plt.subplots(figsize=(14, 10))
+
+    events = [
+        (1687, "ニュートン\n『プリンキピア』", "決定論的宇宙\nF=ma", 'blue', 1.0),
+        (1814, "ラプラスの\n悪魔", "初期条件を与えよ\nすべてが分かる", 'blue', 1.0),
+        (1865, "マクスウェル\n電磁理論", "電磁光の統一\n宇宙は知りうる", 'blue', 0.9),
+        (1900, "プランク\n量子仮説", "エネルギー量子化\nE=nhν", 'orange', 0.5),
+        (1905, "アインシュタイン\n光量子", "光は粒子\nE=hν", 'orange', 0.4),
+        (1913, "ボーア\n原子模型", "電子軌道の量子化\nn=1,2,3...", 'orange', 0.3),
+        (1923, "ド・ブロイ\n物質波", "粒子も波である\nλ=h/p", 'red', 0.2),
+        (1925, "ハイゼンベルク\n行列力学", "可視化との訣別\n万物は行列", 'red', 0.1),
+        (1926, "シュレーディンガー\n波動力学", "波動関数 ψ\n確率解釈", 'red', 0.1),
+        (1927, "ハイゼンベルク\n不確定性原理", "Δx·Δp ≥ ℏ/2\n確定性の死", 'red', 0.0)
+    ]
 
     years = [e[0] for e in events]
     certainties = [e[4] for e in events]
@@ -275,30 +275,30 @@ photoelectric_effect_simulation()
     plt.savefig('determinism_timeline.png', dpi=300, bbox_inches='tight')
     plt.show()
 
-# |     print("\n" + "="*70)
-# |     print("【物理学の三つの世界観】")
-# |     print("="*70)
-# | 
-# |     worldviews = [
-# |         {'時代': '古典時代（1687-1900）', '代表人物': 'ニュートン、ラプラス',
-# |          '核心的信念': '決定論', '宇宙の比喩': '精密な時計仕掛け',
-# |          '因果': '過去が未来を決定', '自由意志': '幻想（すべては決定済み）',
-# |          '神の役割': '第一原因（最初の一押し）'},
-# |         {'時代': '量子の萌芽（1900-1925）', '代表人物': 'プランク、アインシュタイン',
-# |          '核心的信念': 'エネルギーは不連続', '宇宙の比喩': '故障した時計',
-# |          '因果': '因果は残るが限界あり', '自由意志': '不明',
-# |          '神の役割': '「サイコロを振らない」（アインシュタインの確信）'},
-# |         {'時代': '量子革命（1925-現在）', '代表人物': 'ハイゼンベルク、シュレーディンガー、ボーア',
-# |          '核心的信念': '根源的不確定性', '宇宙の比喩': '確率の雲',
-# |          '因果': '確率のみ、必然なし', '自由意志': '存在しうる（余地がある）',
-# |          '神の役割': '「確かにサイコロを振る」（ボーア）'}
-# |     ]
-# | 
-# |     for wv in worldviews:
-# |         print(f"\n【{wv['時代']}】")
-# |         for key, value in wv.items():
-# |             if key != '時代':
-# |                 print(f"  {key:<12}: {value}")
-# | 
-# | # Execute
-# | determinism_timeline()
+    print("\n" + "="*70)
+    print("【物理学の三つの世界観】")
+    print("="*70)
+
+    worldviews = [
+        {'時代': '古典時代（1687-1900）', '代表人物': 'ニュートン、ラプラス',
+         '核心的信念': '決定論', '宇宙の比喩': '精密な時計仕掛け',
+         '因果': '過去が未来を決定', '自由意志': '幻想（すべては決定済み）',
+         '神の役割': '第一原因（最初の一押し）'},
+        {'時代': '量子の萌芽（1900-1925）', '代表人物': 'プランク、アインシュタイン',
+         '核心的信念': 'エネルギーは不連続', '宇宙の比喩': '故障した時計',
+         '因果': '因果は残るが限界あり', '自由意志': '不明',
+         '神の役割': '「サイコロを振らない」（アインシュタインの確信）'},
+        {'時代': '量子革命（1925-現在）', '代表人物': 'ハイゼンベルク、シュレーディンガー、ボーア',
+         '核心的信念': '根源的不確定性', '宇宙の比喩': '確率の雲',
+         '因果': '確率のみ、必然なし', '自由意志': '存在しうる（余地がある）',
+         '神の役割': '「確かにサイコロを振る」（ボーア）'}
+    ]
+
+    for wv in worldviews:
+        print(f"\n【{wv['時代']}】")
+        for key, value in wv.items():
+            if key != '時代':
+                print(f"  {key:<12}: {value}")
+
+# Execute
+determinism_timeline()
